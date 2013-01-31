@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project'
+
+require 'motion-plot'
+
+Motion::Project::App.setup do |app|
+  # Use `rake config' to see complete project settings.
+  app.name = 'BarChart'
+
+  app.device_family = :ipad
+  app.interface_orientations = [:landscape_left, :landscape_right]
+
+  # app.frameworks << "QuartzCore"
+
+  # app.pods do
+  #   pod "CorePlot"
+  # end
+
+end
