@@ -19,7 +19,8 @@ module MotionPlot
       series && series.each_with_index {|hash, index|
         data = hash[:data]
 
-        @series["#{self.class.name}_#{index}"] = hash
+        # @series["#{self.class.name}_#{index}"] = hash
+        @series[hash[:name]] = hash
       }
 
       if(options[:legend])
@@ -135,7 +136,7 @@ module MotionPlot
 
     def add_legend
       @graph.legend               = CPTLegend.legendWithGraph(@graph)
-      @graph.legend.fill          = CPTFill.fillWithColor(CPTColor.darkGrayColor)
+      @graph.legend.fill          = CPTFill.fillWithColor(CPTColor.whiteColor)
       @graph.legend.cornerRadius  = 5.0
       @graph.legend.swatchSize    = CGSizeMake(25.0, 25.0)
       @graph.legendAnchor         = LEGEND_POSITION[0]
