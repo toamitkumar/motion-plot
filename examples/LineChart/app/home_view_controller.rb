@@ -2,7 +2,7 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    @chart_view = UIView.alloc.initWithFrame([[10, 10], [500, 500]])
+    @chart_view = UIView.alloc.initWithFrame([[10, 10], [800, 700]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
@@ -13,12 +13,12 @@ class HomeViewController < UIViewController
   def add_chart
 
     options = {
-      title: {
-        text: "Monthly Average Temperature",
-        enabled: true
-      },
+      title: "Monthly Average Temperature",
       xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      },
+      datalabels: {
+        enabled: true
       },
       yAxis: {
         title: {
@@ -27,7 +27,7 @@ class HomeViewController < UIViewController
         }
       },
       legend: {
-        enabled: false
+        enabled: true
       },
       series: [{
         name: 'Tokyo',
@@ -44,7 +44,8 @@ class HomeViewController < UIViewController
       }]
     }
 
-    LinePlot.alloc.initWithOptions(options, containerView:@chart_view)
+    view = MotionPlot::Line.alloc.initWithOptions(options, containerView:@chart_view)
+    @chart_view.addSubview(view)
   end
 
 end

@@ -10,12 +10,12 @@ Motion::Project::App.setup do |app|
 
   p File.join(File.dirname(__FILE__), 'motion-plot/**/*.rb')
 
-  app.files.unshift(Dir.glob("./motion-plot/**/*.rb"))
+  # app.files.unshift(Dir.glob("./motion-plot/**/*.rb"))
 
-  # Dir.glob(File.join(File.dirname(__FILE__), 'motion-plot/**/*.rb')).each do |file|
-  #   p file
-  #   app.files.unshift(file)
-  # end
+  Dir.glob(File.join(File.dirname(__FILE__), 'motion-plot/**/*.rb')).each do |file|
+    # p file
+    app.files.unshift(file)
+  end
 
   app.frameworks << "QuartzCore"
 

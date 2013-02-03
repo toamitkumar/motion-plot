@@ -1,5 +1,3 @@
-module Motion
-  module Plot
-    VERSION = "0.0.1"
-  end
+module MotionPlot
+  VERSION = "0.0.1"
 end
