@@ -14,6 +14,7 @@ class HomeViewController < UIViewController
 
     options = {
       title: "Monthly Average Temperature",
+      curve_inerpolation: false,
       xAxis: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       },

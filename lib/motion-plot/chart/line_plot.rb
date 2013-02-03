@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
 
-    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :series, :title_enabled, :data_label_enabled
+    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :series, :title_enabled, :data_label_enabled, :curve_inerpolation
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -111,6 +111,7 @@ module MotionPlot
         line.dataLineStyle              = line_style
         line.dataSource                 = self
         line.delegate                   = self
+        line.interpolation              = CPTScatterPlotInterpolationCurved if(@curve_inerpolation)
 
         add_data_labels(line, index) if(@data_label_enabled)
 
