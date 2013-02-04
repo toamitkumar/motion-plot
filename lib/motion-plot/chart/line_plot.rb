@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
 
-    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :series, :title_enabled, :data_label_enabled, :curve_inerpolation
+    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :title_enabled, :data_label_enabled, :curve_inerpolation
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -14,10 +14,13 @@ module MotionPlot
         @xlabels = options[:xAxis][:labels]
       end
 
+      if(options[:yAxis])
+
+      end
+
       @series = {}
       series = options[:series]
       series && series.each_with_index {|hash, index|
-        # @series["#{self.class.name}_#{index}"] = hash
         @series[hash[:name]] = Series.new(hash)
       }
 
@@ -46,14 +49,9 @@ module MotionPlot
       add_title
 
       @graph.applyTheme(CPTTheme.themeNamed KCPTPlainWhiteTheme)
-      
-      @graph.plotAreaFrame.masksToBorder    = false
-      @graph.plotAreaFrame.borderLineStyle  = nil
-      @graph.plotAreaFrame.paddingLeft      = 50.0
-      @graph.plotAreaFrame.paddingTop       = 25.0
-      @graph.plotAreaFrame.paddingRight     = 25.0
-      @graph.plotAreaFrame.paddingBottom    = 50.0
 
+      default_padding
+      
       @chart_layers                         = [NSNumber.numberWithInt(CPTGraphLayerTypePlots), NSNumber.numberWithInt(CPTGraphLayerTypeMajorGridLines), NSNumber.numberWithInt(CPTGraphLayerTypeMinorGridLines), NSNumber.numberWithInt(CPTGraphLayerTypeAxisLines), NSNumber.numberWithInt(CPTGraphLayerTypeAxisLabels), NSNumber.numberWithInt(CPTGraphLayerTypeAxisTitles)]
       @graph.topDownLayerOrder              = @chart_layers
       
@@ -108,7 +106,6 @@ module MotionPlot
 
         if(@series[name].color)
           line_style.lineColor          = @series[name].color.to_color.to_cpt_color
-          p @series[name].color.to_color.to_cpt_color
         else
           line_style.lineColor          = COLORS[index].to_color.to_cpt_color
         end
@@ -129,24 +126,6 @@ module MotionPlot
       add_xy_range
 
       @layer_hosting_view
-    end
-
-    def add_title
-      @graph.title                    = title
-      text_style                      = CPTMutableTextStyle.textStyle
-      text_style.color                = CPTColor.grayColor
-      text_style.fontName             = FONT_NAME
-      @graph.titleTextStyle           = text_style
-      @graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop
-    end
-
-    def add_legend
-      @graph.legend               = CPTLegend.legendWithGraph(@graph)
-      @graph.legend.fill          = CPTFill.fillWithColor(CPTColor.whiteColor)
-      @graph.legend.cornerRadius  = 5.0
-      @graph.legend.swatchSize    = CGSizeMake(25.0, 25.0)
-      @graph.legendAnchor         = LEGEND_POSITION[0]
-      @graph.legendDisplacement   = CGPointMake(0.0, 12.0)
     end
 
     def add_plot_space
@@ -201,15 +180,17 @@ module MotionPlot
     end
 
     def numberForPlot(plot, field:field_enum, recordIndex:index)
-      data            = @series[plot.identifier].data
+      data  = @series[plot.identifier].data
 
-      if (field_enum == CPTScatterPlotFieldY) 
-        num = data[index]
-      elsif (field_enum == CPTScatterPlotFieldX)
-        num = index
-      end
+      (field_enum == CPTScatterPlotFieldY) ? data[index] : index
 
-      num
+      # if (field_enum == CPTScatterPlotFieldY) 
+      #   num = data[index]
+      # elsif (field_enum == CPTScatterPlotFieldX)
+      #   num = index
+      # end
+
+      # num
     end
 
   end
