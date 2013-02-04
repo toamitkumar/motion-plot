@@ -17,10 +17,8 @@ module MotionPlot
       @series = {}
       series = options[:series]
       series && series.each_with_index {|hash, index|
-        data = hash[:data]
-
         # @series["#{self.class.name}_#{index}"] = hash
-        @series[hash[:name]] = hash
+        @series[hash[:name]] = Series.new(hash)
       }
 
       if(options[:legend])
@@ -101,13 +99,20 @@ module MotionPlot
       end
 
       # Create the lines
-      @series.keys.each_with_index do |line_key, index|
+      @series.keys.each_with_index do |name, index|
         line                            = CPTScatterPlot.alloc.initWithFrame(CGRectNull)
-        line.identifier                 = line_key
+        line.identifier                 = name
 
         line_style                      = line.dataLineStyle.mutableCopy
         line_style.lineWidth            = 3.0
-        line_style.lineColor            = COLORS[index].to_color.to_cpt_color
+
+        if(@series[name].color)
+          line_style.lineColor          = @series[name].color.to_color.to_cpt_color
+          p @series[name].color.to_color.to_cpt_color
+        else
+          line_style.lineColor          = COLORS[index].to_color.to_cpt_color
+        end
+
         line.dataLineStyle              = line_style
         line.dataSource                 = self
         line.delegate                   = self
@@ -127,10 +132,10 @@ module MotionPlot
     end
 
     def add_title
-      @graph.title = title
-      text_style = CPTMutableTextStyle.textStyle
+      @graph.title                    = title
+      text_style                      = CPTMutableTextStyle.textStyle
       text_style.color                = CPTColor.grayColor
-      text_style.fontName             = "Helvetica-Bold"
+      text_style.fontName             = FONT_NAME
       @graph.titleTextStyle           = text_style
       @graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop
     end
@@ -152,9 +157,9 @@ module MotionPlot
 
     def add_data_labels(line, index)
       symbol_style                          = CPTMutableLineStyle.lineStyle
-      symbol_style.lineColor                = COLORS[index].to_color.to_cpt_color
+      symbol_style.lineColor                = line.dataLineStyle.lineColor
       plot_symbol                           = CPTPlotSymbol.send(PLOTSYMBOLS[index])
-      plot_symbol.fill                      = CPTFill.fillWithColor(COLORS[index].to_color.to_cpt_color, colorWithAlphaComponent:0.5)
+      plot_symbol.fill                      = CPTFill.fillWithColor(line.dataLineStyle.lineColor, colorWithAlphaComponent:0.5)
       plot_symbol.lineStyle                 = symbol_style
       plot_symbol.size                      = CGSizeMake(8.0, 8.0)
       line.plotSymbol                       = plot_symbol
@@ -179,10 +184,9 @@ module MotionPlot
       annotation_style                      = CPTMutableTextStyle.textStyle
       annotation_style.color                = CPTColor.blackColor
       annotation_style.fontSize             = 14.0
-      annotation_style.fontName             = "Helvetica-Bold"
+      annotation_style.fontName             = FONT_NAME
 
-      line_attr                             = @series[plot.identifier]
-      y_value                               = line_attr[:data][index].round(2)
+      y_value                               = @series[plot.identifier].data[index].round(2)
       text_layer                            = CPTTextLayer.alloc.initWithText(y_value.to_s, style:annotation_style)
 
       @data_label_annotation                = CPTPlotSpaceAnnotation.alloc.initWithPlotSpace(@graph.defaultPlotSpace, anchorPlotPoint:[index, y_value])
@@ -193,13 +197,11 @@ module MotionPlot
     end
 
     def numberOfRecordsForPlot(plot)
-      line_attr = @series[plot.identifier]
-      line_attr[:data].size
+      @series[plot.identifier].data.size
     end
 
     def numberForPlot(plot, field:field_enum, recordIndex:index)
-      line_attr       = @series[plot.identifier]
-      data            = line_attr[:data]
+      data            = @series[plot.identifier].data
 
       if (field_enum == CPTScatterPlotFieldY) 
         num = data[index]
