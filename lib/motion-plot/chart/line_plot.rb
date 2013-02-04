@@ -155,6 +155,14 @@ module MotionPlot
 
     def add_xy_range
       @plot_space.scaleToFitPlots(@plots)
+      x_range = @plot_space.xRange.mutableCopy
+      y_range = @plot_space.yRange.mutableCopy
+
+      # x_range.expandRangeByFactor(CPTDecimalFromDouble(1.01))
+      # y_range.expandRangeByFactor(CPTDecimalFromDouble(1.01))
+
+      # @plot_space.xRange = x_range
+      # @plot_space.yRange = y_range
     end
 
     # This implementation of this method will put the line graph in a fix position so it won't be scrollable.
