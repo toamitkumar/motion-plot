@@ -50,10 +50,16 @@ module MotionPlot
     def default_padding
       @graph.plotAreaFrame.masksToBorder    = true
       @graph.plotAreaFrame.borderLineStyle  = nil
-      @graph.plotAreaFrame.paddingLeft      = 40.0
+      @graph.plotAreaFrame.paddingLeft      = 50.0
       @graph.plotAreaFrame.paddingTop       = 10.0
-      @graph.plotAreaFrame.paddingRight     = 10.0
-      @graph.plotAreaFrame.paddingBottom    = 30.0
+      @graph.plotAreaFrame.paddingRight     = 20.0
+      @graph.plotAreaFrame.paddingBottom    = 50.0
+
+
+      @graph.paddingLeft                    = 5.0
+      @graph.paddingRight                   = 0.0
+      @graph.paddingTop                     = 10.0
+      @graph.paddingBottom                  = 5.0
     end
   end
 end

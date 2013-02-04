@@ -3,19 +3,24 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
 
-    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :title_enabled, :data_label_enabled, :curve_inerpolation
+    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :title_enabled, :data_label_enabled, :curve_inerpolation, :axes
 
     def bootstrap(options)
       options.each_pair {|key, value|
         send("#{key}=", value) if(respond_to?("#{key}="))
       }
 
+      @axes = {}
       if(options[:xAxis])
-        @xlabels = options[:xAxis][:labels]
+        @axes[:x] = Axis.new(options[:xAxis].merge(type: 'xaxis'))
+      else
+        @axes[:x] = Axis.new(type: 'xaxis', enabled: false)
       end
 
       if(options[:yAxis])
-
+        @axes[:y] = Axis.new(options[:yAxis].merge(type: 'yaxis'))
+      else
+        @axes[:y] = Axis.new(type: 'yaxis', enabled: false)
       end
 
       @series = {}
@@ -38,7 +43,7 @@ module MotionPlot
     def initWithOptions(options, containerView:container)
       bootstrap(options)
 
-      @layer_hosting_view = CPTGraphHostingView.alloc.initWithFrame(container.frame)
+      @layer_hosting_view = CPTGraphHostingView.alloc.initWithFrame([[0, 0], [container.frame.size.width, container.frame.size.height]])
 
       bounds = @layer_hosting_view.bounds
 
@@ -59,6 +64,7 @@ module MotionPlot
       # add plot space
       add_plot_space
 
+      # TODO - move it to base class
       @major_grid_line_style            = CPTMutableLineStyle.lineStyle
       @major_grid_line_style.lineWidth  = 0.75
       @major_grid_line_style.lineColor  = CPTColor.grayColor.colorWithAlphaComponent(0.25)
@@ -68,21 +74,22 @@ module MotionPlot
       @xaxis.majorGridLineStyle         = @major_grid_line_style
       @xaxis.minorTicksPerInterval      = 1
 
-      if(@xtitle)
-        @xaxis.title = @xtitle
+      if(@axes[:x])
+        axis = @axes[:x]
+        @xaxis.title = axis.title
         @xaxis.titleOffset = 30.0
-      end
 
-      if(@xlabels)
-        labels = @xlabels.each_with_index.map do |l, i|
-          @xaxis.labelingPolicy = CPTAxisLabelingPolicyNone
-          label = CPTAxisLabel.alloc.initWithText(l, textStyle: @xaxis.labelTextStyle)
-          label.tickLocation = CPTDecimalFromInt(i)
-          label.offset = 5.0
-          label  
+        if(axis.labels)
+          labels = axis.labels.each_with_index.map do |l, i|
+            @xaxis.labelingPolicy = CPTAxisLabelingPolicyNone
+            label = CPTAxisLabel.alloc.initWithText(l, textStyle: @xaxis.labelTextStyle)
+            label.tickLocation = CPTDecimalFromInt(i)
+            label.offset = 3.0
+            label  
+          end
+
+          @xaxis.axisLabels = NSSet.setWithArray(labels)  
         end
-
-        @xaxis.axisLabels = NSSet.setWithArray(labels)
       end
 
       # Setting up y-axis
@@ -91,8 +98,9 @@ module MotionPlot
       @yaxis.minorTicksPerInterval      = 1
       @yaxis.labelingPolicy             = CPTAxisLabelingPolicyAutomatic
 
-      if(@ytitle)
-        @yaxis.title = @ytitle
+      if(@axes[:y])
+        axis = @axes[:y]
+        @yaxis.title = axis.title
         @yaxis.titleOffset = 30.0
       end
 
@@ -165,7 +173,7 @@ module MotionPlot
       annotation_style.fontSize             = 14.0
       annotation_style.fontName             = FONT_NAME
 
-      y_value                               = @series[plot.identifier].data[index].round(2)
+      y_value                               = @series[plot.identifier].data[index][0].round(2)
       text_layer                            = CPTTextLayer.alloc.initWithText(y_value.to_s, style:annotation_style)
 
       @data_label_annotation                = CPTPlotSpaceAnnotation.alloc.initWithPlotSpace(@graph.defaultPlotSpace, anchorPlotPoint:[index, y_value])
@@ -182,15 +190,7 @@ module MotionPlot
     def numberForPlot(plot, field:field_enum, recordIndex:index)
       data  = @series[plot.identifier].data
 
-      (field_enum == CPTScatterPlotFieldY) ? data[index] : index
-
-      # if (field_enum == CPTScatterPlotFieldY) 
-      #   num = data[index]
-      # elsif (field_enum == CPTScatterPlotFieldX)
-      #   num = index
-      # end
-
-      # num
+      (field_enum == CPTScatterPlotFieldY) ? data[index][0] : index
     end
 
   end
