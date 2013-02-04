@@ -192,6 +192,5 @@ module MotionPlot
 
       (field_enum == CPTScatterPlotFieldY) ? data[index][0] : index
     end
-
   end
 end
