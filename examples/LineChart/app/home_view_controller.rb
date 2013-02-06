@@ -2,7 +2,8 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    @chart_view = UIView.alloc.initWithFrame([[10, 10], [800, 700]])
+    # @chart_view = UIView.alloc.initWithFrame([[10, 10], [800, 700]])
+    @chart_view = UIView.alloc.initWithFrame([[5, 5], [300, 450]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
@@ -13,24 +14,47 @@ class HomeViewController < UIViewController
   def add_chart
 
     options = {
-      title: "Monthly Average Temperature",
+      title: {
+        text: "Monthly Average Temperature",
+        color: '0000FF',
+        font_name: "Arial"
+      },
       curve_inerpolation: true,
       xAxis: {
-        title: 'Months - 2013',
+        title: {
+          text: 'Months - 2013',
+          color: "0000FF",
+          font_name: "Arial",
+          offset: 30.0
+        },
         enabled: true,
         color: '808080',
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        style: {
+          color: "0000FF",
+          font_name: "Arial",
+          font_size: 8
+        }
       },
       datalabels: {
         enabled: true
       },
       yAxis: {
-        title: 'Temperature (°C)',
-        color: '808080',
+        title: {
+          text: 'Temperature (°C)',
+          color: "0000FF",
+          font_name: "Arial",
+          offset: 30.0
+        },
+        style: {
+          color: "0000FF",
+          font_name: "Arial",
+          font_size: 8
+        },
         enabled: true
       },
       legend: {
-        enabled: true
+        enabled: false
       },
       series: [{
         name: 'Tokyo',

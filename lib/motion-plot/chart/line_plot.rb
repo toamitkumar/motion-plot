@@ -51,7 +51,7 @@ module MotionPlot
       @graph = CPTXYGraph.alloc.initWithFrame(bounds)
       @layer_hosting_view.hostedGraph = @graph
 
-      add_title
+      add_chart_title(@title) if(@title)
 
       @graph.applyTheme(CPTTheme.themeNamed KCPTPlainWhiteTheme)
 
@@ -76,15 +76,14 @@ module MotionPlot
 
       if(@axes[:x])
         axis = @axes[:x]
-        @xaxis.title = axis.title
-        @xaxis.titleOffset = 30.0
+        add_axis_title(@xaxis, axis.title)
 
         if(axis.labels)
           labels = axis.labels.each_with_index.map do |l, i|
             @xaxis.labelingPolicy = CPTAxisLabelingPolicyNone
-            label = CPTAxisLabel.alloc.initWithText(l, textStyle: @xaxis.labelTextStyle)
-            label.tickLocation = CPTDecimalFromInt(i)
-            label.offset = 3.0
+            label                 = CPTAxisLabel.alloc.initWithText(l, textStyle: axis_label_style(axis.style))
+            label.tickLocation    = CPTDecimalFromInt(i)
+            label.offset          = 3.0
             label  
           end
 
@@ -100,8 +99,8 @@ module MotionPlot
 
       if(@axes[:y])
         axis = @axes[:y]
-        @yaxis.title = axis.title
-        @yaxis.titleOffset = 30.0
+        add_axis_title(@yaxis, axis.title)
+        @yaxis.setLabelTextStyle(axis_label_style(axis.style))
       end
 
       # Create the lines

@@ -10,6 +10,8 @@ Motion::Project::App.setup do |app|
     app.files.unshift(file)
   end
 
+  app.files.unshift(File.join(File.dirname(__FILE__), 'motion-plot/chart/base.rb'))
+
   app.frameworks << "QuartzCore"
 
   app.pods do

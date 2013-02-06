@@ -15,7 +15,7 @@ module MotionPlot
       "snowPlotSymbol"
     ]
 
-    LEGEND_POSITION   = [
+    CHART_POSITION = LEGEND_POSITION   = [
       CPTRectAnchorTopRight,
       CPTRectAnchorBottomLeft,
       CPTRectAnchorBottom,
@@ -29,13 +29,37 @@ module MotionPlot
 
     FONT_NAME         = "Helvetica-Bold"
 
-    def add_title
-      @graph.title                    = title
-      text_style                      = CPTMutableTextStyle.textStyle
-      text_style.color                = CPTColor.blackColor
-      text_style.fontName             = FONT_NAME
-      @graph.titleTextStyle           = text_style
-      @graph.titlePlotAreaFrameAnchor = CPTRectAnchorTop
+    def add_chart_title(title)
+      @graph.title                      = title[:text]
+      style                             = title.dup.delete_if {|k, v| k == :text}
+      style                             = Style.new(style)
+      text_style                        = CPTMutableTextStyle.textStyle
+      text_style.color                  = style.color
+      text_style.fontName               = style.font_name
+      
+      @graph.titleTextStyle             = text_style
+      @graph.titlePlotAreaFrameAnchor   = title[:position] || AnchorPosition.default
+    end
+
+    def add_axis_title(axis, title)
+      axis.title                        = title[:text]
+      style                             = title.dup.delete_if {|k, v| k == :text}
+      style                             = Style.new(style)
+      text_style                        = CPTMutableTextStyle.textStyle
+      text_style.color                  = style.color
+      text_style.fontName               = style.font_name
+      
+      axis.titleTextStyle               = text_style
+      axis.titleOffset                  = style.offset
+    end
+
+    def axis_label_style(style)
+      _style                            = Style.new(style)
+      text_style                        = CPTMutableTextStyle.textStyle
+      text_style.color                  = _style.color
+      text_style.fontName               = _style.font_name
+      text_style.fontSize               = _style.font_size
+      text_style
     end
 
     def add_legend
@@ -44,11 +68,11 @@ module MotionPlot
       @graph.legend.cornerRadius  = 5.0
       @graph.legend.swatchSize    = CGSizeMake(25.0, 25.0)
       @graph.legendAnchor         = LEGEND_POSITION[0]
-      @graph.legendDisplacement   = CGPointMake(0.0, 12.0)
+      @graph.legendDisplacement   = CGPointMake(0.0, 0.0)
     end
 
     def default_padding
-      @graph.plotAreaFrame.masksToBorder    = true
+      @graph.plotAreaFrame.masksToBorder    = false
       @graph.plotAreaFrame.borderLineStyle  = nil
       @graph.plotAreaFrame.paddingLeft      = 50.0
       @graph.plotAreaFrame.paddingTop       = 10.0

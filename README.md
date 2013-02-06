@@ -1,6 +1,6 @@
 # Motion::Plot
 
-TODO: Write a gem description
+Build native charts as you are used with Highcharts/D3. This library is a wrapper on top of CorePlot
 
 ## Installation
 
@@ -18,7 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO:  
+  - Support for iPhones
+  - more configuration options from json (use procs)
+  - 
 
 ## Contributing
 
