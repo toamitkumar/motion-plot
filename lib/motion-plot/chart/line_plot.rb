@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
 
-    attr_accessor :title, :xlabels, :xtitle, :ytitle, :legend_enabled, :title_enabled, :data_label_enabled, :curve_inerpolation, :axes
+    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -33,8 +33,8 @@ module MotionPlot
         @legend_enabled = options[:legend][:enabled] || false
       end
 
-      if(options[:datalabels])
-        @data_label_enabled = options[:datalabels][:enabled] || false
+      if(@plot_symbol)
+        @plot_symbol[:size] ||= 8.0
       end
 
       @plots = []
@@ -122,7 +122,7 @@ module MotionPlot
         line.delegate                   = self
         line.interpolation              = CPTScatterPlotInterpolationCurved if(@curve_inerpolation)
 
-        add_data_labels(line, index) if(@data_label_enabled)
+        add_plot_symbol(line, index) if(@plot_symbol)
 
         @graph.addPlot(line)
         @plots << line
@@ -141,13 +141,13 @@ module MotionPlot
       @plot_space.allowsUserInteraction = true
     end
 
-    def add_data_labels(line, index)
+    def add_plot_symbol(line, index)
       symbol_style                          = CPTMutableLineStyle.lineStyle
       symbol_style.lineColor                = line.dataLineStyle.lineColor
-      plot_symbol                           = CPTPlotSymbol.send(PLOTSYMBOLS[index])
+      plot_symbol                           = MotionPlot::PlotSymbol[index]
       plot_symbol.fill                      = CPTFill.fillWithColor(line.dataLineStyle.lineColor, colorWithAlphaComponent:0.5)
       plot_symbol.lineStyle                 = symbol_style
-      plot_symbol.size                      = CGSizeMake(8.0, 8.0)
+      plot_symbol.size                      = CGSizeMake(@plot_symbol[:size].to_f, @plot_symbol[:size].to_f)
       line.plotSymbol                       = plot_symbol
       line.plotSymbolMarginForHitDetection  = 5.0
     end

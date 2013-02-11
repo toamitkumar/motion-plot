@@ -30,13 +30,10 @@ module MotionPlot
         CPTRectAnchorTopLeft
       end
 
-      def default
-        CPTRectAnchorTop
-      end
-
       def top
         CPTRectAnchorTop
       end
+      alias_method :default, :top
 
       def center
         CPTRectAnchorCenter

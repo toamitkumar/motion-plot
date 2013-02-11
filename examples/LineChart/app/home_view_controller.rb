@@ -36,8 +36,9 @@ class HomeViewController < UIViewController
           font_size: 8
         }
       },
-      datalabels: {
-        enabled: true
+      plot_symbol: {
+        enabled: true,
+        size: 5
       },
       yAxis: {
         title: {

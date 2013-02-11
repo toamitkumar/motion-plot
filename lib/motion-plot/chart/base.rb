@@ -3,32 +3,6 @@ module MotionPlot
 
     COLORS            = ['4572A7', 'AA4643', '89A54E', '80699B', '3D96AE', 'DB843D', '92A8CD', 'A47D7C', 'B5CA92']
 
-    PLOTSYMBOLS       = [
-      "rectanglePlotSymbol", 
-      "plusPlotSymbol", 
-      "starPlotSymbol", 
-      "diamondPlotSymbol", 
-      "trianglePlotSymbol", 
-      "pentagonPlotSymbol", 
-      "hexagonPlotSymbol", 
-      "dashPlotSymbol", 
-      "snowPlotSymbol"
-    ]
-
-    CHART_POSITION = LEGEND_POSITION   = [
-      CPTRectAnchorTopRight,
-      CPTRectAnchorBottomLeft,
-      CPTRectAnchorBottom,
-      CPTRectAnchorBottomRight,
-      CPTRectAnchorLeft,
-      CPTRectAnchorRight,
-      CPTRectAnchorTopLeft,
-      CPTRectAnchorTop,
-      CPTRectAnchorCenter
-    ]
-
-    FONT_NAME         = "Helvetica-Bold"
-
     def add_chart_title(title)
       @graph.title                      = title[:text]
       style                             = title.dup.delete_if {|k, v| k == :text}
