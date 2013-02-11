@@ -14,14 +14,13 @@ module MotionPlot
     }
 
     class << self
+      def method_missing(m, *args, &block)
+        method_name = m == :default ? :rectangle : m
 
-      ALIASES.each_pair do |key, value|
-        define_method(key) do
-          CPTPlotSymbol.send(value)
-        end
+        raise unless(ALIASES.keys.include?(method_name))        
+
+        CPTPlotSymbol.send(ALIASES[method_name])
       end
-
-      alias_method :default, :rectangle
 
       def [](index)
         index = 0 if(index > 9)
