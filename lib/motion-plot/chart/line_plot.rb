@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
 
-    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes
+    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -53,7 +53,7 @@ module MotionPlot
 
       add_chart_title(@title) if(@title)
 
-      @graph.applyTheme(CPTTheme.themeNamed KCPTPlainWhiteTheme)
+      @graph.applyTheme(@theme || MotionPlot::Theme.default)
 
       default_padding
       
@@ -157,11 +157,11 @@ module MotionPlot
       x_range = @plot_space.xRange.mutableCopy
       y_range = @plot_space.yRange.mutableCopy
 
-      # x_range.expandRangeByFactor(CPTDecimalFromDouble(1.01))
-      # y_range.expandRangeByFactor(CPTDecimalFromDouble(1.01))
+      x_range.expandRangeByFactor(CPTDecimalFromDouble(1.03))
+      y_range.expandRangeByFactor(CPTDecimalFromDouble(1.03))
 
-      # @plot_space.xRange = x_range
-      # @plot_space.yRange = y_range
+      @plot_space.xRange = x_range
+      @plot_space.yRange = y_range
     end
 
     # This implementation of this method will put the line graph in a fix position so it won't be scrollable.
@@ -178,7 +178,7 @@ module MotionPlot
       annotation_style                      = CPTMutableTextStyle.textStyle
       annotation_style.color                = CPTColor.blackColor
       annotation_style.fontSize             = 14.0
-      annotation_style.fontName             = FONT_NAME
+      annotation_style.fontName             = MotionPlot::Style::DEFAULTS[:font_name]
 
       y_value                               = @series[plot.identifier].data[index][0].round(2)
       text_layer                            = CPTTextLayer.alloc.initWithText(y_value.to_s, style:annotation_style)

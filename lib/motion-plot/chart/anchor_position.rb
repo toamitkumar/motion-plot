@@ -1,43 +1,26 @@
 module MotionPlot
   class AnchorPosition
+    DEFAULTS = {
+      :top_right      => CPTRectAnchorTopRight,
+      :bottom_left    => CPTRectAnchorBottomLeft,
+      :bottom         => CPTRectAnchorBottom,
+      :bottom_right   => CPTRectAnchorBottomRight,
+      :left           => CPTRectAnchorLeft,
+      :right          => CPTRectAnchorRight,
+      :top_left       => CPTRectAnchorTopLeft,
+      :top            => CPTRectAnchorTop,
+      :center         => CPTRectAnchorCenter 
+    }
+
     class << self
 
-      def top_right
-        CPTRectAnchorTopRight
-      end
+      def method_missing(m, *args, &block)
+        method_name = m == :default ? :top : m
 
-      def bottom_left
-        CPTRectAnchorBottomLeft
-      end
+        raise unless(DEFAULTS.keys.include?(method_name))        
 
-      def bottom
-        CPTRectAnchorBottom
-      end
-
-      def bottom_right
-        CPTRectAnchorBottomRight
-      end
-
-      def left
-        CPTRectAnchorLeft
-      end
-
-      def right
-        CPTRectAnchorRight
-      end
-
-      def top_left
-        CPTRectAnchorTopLeft
-      end
-
-      def top
-        CPTRectAnchorTop
-      end
-      alias_method :default, :top
-
-      def center
-        CPTRectAnchorCenter
-      end
+        DEFAULTS[method_name]
+      end      
 
     end
   end

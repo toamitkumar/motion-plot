@@ -3,6 +3,20 @@ module MotionPlot
 
     COLORS            = ['4572A7', 'AA4643', '89A54E', '80699B', '3D96AE', 'DB843D', '92A8CD', 'A47D7C', 'B5CA92']
 
+    PLOTSYMBOLS       = [
+      "rectanglePlotSymbol", 
+      "plusPlotSymbol", 
+      "starPlotSymbol", 
+      "diamondPlotSymbol", 
+      "trianglePlotSymbol", 
+      "pentagonPlotSymbol", 
+      "hexagonPlotSymbol", 
+      "dashPlotSymbol", 
+      "snowPlotSymbol"
+    ]
+
+    FONT_NAME         = "Helvetica-Bold"
+
     def add_chart_title(title)
       @graph.title                      = title[:text]
       style                             = title.dup.delete_if {|k, v| k == :text}
@@ -51,13 +65,13 @@ module MotionPlot
       @graph.plotAreaFrame.paddingLeft      = 50.0
       @graph.plotAreaFrame.paddingTop       = 10.0
       @graph.plotAreaFrame.paddingRight     = 20.0
-      @graph.plotAreaFrame.paddingBottom    = 50.0
+      @graph.plotAreaFrame.paddingBottom    = 20.0
 
 
       @graph.paddingLeft                    = 5.0
       @graph.paddingRight                   = 0.0
       @graph.paddingTop                     = 10.0
-      @graph.paddingBottom                  = 5.0
+      @graph.paddingBottom                  = 10.0
     end
   end
 end

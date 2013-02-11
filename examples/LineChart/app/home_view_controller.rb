@@ -2,8 +2,8 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    # @chart_view = UIView.alloc.initWithFrame([[10, 10], [800, 700]])
-    @chart_view = UIView.alloc.initWithFrame([[5, 5], [300, 450]])
+    @chart_view = UIView.alloc.initWithFrame([[10, 10], [800, 700]])
+    # @chart_view = UIView.alloc.initWithFrame([[5, 5], [300, 450]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
@@ -20,6 +20,7 @@ class HomeViewController < UIViewController
         font_name: "Arial"
       },
       curve_inerpolation: true,
+      theme: MotionPlot::Theme.dark_gradient,
       xAxis: {
         title: {
           text: 'Months - 2013',
@@ -38,7 +39,7 @@ class HomeViewController < UIViewController
       },
       plot_symbol: {
         enabled: true,
-        size: 5
+        size: 8
       },
       yAxis: {
         title: {
@@ -95,7 +96,7 @@ class HomeViewController < UIViewController
         data: [[-0.9, 'Jan'], [0.6, 'Feb'], [3.5, 'Mar'], [8.4, 'Apr'], [13.5, 'May'], [17.0, 'Jun'], [18.6, 'Jul'], [17.9, 'Aug'], [14.3, 'Sep'], [9.0, 'Oct'], [3.9, 'Nov'], [1.0, 'Dec']]
       }, {
         name: 'London',
-        data: [[3.9, 'Jan'], [4.2, 'Feb'], [5.7, 'Mar'], [8.5, 'Apr'], [11.9, 'May'], [15.2, 'Jun'], [17.0, 'Jul'], [16.6, 'Aug'], [14.2, 'Sep'], [-10.3, 'Oct']]
+        data: [[3.9, 'Jan'], [4.2, 'Feb'], [5.7, 'Mar'], [8.5, 'Apr'], [11.9, 'May'], [15.2, 'Jun'], [17.0, 'Jul'], [16.6, 'Aug'], [14.2, 'Sep'], [10.3, 'Oct']]
       }]
     }
 
