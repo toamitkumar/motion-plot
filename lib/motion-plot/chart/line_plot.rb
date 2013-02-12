@@ -1,9 +1,9 @@
 module MotionPlot
   class Line < Base
 
-    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :data_label_annotation
+    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis
 
-    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme
+    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme, :data_label
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -33,8 +33,13 @@ module MotionPlot
         @legend_enabled = options[:legend][:enabled] || false
       end
 
+      if(options[:data_label])
+        @data_label = DataLabel.new(options[:data_label])
+      end
+
       if(@plot_symbol)
-        @plot_symbol[:size] ||= 8.0
+        @plot_symbol = PlotSymbol.new(options[:plot_symbol])
+        # @plot_symbol[:size] ||= 8.0
       end
 
       @plots = []
@@ -142,13 +147,7 @@ module MotionPlot
     end
 
     def add_plot_symbol(line, index)
-      symbol_style                          = CPTMutableLineStyle.lineStyle
-      symbol_style.lineColor                = line.dataLineStyle.lineColor
-      plot_symbol                           = MotionPlot::PlotSymbol[index]
-      plot_symbol.fill                      = CPTFill.fillWithColor(line.dataLineStyle.lineColor, colorWithAlphaComponent:0.5)
-      plot_symbol.lineStyle                 = symbol_style
-      plot_symbol.size                      = CGSizeMake(@plot_symbol[:size].to_f, @plot_symbol[:size].to_f)
-      line.plotSymbol                       = plot_symbol
+      line.plotSymbol                       = @plot_symbol.symbol_for(line, atIndex: index)
       line.plotSymbolMarginForHitDetection  = 5.0
     end
 
@@ -170,24 +169,13 @@ module MotionPlot
     end
 
     def scatterPlot(plot, plotSymbolWasSelectedAtRecordIndex:index)
-      if(@data_label_annotation)
-        @graph.plotAreaFrame.plotArea.removeAnnotation(@data_label_annotation)
-        @data_label_annotation = nil
+      if(@data_label and @data_label.annotation)
+        @graph.plotAreaFrame.plotArea.removeAnnotation(@data_label.annotation)
+        @data_label.annotation = nil
       end
 
-      annotation_style                      = CPTMutableTextStyle.textStyle
-      annotation_style.color                = CPTColor.blackColor
-      annotation_style.fontSize             = 14.0
-      annotation_style.fontName             = MotionPlot::Style::DEFAULTS[:font_name]
-
-      y_value                               = @series[plot.identifier].data[index][0].round(2)
-      text_layer                            = CPTTextLayer.alloc.initWithText(y_value.to_s, style:annotation_style)
-
-      @data_label_annotation                = CPTPlotSpaceAnnotation.alloc.initWithPlotSpace(@graph.defaultPlotSpace, anchorPlotPoint:[index, y_value])
-      @data_label_annotation.contentLayer   = text_layer
-      @data_label_annotation.displacement   = CGPointMake(0.0, 20.0)
-
-      @graph.plotAreaFrame.plotArea.addAnnotation(@data_label_annotation)
+      y_value = @series[plot.identifier].data[index][0].round(2)
+      @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: index, plotSpace: @graph.defaultPlotSpace))
     end
 
     def numberOfRecordsForPlot(plot)

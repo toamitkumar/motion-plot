@@ -41,6 +41,12 @@ class HomeViewController < UIViewController
         enabled: true,
         size: 8
       },
+      data_label: {
+        color: "0000FF",
+        font_size: 8,
+        font_name: "Arial",
+        displacement: [0, 10]
+      },
       yAxis: {
         title: {
           text: 'Temperature (°C)',
