@@ -10,9 +10,11 @@ module MotionPlot
 
     class << self
       def method_missing(m, *args, &block)
-        raise unless(DEFAULTS.keys.include?(m))       
+        method_name = m == :default ? :plain_white : m
 
-        CPTTheme.themeNamed(DEFAULTS[m])
+        raise unless(DEFAULTS.keys.include?(method_name))       
+
+        CPTTheme.themeNamed(DEFAULTS[method_name])
       end
     end
 

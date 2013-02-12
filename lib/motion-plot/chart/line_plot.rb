@@ -58,7 +58,7 @@ module MotionPlot
 
       add_chart_title(@title) if(@title)
 
-      @graph.applyTheme(@theme || MotionPlot::Theme.default)
+      @graph.applyTheme(@theme || Theme.default)
 
       default_padding
       
@@ -109,29 +109,7 @@ module MotionPlot
       end
 
       # Create the lines
-      @series.keys.each_with_index do |name, index|
-        line                            = CPTScatterPlot.alloc.initWithFrame(CGRectNull)
-        line.identifier                 = name
-
-        line_style                      = line.dataLineStyle.mutableCopy
-        line_style.lineWidth            = 3.0
-
-        if(@series[name].color)
-          line_style.lineColor          = @series[name].color.to_color.to_cpt_color
-        else
-          line_style.lineColor          = COLORS[index].to_color.to_cpt_color
-        end
-
-        line.dataLineStyle              = line_style
-        line.dataSource                 = self
-        line.delegate                   = self
-        line.interpolation              = CPTScatterPlotInterpolationCurved if(@curve_inerpolation)
-
-        add_plot_symbol(line, index) if(@plot_symbol)
-
-        @graph.addPlot(line)
-        @plots << line
-      end
+      add_series
 
       add_legend if(@legend_enabled)
 
@@ -161,6 +139,32 @@ module MotionPlot
 
       @plot_space.xRange = x_range
       @plot_space.yRange = y_range
+    end
+
+    def add_series
+      @series.keys.each_with_index do |name, index|
+        line                            = CPTScatterPlot.alloc.initWithFrame(CGRectNull)
+        line.identifier                 = name
+
+        line_style                      = line.dataLineStyle.mutableCopy
+        line_style.lineWidth            = 3.0
+
+        if(@series[name].color)
+          line_style.lineColor          = @series[name].color.to_color.to_cpt_color
+        else
+          line_style.lineColor          = COLORS[index].to_color.to_cpt_color
+        end
+
+        line.dataLineStyle              = line_style
+        line.dataSource                 = self
+        line.delegate                   = self
+        line.interpolation              = CPTScatterPlotInterpolationCurved if(@curve_inerpolation)
+
+        add_plot_symbol(line, index) if(@plot_symbol)
+
+        @graph.addPlot(line)
+        @plots << line
+      end
     end
 
     # This implementation of this method will put the line graph in a fix position so it won't be scrollable.

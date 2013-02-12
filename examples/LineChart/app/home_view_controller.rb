@@ -20,7 +20,7 @@ class HomeViewController < UIViewController
         font_name: "Arial"
       },
       curve_inerpolation: true,
-      theme: MotionPlot::Theme.dark_gradient,
+      # theme: MotionPlot::Theme.dark_gradient,
       xAxis: {
         title: {
           text: 'Months - 2013',
