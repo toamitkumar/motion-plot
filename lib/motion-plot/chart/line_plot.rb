@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis
 
-    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme, :data_label
+    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme, :data_label, :orientation
 
     def bootstrap(options)
       options.each_pair {|key, value|
