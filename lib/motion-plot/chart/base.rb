@@ -3,51 +3,16 @@ module MotionPlot
 
     COLORS            = ['4572A7', 'AA4643', '89A54E', '80699B', '3D96AE', 'DB843D', '92A8CD', 'A47D7C', 'B5CA92']
 
-    PLOTSYMBOLS       = [
-      "rectanglePlotSymbol", 
-      "plusPlotSymbol", 
-      "starPlotSymbol", 
-      "diamondPlotSymbol", 
-      "trianglePlotSymbol", 
-      "pentagonPlotSymbol", 
-      "hexagonPlotSymbol", 
-      "dashPlotSymbol", 
-      "snowPlotSymbol"
-    ]
-
-    FONT_NAME         = "Helvetica-Bold"
-
     def add_chart_title(title)
-      @graph.title                      = title[:text]
-      style                             = title.dup.delete_if {|k, v| k == :text}
-      style                             = Style.new(style)
-      text_style                        = CPTMutableTextStyle.textStyle
-      text_style.color                  = style.color
-      text_style.fontName               = style.font_name
-      
-      @graph.titleTextStyle             = text_style
-      @graph.titlePlotAreaFrameAnchor   = title[:position] || AnchorPosition.default
+      @graph.title                      = title.text
+      @graph.titleTextStyle             = title.text_style
+      @graph.titlePlotAreaFrameAnchor   = title.position
     end
 
     def add_axis_title(axis, title)
-      axis.title                        = title[:text]
-      style                             = title.dup.delete_if {|k, v| k == :text}
-      style                             = Style.new(style)
-      text_style                        = CPTMutableTextStyle.textStyle
-      text_style.color                  = style.color
-      text_style.fontName               = style.font_name
-      
-      axis.titleTextStyle               = text_style
-      axis.titleOffset                  = style.offset
-    end
-
-    def axis_label_style(style)
-      _style                            = Style.new(style)
-      text_style                        = CPTMutableTextStyle.textStyle
-      text_style.color                  = _style.color
-      text_style.fontName               = _style.font_name
-      text_style.fontSize               = _style.font_size
-      text_style
+      axis.title            = title.text
+      axis.titleTextStyle   = text_style
+      axis.titleOffset      = title.style.offset
     end
 
     def add_legend

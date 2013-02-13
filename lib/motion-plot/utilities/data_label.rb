@@ -9,7 +9,7 @@ module MotionPlot
 
     def initialize(options={})
       @attributes = DEFAULTS.merge(options)
-      @style = Style.new(@attributes)
+      @style      = Style.new(@attributes)
     end
 
     def style

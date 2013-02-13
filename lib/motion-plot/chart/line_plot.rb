@@ -1,14 +1,18 @@
 module MotionPlot
   class Line < Base
 
-    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis
+    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title
 
-    attr_accessor :title, :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme, :data_label, :orientation
+    attr_accessor :legend_enabled, :plot_symbol, :curve_inerpolation, :axes, :theme, :data_label, :orientation
 
     def bootstrap(options)
       options.each_pair {|key, value|
         send("#{key}=", value) if(respond_to?("#{key}="))
       }
+
+      if(options[:title])
+        @title = Title.new(options[:title])
+      end
 
       @axes = {}
       if(options[:xAxis])
@@ -39,7 +43,6 @@ module MotionPlot
 
       if(@plot_symbol)
         @plot_symbol = PlotSymbol.new(options[:plot_symbol])
-        # @plot_symbol[:size] ||= 8.0
       end
 
       @plots = []
@@ -86,7 +89,7 @@ module MotionPlot
         if(axis.labels)
           labels = axis.labels.each_with_index.map do |l, i|
             @xaxis.labelingPolicy = CPTAxisLabelingPolicyNone
-            label                 = CPTAxisLabel.alloc.initWithText(l, textStyle: axis_label_style(axis.style))
+            label                 = CPTAxisLabel.alloc.initWithText(l, textStyle: axis.text_style))
             label.tickLocation    = CPTDecimalFromInt(i)
             label.offset          = 3.0
             label  
@@ -105,7 +108,7 @@ module MotionPlot
       if(@axes[:y])
         axis = @axes[:y]
         add_axis_title(@yaxis, axis.title)
-        @yaxis.setLabelTextStyle(axis_label_style(axis.style))
+        @yaxis.setLabelTextStyle(axis.text_style)
       end
 
       # Create the lines

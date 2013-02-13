@@ -9,7 +9,7 @@ module MotionPlot
       color: "000000"
     }
 
-    def initialize(args)
+    def initialize(args={})
       options = DEFAULTS.merge(args)
 
       options.each_pair {|key, value|
