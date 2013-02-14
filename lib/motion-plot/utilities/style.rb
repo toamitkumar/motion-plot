@@ -1,6 +1,6 @@
 module MotionPlot
   class Style
-    attr_accessor :font_name, :font_size, :offset, :alignment, :color, :rotation
+    attr_accessor :font_name, :font_size, :offset, :alignment, :color, :rotation, :width
 
     DEFAULTS = {
       font_name: "Helvetica",

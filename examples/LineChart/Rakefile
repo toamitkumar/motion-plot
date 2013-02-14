@@ -2,7 +2,8 @@
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project'
 
-require 'motion-plot'
+require "bundler"
+Bundler.require :default
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.

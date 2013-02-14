@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rake', '0.9.6'
 gem 'bubble-wrap'
 gem 'cocoapods'
 gem 'motion-cocoapods'

@@ -80,7 +80,10 @@ class HomeViewController < UIViewController
           [13.9, 'Nov'], 
           [9.6, 'Dec']
         ],
-        color: "173B0B"
+        style: {
+          color: "173B0B",
+          width: 8.0
+        }
       }, {
         name: 'New York',
         data: [
