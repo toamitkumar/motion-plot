@@ -16,5 +16,12 @@ module MotionPlot
       line.areaFill       = AreaGradient.new(@orientation).fill_with(line.dataLineStyle.lineColor)
       line.areaBaseValue  = CPTDecimalFromString("0.0")
     end    
+
+    protected
+    
+    def plot_type
+      "area"
+    end
+
   end
 end

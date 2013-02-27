@@ -3,14 +3,6 @@ module MotionPlot
 
     attr_accessor :curve_inerpolation
 
-    DEFAULT_OPTIONS = {
-      width: 2.0
-    }
-
-    def plot_type
-      "line"
-    end
-
     def add_series
       @series.keys.each_with_index do |name, index|
         line                  = CPTScatterPlot.alloc.initWithFrame(CGRectNull)
@@ -57,5 +49,17 @@ module MotionPlot
 
       (field_enum == CPTScatterPlotFieldY) ? data[index][0] : index
     end
+
+    protected
+    def default_style
+      {
+        width: 2.0
+      }
+    end    
+
+    def plot_type
+      "line"
+    end
+
   end
 end

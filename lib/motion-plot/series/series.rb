@@ -10,14 +10,11 @@ module MotionPlot
         send("#{key}=", value) if(respond_to?("#{key}="))
       }
 
-      defaults = {
-        width: 2.0
-      }
+      style_attr = args[:defaults].merge!(color: COLORS[args[:index]])
+      merge_plot_options(style_attr, args[:plot_options])
+      merge_style(style_attr, args[:style])
 
-      style_attr = args[:style] || {}
-      style_attr.merge!(color: COLORS[args[:index]]) if(style_attr.empty? or !(args[:style] and args[:style][:color]))
-
-      @style = Style.new(defaults.merge(style_attr))
+      @style = Style.new(style_attr)
     end
 
     def color
@@ -27,6 +24,21 @@ module MotionPlot
     def width
       @style.width
     end
+
+    private
+    def merge_plot_options(style, plot_options)
+      return if(plot_options.nil?)
+      return if(plot_options.send(type).nil?)
+      return if(plot_options.send(type)[:style].nil?)
+
+      merge_style(style, plot_options.send(type)[:style])
+    end
+
+    def merge_style(old_style, new_style)
+      old_style.merge!(new_style) {|key, old_val, new_val| 
+        new_val.nil? ? old_val : new_val
+      } if(new_style)
+    end    
 
   end
 end

@@ -3,16 +3,8 @@ module MotionPlot
 
     attr_reader :data_hash
 
-    DEFAULT_OPTIONS = {
-      width: 0.25
-    }
-
     CPDBarWidth     = 0.25
     CPDBarInitialX  = 0.0
-
-    def plot_type
-      "bar"
-    end
 
     def add_series
       @stacking           = @plot_options ? @plot_options.bar[:stacking] : nil
@@ -30,7 +22,7 @@ module MotionPlot
 
       @series.keys.each_with_index do |name, index|
         bar               = CPTBarPlot.tubularBarPlotWithColor(@series[name].color, horizontalBars: horizontal_bar)
-        bar.barWidth      = CPTDecimalFromDouble(CPDBarWidth)
+        bar.barWidth      = CPTDecimalFromDouble(@series[name].width)
         bar.barOffset     = CPTDecimalFromDouble(bar_x) unless(@stacking)
 
         bar.identifier    = name
@@ -49,7 +41,7 @@ module MotionPlot
 
         animate(bar)
 
-        bar_x += CPDBarWidth
+        bar_x += @series[name].width
         @data_hash[index] = @series[name].data
       end
     end
@@ -66,6 +58,17 @@ module MotionPlot
 
       bar.addAnimation(scaling, forKey:"scaling")
     end
+
+    protected
+    def default_style
+      {
+        width: 0.25 
+      }
+    end
+
+    def plot_type
+      "bar"
+    end    
 
     # def numberOfRecordsForPlot(plot)
     #   @series[plot.identifier].data.size

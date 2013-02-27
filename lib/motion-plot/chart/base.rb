@@ -34,7 +34,8 @@ module MotionPlot
       @series = {}
       series = options[:series]
       series && series.each_with_index {|hash, index|
-        @series[hash[:name]] = Series.new(hash.merge(index: index))
+        hash.merge!({index: index, defaults: default_style, plot_options: @plot_options, type: self.plot_type})
+        @series[hash[:name]] = Series.new(hash)
       }
 
       if(options[:legend])
@@ -182,6 +183,12 @@ module MotionPlot
       @graph.paddingRight                   = 0.0
       @graph.paddingTop                     = 10.0
       @graph.paddingBottom                  = 10.0
+    end
+
+    protected
+    def default_style
+      # inheriting classes should implement this
+      {}
     end
   end
 end

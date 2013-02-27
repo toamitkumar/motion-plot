@@ -62,7 +62,7 @@ class HomeViewController < UIViewController
         bar: {
           stacking: 'normal',
           style: {
-            width: 0.3            
+            width: 0.5           
           }
         }
       },
