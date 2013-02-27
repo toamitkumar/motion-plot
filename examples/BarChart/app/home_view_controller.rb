@@ -18,7 +18,7 @@ class HomeViewController < UIViewController
         color: '0000FF',
         font_name: "Arial"
       },
-      theme: MotionPlot::Theme.dark_gradient,
+      theme: MotionPlot::Theme.plain_white,
       xAxis: {
         title: {
           text: 'Months - 2013',
@@ -61,18 +61,18 @@ class HomeViewController < UIViewController
       series: [{
         name: 'Tokyo',
         data: [
-          [7.0, 'Jan'], 
-          [6.9, 'Feb'], 
-          [9.5, 'Mar'], 
-          [14.5, 'Apr'], 
-          [18.2, 'May'], 
-          [21.5, 'Jun'], 
-          [25.2, 'Jul'], 
-          [26.5, 'Aug'], 
-          [23.3, 'Sep'], 
-          [18.3, 'Oct'], 
-          [13.9, 'Nov'], 
-          [9.6, 'Dec']
+          7.0, 
+          6.9, 
+          9.5, 
+          14.5, 
+          18.2, 
+          21.5, 
+          25.2, 
+          26.5, 
+          23.3, 
+          18.3, 
+          13.9, 
+          9.6
         ],
         style: {
           color: "173B0B",
@@ -81,18 +81,18 @@ class HomeViewController < UIViewController
       }, {
         name: 'New York',
         data: [
-          [-0.2, 'Jan'], 
-          [0.8, 'Feb'], 
-          [5.7, 'Mar'], 
-          [11.3, 'Apr'], 
-          [17.0, 'May'], 
-          [22.0, 'Jun'], 
-          [24.8, 'Jul'], 
-          [24.1, 'Aug'], 
-          [20.1, 'Sep'], 
-          [14.1, 'Oct'], 
-          [8.6, 'Nov'], 
-          [2.5, 'Dec']
+          0.2, 
+          -0.8, 
+          5.7, 
+          11.3, 
+          17.0, 
+          22.0, 
+          24.8, 
+          24.1, 
+          20.1, 
+          14.1, 
+          8.6, 
+          2.5
         ]
       }]
     }

@@ -1,6 +1,10 @@
 module MotionPlot
   class Area < Line
 
+    def plot_type
+      "area"
+    end
+
     def add_series
       super
       @plots.each do |line|

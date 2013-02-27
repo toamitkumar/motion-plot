@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title
 
-    attr_accessor :legend_enabled, :plot_symbol, :axes, :theme, :data_label, :orientation
+    attr_accessor :legend_enabled, :plot_symbol, :axes, :theme, :data_label, :orientation, :plot_options
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -25,6 +25,10 @@ module MotionPlot
         @axes[:y] = Axis.new(options[:yAxis].merge(type: 'yaxis'))
       else
         @axes[:y] = Axis.new(type: 'yaxis', enabled: false)
+      end
+
+      if(@plot_options)
+        @plot_options = PlotOptions.new(@plot_options)
       end
 
       @series = {}

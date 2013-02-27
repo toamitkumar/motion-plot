@@ -3,7 +3,7 @@ module MotionPlot
 
     COLORS = ['4572A7', 'AA4643', '89A54E', '80699B', '3D96AE', 'DB843D', '92A8CD', 'A47D7C', 'B5CA92']
 
-    attr_accessor :name, :data
+    attr_accessor :name, :data, :index, :type
 
     def initialize(args={})
       args.each_pair {|key, value|
