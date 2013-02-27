@@ -1,0 +1,4570 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<struct name='CPTGradientElement' type='{_CPTGradientElement=&quot;color&quot;{_CPTRGBAColor=&quot;red&quot;f&quot;green&quot;f&quot;blue&quot;f&quot;alpha&quot;f}&quot;position&quot;f&quot;nextElement&quot;^{_CPTGradientElement}}'>
+<field declared_type='CPTRGBAColor' name='color' type='{_CPTRGBAColor=&quot;red&quot;f&quot;green&quot;f&quot;blue&quot;f&quot;alpha&quot;f}'/>
+<field declared_type='CGFloat' name='position' type='f'/>
+<field declared_type='struct _CPTGradientElement*' name='nextElement' type='^{_CPTGradientElement={_CPTRGBAColor=ffff}f^{_CPTGradientElement}}'/>
+</struct>
+<struct name='CPTNumericDataType' type='{_CPTNumericDataType=&quot;dataTypeFormat&quot;i&quot;sampleBytes&quot;I&quot;byteOrder&quot;i}'>
+<field declared_type='CPTDataTypeFormat' name='dataTypeFormat' type='i'/>
+<field declared_type='size_t' name='sampleBytes' type='L'/>
+<field declared_type='CFByteOrder' name='byteOrder' type='l'/>
+</struct>
+<struct name='CPTRGBAColor' type='{_CPTRGBAColor=&quot;red&quot;f&quot;green&quot;f&quot;blue&quot;f&quot;alpha&quot;f}'>
+<field declared_type='CGFloat' name='red' type='f'/>
+<field declared_type='CGFloat' name='green' type='f'/>
+<field declared_type='CGFloat' name='blue' type='f'/>
+<field declared_type='CGFloat' name='alpha' type='f'/>
+</struct>
+<constant const='true' declared_type='NSString*' name='CPTBarPlotBindingBarBases' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTBarPlotBindingBarFills' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTBarPlotBindingBarLineStyles' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTBarPlotBindingBarLocations' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTBarPlotBindingBarTips' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTDataException' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTException' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTGraphNeedsRedrawNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTLayerBoundsDidChangeNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTLegendNeedsLayoutForPlotNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTLegendNeedsRedrawForPlotNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTLegendNeedsReloadEntriesForPlotNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTNumericDataException' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTPieChartBindingPieSliceFills' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTPieChartBindingPieSliceRadialOffsets' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTPieChartBindingPieSliceWidthValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTPlotBindingDataLabels' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTPlotSpaceCoordinateMappingDidChangeNotification' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingBarLineStyles' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingHighValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingLeftValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingLowValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingRightValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingXValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTRangePlotBindingYValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTScatterPlotBindingPlotSymbols' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTScatterPlotBindingXValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTScatterPlotBindingYValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingCloseValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingDecreaseFills' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingDecreaseLineStyles' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingHighValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingIncreaseFills' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingIncreaseLineStyles' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingLineStyles' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingLowValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingOpenValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='CPTTradingRangePlotBindingXValues' type='@'/>
+<constant const='true' declared_type='NSString*' name='kCPTDarkGradientTheme' type='@'/>
+<constant const='true' declared_type='NSString*' name='kCPTPlainBlackTheme' type='@'/>
+<constant const='true' declared_type='NSString*' name='kCPTPlainWhiteTheme' type='@'/>
+<constant const='true' declared_type='NSString*' name='kCPTSlateTheme' type='@'/>
+<constant const='true' declared_type='NSString*' name='kCPTStocksTheme' type='@'/>
+<constant const='true' declared_type='CGFloat' name='kCPTTextLayerMarginWidth' type='f'/>
+<enum value='5' name='CPTAlignmentBottom'/>
+<enum value='1' name='CPTAlignmentCenter'/>
+<enum value='0' name='CPTAlignmentLeft'/>
+<enum value='4' name='CPTAlignmentMiddle'/>
+<enum value='2' name='CPTAlignmentRight'/>
+<enum value='3' name='CPTAlignmentTop'/>
+<enum value='3' name='CPTAxisLabelingPolicyAutomatic'/>
+<enum value='4' name='CPTAxisLabelingPolicyEqualDivisions'/>
+<enum value='2' name='CPTAxisLabelingPolicyFixedInterval'/>
+<enum value='1' name='CPTAxisLabelingPolicyLocationsProvided'/>
+<enum value='0' name='CPTAxisLabelingPolicyNone'/>
+<enum value='2' name='CPTBarPlotFieldBarBase'/>
+<enum value='0' name='CPTBarPlotFieldBarLocation'/>
+<enum value='1' name='CPTBarPlotFieldBarTip'/>
+<enum value='1' name='CPTChromaticBlendingMode'/>
+<enum value='4' name='CPTComplexFloatingPointDataType'/>
+<enum value='0' name='CPTCoordinateX'/>
+<enum value='1' name='CPTCoordinateY'/>
+<enum value='2' name='CPTCoordinateZ'/>
+<enum value='1' name='CPTDataOrderColumnsFirst'/>
+<enum value='0' name='CPTDataOrderRowsFirst'/>
+<enum value='5' name='CPTDecimalDataType'/>
+<enum value='1' name='CPTErrorBarTypeConstantRatio'/>
+<enum value='2' name='CPTErrorBarTypeConstantValue'/>
+<enum value='0' name='CPTErrorBarTypeCustom'/>
+<enum value='3' name='CPTFloatingPointDataType'/>
+<enum value='0' name='CPTGradientTypeAxial'/>
+<enum value='1' name='CPTGradientTypeRadial'/>
+<enum value='4' name='CPTGraphLayerTypeAxisLabels'/>
+<enum value='2' name='CPTGraphLayerTypeAxisLines'/>
+<enum value='5' name='CPTGraphLayerTypeAxisTitles'/>
+<enum value='1' name='CPTGraphLayerTypeMajorGridLines'/>
+<enum value='0' name='CPTGraphLayerTypeMinorGridLines'/>
+<enum value='3' name='CPTGraphLayerTypePlots'/>
+<enum value='1' name='CPTIntegerDataType'/>
+<enum value='2' name='CPTInverseChromaticBlendingMode'/>
+<enum value='9' name='CPTLineCapTypeBar'/>
+<enum value='10' name='CPTLineCapTypeCross'/>
+<enum value='12' name='CPTLineCapTypeCustom'/>
+<enum value='6' name='CPTLineCapTypeDiamond'/>
+<enum value='5' name='CPTLineCapTypeEllipse'/>
+<enum value='8' name='CPTLineCapTypeHexagon'/>
+<enum value='0' name='CPTLineCapTypeNone'/>
+<enum value='1' name='CPTLineCapTypeOpenArrow'/>
+<enum value='7' name='CPTLineCapTypePentagon'/>
+<enum value='4' name='CPTLineCapTypeRectangle'/>
+<enum value='11' name='CPTLineCapTypeSnow'/>
+<enum value='2' name='CPTLineCapTypeSolidArrow'/>
+<enum value='3' name='CPTLineCapTypeSweptArrow'/>
+<enum value='0' name='CPTLinearBlendingMode'/>
+<enum value='2' name='CPTNumericTypeDouble'/>
+<enum value='1' name='CPTNumericTypeFloat'/>
+<enum value='0' name='CPTNumericTypeInteger'/>
+<enum value='0' name='CPTPieChartFieldSliceWidth'/>
+<enum value='1' name='CPTPieChartFieldSliceWidthNormalized'/>
+<enum value='2' name='CPTPieChartFieldSliceWidthSum'/>
+<enum value='0' name='CPTPieDirectionClockwise'/>
+<enum value='1' name='CPTPieDirectionCounterClockwise'/>
+<enum value='0' name='CPTPlotCachePrecisionAuto'/>
+<enum value='2' name='CPTPlotCachePrecisionDecimal'/>
+<enum value='1' name='CPTPlotCachePrecisionDouble'/>
+<enum value='2' name='CPTPlotRangeComparisonResultNumberAboveRange'/>
+<enum value='0' name='CPTPlotRangeComparisonResultNumberBelowRange'/>
+<enum value='1' name='CPTPlotRangeComparisonResultNumberInRange'/>
+<enum value='8' name='CPTPlotSymbolTypeCross'/>
+<enum value='12' name='CPTPlotSymbolTypeCustom'/>
+<enum value='10' name='CPTPlotSymbolTypeDash'/>
+<enum value='3' name='CPTPlotSymbolTypeDiamond'/>
+<enum value='2' name='CPTPlotSymbolTypeEllipse'/>
+<enum value='7' name='CPTPlotSymbolTypeHexagon'/>
+<enum value='0' name='CPTPlotSymbolTypeNone'/>
+<enum value='6' name='CPTPlotSymbolTypePentagon'/>
+<enum value='9' name='CPTPlotSymbolTypePlus'/>
+<enum value='1' name='CPTPlotSymbolTypeRectangle'/>
+<enum value='11' name='CPTPlotSymbolTypeSnow'/>
+<enum value='5' name='CPTPlotSymbolTypeStar'/>
+<enum value='4' name='CPTPlotSymbolTypeTriangle'/>
+<enum value='2' name='CPTRangePlotFieldHigh'/>
+<enum value='4' name='CPTRangePlotFieldLeft'/>
+<enum value='3' name='CPTRangePlotFieldLow'/>
+<enum value='5' name='CPTRangePlotFieldRight'/>
+<enum value='0' name='CPTRangePlotFieldX'/>
+<enum value='1' name='CPTRangePlotFieldY'/>
+<enum value='1' name='CPTRectAnchorBottom'/>
+<enum value='0' name='CPTRectAnchorBottomLeft'/>
+<enum value='2' name='CPTRectAnchorBottomRight'/>
+<enum value='8' name='CPTRectAnchorCenter'/>
+<enum value='3' name='CPTRectAnchorLeft'/>
+<enum value='4' name='CPTRectAnchorRight'/>
+<enum value='6' name='CPTRectAnchorTop'/>
+<enum value='5' name='CPTRectAnchorTopLeft'/>
+<enum value='7' name='CPTRectAnchorTopRight'/>
+<enum value='2' name='CPTScaleTypeAngular'/>
+<enum value='4' name='CPTScaleTypeCategory'/>
+<enum value='3' name='CPTScaleTypeDateTime'/>
+<enum value='0' name='CPTScaleTypeLinear'/>
+<enum value='1' name='CPTScaleTypeLog'/>
+<enum value='0' name='CPTScatterPlotFieldX'/>
+<enum value='1' name='CPTScatterPlotFieldY'/>
+<enum value='3' name='CPTScatterPlotInterpolationCurved'/>
+<enum value='2' name='CPTScatterPlotInterpolationHistogram'/>
+<enum value='0' name='CPTScatterPlotInterpolationLinear'/>
+<enum value='1' name='CPTScatterPlotInterpolationStepped'/>
+<enum value='-1' name='CPTSignNegative'/>
+<enum value='0' name='CPTSignNone'/>
+<enum value='1' name='CPTSignPositive'/>
+<enum value='1' name='CPTTextAlignmentCenter'/>
+<enum value='0' name='CPTTextAlignmentLeft'/>
+<enum value='2' name='CPTTextAlignmentRight'/>
+<enum value='4' name='CPTTradingRangePlotFieldClose'/>
+<enum value='2' name='CPTTradingRangePlotFieldHigh'/>
+<enum value='3' name='CPTTradingRangePlotFieldLow'/>
+<enum value='1' name='CPTTradingRangePlotFieldOpen'/>
+<enum value='0' name='CPTTradingRangePlotFieldX'/>
+<enum value='1' name='CPTTradingRangePlotStyleCandleStick'/>
+<enum value='0' name='CPTTradingRangePlotStyleOHLC'/>
+<enum value='0' name='CPTUndefinedDataType'/>
+<enum value='2' name='CPTUnsignedIntegerDataType'/>
+<enum value='0' name='CPT_SDK_SUPPORTS_WEAK'/>
+<function name='AddRoundedRectPath'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg declared_type='CGFloat' name='cornerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='CPTAlignIntegralPointToUserSpace'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</function>
+<function name='CPTAlignIntegralRectToUserSpace'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</function>
+<function name='CPTAlignPointToUserSpace'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</function>
+<function name='CPTAlignRectToUserSpace'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</function>
+<function name='CPTAlignSizeToUserSpace'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg declared_type='CGSize' name='size' type='{CGSize=ff}'/>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</function>
+<function name='CPTDataType'>
+<arg declared_type='CPTDataTypeFormat' name='format' type='i'/>
+<arg declared_type='size_t' name='sampleBytes' type='L'/>
+<arg declared_type='CFByteOrder' name='byteOrder' type='l'/>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</function>
+<function name='CPTDataTypeEqualToDataType'>
+<arg declared_type='CPTNumericDataType' name='dataType1' type='{_CPTNumericDataType=iIi}'/>
+<arg declared_type='CPTNumericDataType' name='dataType2' type='{_CPTNumericDataType=iIi}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDataTypeIsSupported'>
+<arg declared_type='CPTNumericDataType' name='format' type='{_CPTNumericDataType=iIi}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDataTypeStringFromDataType'>
+<arg declared_type='CPTNumericDataType' name='dataType' type='{_CPTNumericDataType=iIi}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='CPTDataTypeWithDataTypeString'>
+<arg declared_type='NSString*' name='dataTypeString' type='@'/>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</function>
+<function name='CPTDecimalAdd'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalCGFloatValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='CGFloat' type='f'/>
+</function>
+<function name='CPTDecimalCharValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='int8_t' type='c'/>
+</function>
+<function name='CPTDecimalDivide'>
+<arg declared_type='NSDecimal' name='numerator' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='denominator' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalDoubleValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='double' type='d'/>
+</function>
+<function name='CPTDecimalEquals'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDecimalFloatValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='float' type='f'/>
+</function>
+<function name='CPTDecimalFromCGFloat'>
+<arg declared_type='CGFloat' name='aCGFloat' type='f'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromChar'>
+<arg declared_type='int8_t' name='anInt' type='c'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromDouble'>
+<arg declared_type='double' name='aDouble' type='d'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromFloat'>
+<arg declared_type='float' name='aFloat' type='f'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromInt'>
+<arg declared_type='int' name='i' type='i'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromInteger'>
+<arg declared_type='NSInteger' name='i' type='i'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromLong'>
+<arg declared_type='int32_t' name='anInt' type='i'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromLongLong'>
+<arg declared_type='int64_t' name='anInt' type='q'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromShort'>
+<arg declared_type='int16_t' name='anInt' type='s'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromString'>
+<arg declared_type='NSString*' name='stringRepresentation' type='@'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedChar'>
+<arg declared_type='uint8_t' name='i' type='C'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedInt'>
+<arg declared_type='unsigned int' name='i' type='I'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedInteger'>
+<arg declared_type='NSUInteger' name='i' type='I'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedLong'>
+<arg declared_type='uint32_t' name='i' type='I'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedLongLong'>
+<arg declared_type='uint64_t' name='i' type='Q'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalFromUnsignedShort'>
+<arg declared_type='uint16_t' name='i' type='S'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalGreaterThan'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDecimalGreaterThanOrEqualTo'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDecimalIntValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='int' type='i'/>
+</function>
+<function name='CPTDecimalIntegerValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSInteger' type='i'/>
+</function>
+<function name='CPTDecimalLessThan'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDecimalLessThanOrEqualTo'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</function>
+<function name='CPTDecimalLongLongValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='int64_t' type='q'/>
+</function>
+<function name='CPTDecimalLongValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='int32_t' type='i'/>
+</function>
+<function name='CPTDecimalMultiply'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalNaN'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalShortValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='int16_t' type='s'/>
+</function>
+<function name='CPTDecimalStringValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='CPTDecimalSubtract'>
+<arg declared_type='NSDecimal' name='leftOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg declared_type='NSDecimal' name='rightOperand' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</function>
+<function name='CPTDecimalUnsignedCharValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='uint8_t' type='C'/>
+</function>
+<function name='CPTDecimalUnsignedIntValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='unsigned int' type='I'/>
+</function>
+<function name='CPTDecimalUnsignedIntegerValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='NSUInteger' type='I'/>
+</function>
+<function name='CPTDecimalUnsignedLongLongValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='uint64_t' type='Q'/>
+</function>
+<function name='CPTDecimalUnsignedLongValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='uint32_t' type='I'/>
+</function>
+<function name='CPTDecimalUnsignedShortValue'>
+<arg declared_type='NSDecimal' name='decimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='uint16_t' type='S'/>
+</function>
+<function name='CPTExpandedRange'>
+<arg declared_type='NSRange' name='range' type='{_NSRange=II}'/>
+<arg declared_type='NSInteger' name='expandBy' type='i'/>
+<retval declared_type='NSRange' type='{_NSRange=II}'/>
+</function>
+<function name='CPTGetCurrentContext'>
+<retval declared_type='CGContextRef' type='^{CGContext=}'/>
+</function>
+<function name='CPTOrthogonalCoordinate'>
+<arg declared_type='CPTCoordinate' name='coord' type='i'/>
+<retval declared_type='CPTCoordinate' type='i'/>
+</function>
+<function name='CPTPopCGContext'>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='CPTPushCGContext'>
+<arg declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</function>
+<function name='CPTRGBAColorFromCGColor'>
+<arg declared_type='CGColorRef' name='color' type='^{CGColor=}'/>
+<retval declared_type='CPTRGBAColor' type='{_CPTRGBAColor=ffff}'/>
+</function>
+<function name='CPTStringFromPoint'>
+<arg declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='CPTStringFromRect'>
+<arg declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='CPTStringFromSize'>
+<arg declared_type='CGSize' name='size' type='{CGSize=ff}'/>
+<retval declared_type='NSString*' type='@'/>
+</function>
+<function name='CreateRoundedRectPath'>
+<arg declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg declared_type='CGFloat' name='cornerRadius' type='f'/>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</function>
+<function name='squareOfDistanceBetweenPoints'>
+<arg declared_type='CGPoint' name='point1' type='{CGPoint=ff}'/>
+<arg declared_type='CGPoint' name='point2' type='{CGPoint=ff}'/>
+<retval declared_type='CGFloat' type='f'/>
+</function>
+<class name='CPTAnnotation'>
+<method selector='annotationHostLayer'>
+<retval declared_type='CPTAnnotationHostLayer*' type='@'/>
+</method>
+<method selector='contentAnchorPoint'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='contentLayer'>
+<retval declared_type='CPTLayer*' type='@'/>
+</method>
+<method selector='displacement'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='positionContentLayer'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setAnnotationHostLayer:'>
+<arg index='0' declared_type='CPTAnnotationHostLayer*' name='annotationHostLayer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentAnchorPoint:'>
+<arg index='0' declared_type='CGPoint' name='contentAnchorPoint' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentLayer:'>
+<arg index='0' declared_type='CPTLayer*' name='contentLayer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDisplacement:'>
+<arg index='0' declared_type='CGPoint' name='displacement' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:'>
+<arg index='0' declared_type='CGFloat' name='rotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTAnnotationHostLayer'>
+<method selector='addAnnotation:'>
+<arg index='0' declared_type='CPTAnnotation*' name='annotation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='annotations'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='removeAllAnnotations'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeAnnotation:'>
+<arg index='0' declared_type='CPTAnnotation*' name='annotation' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTAxis'>
+<method selector='addBackgroundLimitBand:'>
+<arg index='0' declared_type='CPTLimitBand*' name='limitBand' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='alternatingBandFills'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='axisLabels'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='axisLineCapMax'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='axisLineCapMin'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='axisLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='axisSet'>
+<retval declared_type='CPTAxisSet*' type='@'/>
+</method>
+<method selector='axisTitle'>
+<retval declared_type='CPTAxisTitle*' type='@'/>
+</method>
+<method selector='backgroundLimitBands'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='coordinate'>
+<retval declared_type='CPTCoordinate' type='i'/>
+</method>
+<method selector='defaultTitleLocation'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='drawBackgroundBandsInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='drawBackgroundLimitsInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='drawGridLinesInContext:isMajor:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='1' declared_type='BOOL' name='major' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='filteredMajorTickLocations:'>
+<arg index='0' declared_type='NSSet*' name='allLocations' type='@'/>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='filteredMinorTickLocations:'>
+<arg index='0' declared_type='NSSet*' name='allLocations' type='@'/>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='gridLinesRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='labelAlignment'>
+<retval declared_type='CPTAlignment' type='i'/>
+</method>
+<method selector='labelExclusionRanges'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='labelFormatter'>
+<retval declared_type='NSNumberFormatter*' type='@'/>
+</method>
+<method selector='labelOffset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='labelRotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='labelShadow'>
+<retval declared_type='CPTShadow*' type='@'/>
+</method>
+<method selector='labelTextStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='labelingOrigin'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='labelingPolicy'>
+<retval declared_type='CPTAxisLabelingPolicy' type='i'/>
+</method>
+<method selector='majorGridLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='majorGridLines'>
+<retval declared_type='CPTGridLines*' type='@'/>
+</method>
+<method selector='majorIntervalLength'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='majorTickLength'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='majorTickLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='majorTickLocations'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='minorGridLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='minorGridLines'>
+<retval declared_type='CPTGridLines*' type='@'/>
+</method>
+<method selector='minorTickAxisLabels'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='minorTickLabelAlignment'>
+<retval declared_type='CPTAlignment' type='i'/>
+</method>
+<method selector='minorTickLabelFormatter'>
+<retval declared_type='NSNumberFormatter*' type='@'/>
+</method>
+<method selector='minorTickLabelOffset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='minorTickLabelRotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='minorTickLabelTextStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='minorTickLength'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='minorTickLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='minorTickLocations'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='minorTicksPerInterval'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='needsRelabel'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotArea'>
+<retval declared_type='CPTPlotArea*' type='@'/>
+</method>
+<method selector='plotSpace'>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='preferredNumberOfMajorTicks'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='relabel'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removeBackgroundLimitBand:'>
+<arg index='0' declared_type='CPTLimitBand*' name='limitBand' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='separateLayers'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setAlternatingBandFills:'>
+<arg index='0' declared_type='NSArray*' name='alternatingBandFills' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisLabels:'>
+<arg index='0' declared_type='NSSet*' name='axisLabels' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisLineCapMax:'>
+<arg index='0' declared_type='CPTLineCap*' name='axisLineCapMax' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisLineCapMin:'>
+<arg index='0' declared_type='CPTLineCap*' name='axisLineCapMin' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='axisLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisTitle:'>
+<arg index='0' declared_type='CPTAxisTitle*' name='axisTitle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCoordinate:'>
+<arg index='0' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGridLinesRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='gridLinesRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelAlignment:'>
+<arg index='0' declared_type='CPTAlignment' name='labelAlignment' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelExclusionRanges:'>
+<arg index='0' declared_type='NSArray*' name='labelExclusionRanges' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelFormatter:'>
+<arg index='0' declared_type='NSNumberFormatter*' name='labelFormatter' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelOffset:'>
+<arg index='0' declared_type='CGFloat' name='labelOffset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelRotation:'>
+<arg index='0' declared_type='CGFloat' name='labelRotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelShadow:'>
+<arg index='0' declared_type='CPTShadow*' name='labelShadow' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='labelTextStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelingOrigin:'>
+<arg index='0' declared_type='NSDecimal' name='labelingOrigin' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelingPolicy:'>
+<arg index='0' declared_type='CPTAxisLabelingPolicy' name='labelingPolicy' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorGridLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='majorGridLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorIntervalLength:'>
+<arg index='0' declared_type='NSDecimal' name='majorIntervalLength' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorTickLength:'>
+<arg index='0' declared_type='CGFloat' name='majorTickLength' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorTickLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='majorTickLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorTickLocations:'>
+<arg index='0' declared_type='NSSet*' name='majorTickLocations' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorGridLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='minorGridLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickAxisLabels:'>
+<arg index='0' declared_type='NSSet*' name='minorTickAxisLabels' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLabelAlignment:'>
+<arg index='0' declared_type='CPTAlignment' name='minorTickLabelAlignment' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLabelFormatter:'>
+<arg index='0' declared_type='NSNumberFormatter*' name='minorTickLabelFormatter' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLabelOffset:'>
+<arg index='0' declared_type='CGFloat' name='minorTickLabelOffset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLabelRotation:'>
+<arg index='0' declared_type='CGFloat' name='minorTickLabelRotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLabelTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='minorTickLabelTextStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLength:'>
+<arg index='0' declared_type='CGFloat' name='minorTickLength' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='minorTickLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTickLocations:'>
+<arg index='0' declared_type='NSSet*' name='minorTickLocations' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorTicksPerInterval:'>
+<arg index='0' declared_type='NSUInteger' name='minorTicksPerInterval' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNeedsRelabel'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotArea:'>
+<arg index='0' declared_type='CPTPlotArea*' name='plotArea' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotSpace:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='plotSpace' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPreferredNumberOfMajorTicks:'>
+<arg index='0' declared_type='NSUInteger' name='preferredNumberOfMajorTicks' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSeparateLayers:'>
+<arg index='0' declared_type='BOOL' name='separateLayers' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTickDirection:'>
+<arg index='0' declared_type='CPTSign' name='tickDirection' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitle:'>
+<arg index='0' declared_type='NSString*' name='title' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleLocation:'>
+<arg index='0' declared_type='NSDecimal' name='titleLocation' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleOffset:'>
+<arg index='0' declared_type='CGFloat' name='titleOffset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleRotation:'>
+<arg index='0' declared_type='CGFloat' name='titleRotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='titleTextStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVisibleAxisRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='visibleAxisRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setVisibleRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='visibleRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tickDirection'>
+<retval declared_type='CPTSign' type='i'/>
+</method>
+<method selector='title'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='titleLocation'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='titleOffset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='titleRotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='titleTextStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='updateMajorTickLabels'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='updateMinorTickLabels'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='viewPointForCoordinateDecimalNumber:'>
+<arg index='0' declared_type='NSDecimal' name='coordinateDecimalNumber' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='visibleAxisRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='visibleRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+</class>
+<class name='CPTAxisLabel'>
+<method selector='alignment'>
+<retval declared_type='CPTAlignment' type='i'/>
+</method>
+<method selector='contentLayer'>
+<retval declared_type='CPTLayer*' type='@'/>
+</method>
+<method selector='initWithContentLayer:'>
+<arg index='0' declared_type='CPTLayer*' name='layer' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithText:textStyle:'>
+<arg index='0' declared_type='NSString*' name='newText' type='@'/>
+<arg index='1' declared_type='CPTTextStyle*' name='style' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='offset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='positionBetweenViewPoint:andViewPoint:forCoordinate:inDirection:'>
+<arg index='0' declared_type='CGPoint' name='firstPoint' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CGPoint' name='secondPoint' type='{CGPoint=ff}'/>
+<arg index='2' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<arg index='3' declared_type='CPTSign' name='direction' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='positionRelativeToViewPoint:forCoordinate:inDirection:'>
+<arg index='0' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<arg index='2' declared_type='CPTSign' name='direction' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setAlignment:'>
+<arg index='0' declared_type='CPTAlignment' name='alignment' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentLayer:'>
+<arg index='0' declared_type='CPTLayer*' name='contentLayer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOffset:'>
+<arg index='0' declared_type='CGFloat' name='offset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRotation:'>
+<arg index='0' declared_type='CGFloat' name='rotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTickLocation:'>
+<arg index='0' declared_type='NSDecimal' name='tickLocation' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tickLocation'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+</class>
+<class name='CPTAxisSet'>
+<method selector='axes'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='axisForCoordinate:atIndex:'>
+<arg index='0' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTAxis*' type='@'/>
+</method>
+<method selector='borderLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='relabelAxes'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxes:'>
+<arg index='0' declared_type='NSArray*' name='axes' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='borderLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTBarPlot'>
+<method selector='barBaseCornerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='barBasesVary'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='barCornerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='barOffset'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='barOffsetScale'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='barWidth'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='barWidthScale'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='barWidthsAreInViewCoordinates'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='barsAreHorizontal'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='baseValue'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='lineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='plotRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='plotRangeEnclosingBars'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='setBarBaseCornerRadius:'>
+<arg index='0' declared_type='CGFloat' name='barBaseCornerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarBasesVary:'>
+<arg index='0' declared_type='BOOL' name='barBasesVary' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarCornerRadius:'>
+<arg index='0' declared_type='CGFloat' name='barCornerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarOffset:'>
+<arg index='0' declared_type='NSDecimal' name='barOffset' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarOffsetScale:'>
+<arg index='0' declared_type='CGFloat' name='barOffsetScale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarWidth:'>
+<arg index='0' declared_type='NSDecimal' name='barWidth' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarWidthScale:'>
+<arg index='0' declared_type='CGFloat' name='barWidthScale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarWidthsAreInViewCoordinates:'>
+<arg index='0' declared_type='BOOL' name='barWidthsAreInViewCoordinates' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarsAreHorizontal:'>
+<arg index='0' declared_type='BOOL' name='barsAreHorizontal' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBaseValue:'>
+<arg index='0' declared_type='NSDecimal' name='baseValue' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='lineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='plotRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tubularBarPlotWithColor:horizontalBars:' class_method='true'>
+<arg index='0' declared_type='CPTColor*' name='color' type='@'/>
+<arg index='1' declared_type='BOOL' name='horizontal' type='B'/>
+<retval declared_type='CPTBarPlot*' type='@'/>
+</method>
+</class>
+<class name='CPTBorderLayer'>
+<method selector='maskedLayer'>
+<retval declared_type='CPTBorderedLayer*' type='@'/>
+</method>
+<method selector='setMaskedLayer:'>
+<arg index='0' declared_type='CPTBorderedLayer*' name='maskedLayer' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTBorderedLayer'>
+<method selector='borderLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='inLayout'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='renderBorderedLayer:asVectorInContext:'>
+<arg index='0' declared_type='CPTBorderedLayer*' name='layer' type='@'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='borderLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInLayout:'>
+<arg index='0' declared_type='BOOL' name='inLayout' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTCalendarFormatter'>
+<method selector='dateFormatter'>
+<retval declared_type='NSDateFormatter*' type='@'/>
+</method>
+<method selector='initWithDateFormatter:'>
+<arg index='0' declared_type='NSDateFormatter*' name='aDateFormatter' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='referenceCalendar'>
+<retval declared_type='NSCalendar*' type='@'/>
+</method>
+<method selector='referenceCalendarUnit'>
+<retval declared_type='NSCalendarUnit' type='I'/>
+</method>
+<method selector='referenceDate'>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='setDateFormatter:'>
+<arg index='0' declared_type='NSDateFormatter*' name='dateFormatter' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReferenceCalendar:'>
+<arg index='0' declared_type='NSCalendar*' name='referenceCalendar' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReferenceCalendarUnit:'>
+<arg index='0' declared_type='NSCalendarUnit' name='referenceCalendarUnit' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReferenceDate:'>
+<arg index='0' declared_type='NSDate*' name='referenceDate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTColor'>
+<method selector='blackColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='blueColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='brownColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='cgColor'>
+<retval declared_type='CGColorRef' type='^{CGColor=}'/>
+</method>
+<method selector='clearColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='colorWithAlphaComponent:'>
+<arg index='0' declared_type='CGFloat' name='alpha' type='f'/>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='colorWithCGColor:' class_method='true'>
+<arg index='0' declared_type='CGColorRef' name='newCGColor' type='^{CGColor=}'/>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='colorWithComponentRed:green:blue:alpha:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='red' type='f'/>
+<arg index='1' declared_type='CGFloat' name='green' type='f'/>
+<arg index='2' declared_type='CGFloat' name='blue' type='f'/>
+<arg index='3' declared_type='CGFloat' name='alpha' type='f'/>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='colorWithGenericGray:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='gray' type='f'/>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='cyanColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='darkGrayColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='grayColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='greenColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='initWithCGColor:'>
+<arg index='0' declared_type='CGColorRef' name='cgColor' type='^{CGColor=}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithComponentRed:green:blue:alpha:'>
+<arg index='0' declared_type='CGFloat' name='red' type='f'/>
+<arg index='1' declared_type='CGFloat' name='green' type='f'/>
+<arg index='2' declared_type='CGFloat' name='blue' type='f'/>
+<arg index='3' declared_type='CGFloat' name='alpha' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='lightGrayColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='magentaColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='orangeColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='purpleColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='redColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='uiColor'>
+<retval declared_type='UIColor*' type='@'/>
+</method>
+<method selector='whiteColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='yellowColor' class_method='true'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+</class>
+<class name='CPTColorSpace'>
+<method selector='cgColorSpace'>
+<retval declared_type='CGColorSpaceRef' type='^{CGColorSpace=}'/>
+</method>
+<method selector='genericRGBSpace' class_method='true'>
+<retval declared_type='CPTColorSpace*' type='@'/>
+</method>
+<method selector='initWithCGColorSpace:'>
+<arg index='0' declared_type='CGColorSpaceRef' name='colorSpace' type='^{CGColorSpace=}'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='CPTConstraints'>
+<method selector='constraintWithLowerOffset:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='CPTConstraints*' type='@'/>
+</method>
+<method selector='constraintWithRelativeOffset:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='CPTConstraints*' type='@'/>
+</method>
+<method selector='constraintWithUpperOffset:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='CPTConstraints*' type='@'/>
+</method>
+<method selector='initWithLowerOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithRelativeOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithUpperOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isEqualToConstraint:'>
+<arg index='0' declared_type='CPTConstraints*' name='otherConstraint' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='positionForLowerBound:upperBound:'>
+<arg index='0' declared_type='CGFloat' name='lowerBound' type='f'/>
+<arg index='1' declared_type='CGFloat' name='upperBound' type='f'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='CPTFill'>
+<method selector='fillPathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillWithColor:' class_method='true'>
+<arg index='0' declared_type='CPTColor*' name='aColor' type='@'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='fillWithGradient:' class_method='true'>
+<arg index='0' declared_type='CPTGradient*' name='aGradient' type='@'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='fillWithImage:' class_method='true'>
+<arg index='0' declared_type='CPTImage*' name='anImage' type='@'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='initWithColor:'>
+<arg index='0' declared_type='CPTColor*' name='aColor' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithGradient:'>
+<arg index='0' declared_type='CPTGradient*' name='aGradient' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithImage:'>
+<arg index='0' declared_type='CPTImage*' name='anImage' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='CPTGradient'>
+<method selector='addColorStop:atPosition:'>
+<arg index='0' declared_type='CPTColor*' name='color' type='@'/>
+<arg index='1' declared_type='CGFloat' name='position' type='f'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='angle'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='aquaNormalGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='aquaPressedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='aquaSelectedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='blendingMode'>
+<retval declared_type='CPTGradientBlendingMode' type='i'/>
+</method>
+<method selector='drawSwatchInRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillPathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='gradientType'>
+<retval declared_type='CPTGradientType' type='i'/>
+</method>
+<method selector='gradientWithAlphaComponent:'>
+<arg index='0' declared_type='CGFloat' name='alpha' type='f'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='gradientWithBeginningColor:endingColor:' class_method='true'>
+<arg index='0' declared_type='CPTColor*' name='begin' type='@'/>
+<arg index='1' declared_type='CPTColor*' name='end' type='@'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='gradientWithBeginningColor:endingColor:beginningPosition:endingPosition:' class_method='true'>
+<arg index='0' declared_type='CPTColor*' name='begin' type='@'/>
+<arg index='1' declared_type='CPTColor*' name='end' type='@'/>
+<arg index='2' declared_type='CGFloat' name='beginningPosition' type='f'/>
+<arg index='3' declared_type='CGFloat' name='endingPosition' type='f'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='gradientWithBlendingMode:'>
+<arg index='0' declared_type='CPTGradientBlendingMode' name='mode' type='i'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='hydrogenSpectrumGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='newColorAtPosition:'>
+<arg index='0' declared_type='CGFloat' name='position' type='f'/>
+<retval declared_type='CGColorRef' type='^{CGColor=}'/>
+</method>
+<method selector='newColorStopAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CGColorRef' type='^{CGColor=}'/>
+</method>
+<method selector='rainbowGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='removeColorStopAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='removeColorStopAtPosition:'>
+<arg index='0' declared_type='CGFloat' name='position' type='f'/>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='setAngle:'>
+<arg index='0' declared_type='CGFloat' name='angle' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGradientType:'>
+<arg index='0' declared_type='CPTGradientType' name='gradientType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sourceListSelectedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='sourceListUnselectedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='unifiedDarkGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='unifiedNormalGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='unifiedPressedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+<method selector='unifiedSelectedGradient' class_method='true'>
+<retval declared_type='CPTGradient*' type='@'/>
+</method>
+</class>
+<class name='CPTGraph'>
+<method selector='addPlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addPlot:toPlotSpace:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='addPlotSpace:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='allPlotSpaces'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='allPlots'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='applyTheme:'>
+<arg index='0' declared_type='CPTTheme*' name='theme' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='axisSet'>
+<retval declared_type='CPTAxisSet*' type='@'/>
+</method>
+<method selector='defaultPlotSpace'>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='hostingView'>
+<retval declared_type='CPTGraphHostingView*' type='@'/>
+</method>
+<method selector='insertPlot:atIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='insertPlot:atIndex:intoPlotSpace:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='legend'>
+<retval declared_type='CPTLegend*' type='@'/>
+</method>
+<method selector='legendAnchor'>
+<retval declared_type='CPTRectAnchor' type='i'/>
+</method>
+<method selector='legendDisplacement'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='newAxisSet'>
+<retval declared_type='CPTAxisSet*' type='@'/>
+</method>
+<method selector='newPlotSpace'>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='plotAreaFrame'>
+<retval declared_type='CPTPlotAreaFrame*' type='@'/>
+</method>
+<method selector='plotAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlot*' type='@'/>
+</method>
+<method selector='plotSpaceAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='plotSpaceWithIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='plotWithIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='CPTPlot*' type='@'/>
+</method>
+<method selector='reloadData'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='reloadDataIfNeeded'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removePlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removePlotSpace:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='plotSpace' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removePlotWithIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisSet:'>
+<arg index='0' declared_type='CPTAxisSet*' name='axisSet' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostingView:'>
+<arg index='0' declared_type='CPTGraphHostingView*' name='hostingView' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLegend:'>
+<arg index='0' declared_type='CPTLegend*' name='legend' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLegendAnchor:'>
+<arg index='0' declared_type='CPTRectAnchor' name='legendAnchor' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLegendDisplacement:'>
+<arg index='0' declared_type='CGPoint' name='legendDisplacement' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotAreaFrame:'>
+<arg index='0' declared_type='CPTPlotAreaFrame*' name='plotAreaFrame' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitle:'>
+<arg index='0' declared_type='NSString*' name='title' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleDisplacement:'>
+<arg index='0' declared_type='CGPoint' name='titleDisplacement' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitlePlotAreaFrameAnchor:'>
+<arg index='0' declared_type='CPTRectAnchor' name='titlePlotAreaFrameAnchor' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='titleTextStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTopDownLayerOrder:'>
+<arg index='0' declared_type='NSArray*' name='topDownLayerOrder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='title'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='titleDisplacement'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='titlePlotAreaFrameAnchor'>
+<retval declared_type='CPTRectAnchor' type='i'/>
+</method>
+<method selector='titleTextStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='topDownLayerOrder'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='CPTGraphHostingView'>
+<method selector='allowPinchScaling'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='collapsesLayers'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='hostedGraph'>
+<retval declared_type='CPTGraph*' type='@'/>
+</method>
+<method selector='setAllowPinchScaling:'>
+<arg index='0' declared_type='BOOL' name='allowPinchScaling' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCollapsesLayers:'>
+<arg index='0' declared_type='BOOL' name='collapsesLayers' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setHostedGraph:'>
+<arg index='0' declared_type='CPTGraph*' name='hostedGraph' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTGridLineGroup'>
+<method selector='major'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotArea'>
+<retval declared_type='CPTPlotArea*' type='@'/>
+</method>
+<method selector='setMajor:'>
+<arg index='0' declared_type='BOOL' name='major' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotArea:'>
+<arg index='0' declared_type='CPTPlotArea*' name='plotArea' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTGridLines'>
+<method selector='axis'>
+<retval declared_type='CPTAxis*' type='@'/>
+</method>
+<method selector='major'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='setAxis:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajor:'>
+<arg index='0' declared_type='BOOL' name='major' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTImage'>
+<method selector='drawInRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='image'>
+<retval declared_type='CGImageRef' type='^{CGImage=}'/>
+</method>
+<method selector='imageForPNGFile:' class_method='true'>
+<arg index='0' declared_type='NSString*' name='path' type='@'/>
+<retval declared_type='CPTImage*' type='@'/>
+</method>
+<method selector='imageWithCGImage:' class_method='true'>
+<arg index='0' declared_type='CGImageRef' name='anImage' type='^{CGImage=}'/>
+<retval declared_type='CPTImage*' type='@'/>
+</method>
+<method selector='imageWithCGImage:scale:' class_method='true'>
+<arg index='0' declared_type='CGImageRef' name='anImage' type='^{CGImage=}'/>
+<arg index='1' declared_type='CGFloat' name='newScale' type='f'/>
+<retval declared_type='CPTImage*' type='@'/>
+</method>
+<method selector='initForPNGFile:'>
+<arg index='0' declared_type='NSString*' name='path' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithCGImage:'>
+<arg index='0' declared_type='CGImageRef' name='anImage' type='^{CGImage=}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithCGImage:scale:'>
+<arg index='0' declared_type='CGImageRef' name='anImage' type='^{CGImage=}'/>
+<arg index='1' declared_type='CGFloat' name='newScale' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isTiled'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='scale'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setImage:'>
+<arg index='0' declared_type='CGImageRef' name='image' type='^{CGImage=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScale:'>
+<arg index='0' declared_type='CGFloat' name='scale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTileAnchoredToContext:'>
+<arg index='0' declared_type='BOOL' name='tileAnchoredToContext' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTiled:'>
+<arg index='0' declared_type='BOOL' name='tiled' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tileAnchoredToContext'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='CPTLayer'>
+<method selector='applyMaskToContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applySublayerMaskToContext:forSublayer:withOffset:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='1' declared_type='CPTLayer*' name='sublayer' type='@'/>
+<arg index='2' declared_type='CGPoint' name='offset' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='contentsScale'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='dataForPDFRepresentationOfLayer'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='graph'>
+<retval declared_type='CPTGraph*' type='@'/>
+</method>
+<method selector='identifier'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='imageOfLayer'>
+<retval declared_type='UIImage*' type='^{UIImage=#^vf{?=b1b3b1b1b1b16}}'/>
+</method>
+<method selector='initWithFrame:'>
+<arg index='0' declared_type='CGRect' name='newFrame' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='innerBorderPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='layoutAndRenderInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='logLayers'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='maskingPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='masksToBorder'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='outerBorderPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='paddingBottom'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='paddingLeft'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='paddingRight'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='paddingTop'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='pixelAlign'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='recursivelyRenderInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='renderAsVectorInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setContentsScale:'>
+<arg index='0' declared_type='CGFloat' name='contentsScale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGraph:'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInnerBorderPath:'>
+<arg index='0' declared_type='CGPathRef' name='innerBorderPath' type='^{CGPath=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMasksToBorder:'>
+<arg index='0' declared_type='BOOL' name='masksToBorder' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOuterBorderPath:'>
+<arg index='0' declared_type='CGPathRef' name='outerBorderPath' type='^{CGPath=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPaddingBottom:'>
+<arg index='0' declared_type='CGFloat' name='paddingBottom' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPaddingLeft:'>
+<arg index='0' declared_type='CGFloat' name='paddingLeft' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPaddingRight:'>
+<arg index='0' declared_type='CGFloat' name='paddingRight' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPaddingTop:'>
+<arg index='0' declared_type='CGFloat' name='paddingTop' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadow:'>
+<arg index='0' declared_type='CPTShadow*' name='shadow' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shadow'>
+<retval declared_type='CPTShadow*' type='@'/>
+</method>
+<method selector='sublayerMarginLeft:top:right:bottom:'>
+<arg index='0' declared_type='CGFloat*' name='left' type='^f'/>
+<arg index='1' declared_type='CGFloat*' name='top' type='^f'/>
+<arg index='2' declared_type='CGFloat*' name='right' type='^f'/>
+<arg index='3' declared_type='CGFloat*' name='bottom' type='^f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sublayerMaskingPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='sublayersExcludedFromAutomaticLayout'>
+<retval declared_type='NSSet*' type='@'/>
+</method>
+<method selector='useFastRendering'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='CPTLayerAnnotation'>
+<method selector='anchorLayer'>
+<retval declared_type='CPTLayer*' type='@'/>
+</method>
+<method selector='initWithAnchorLayer:'>
+<arg index='0' declared_type='CPTLayer*' name='anchorLayer' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='rectAnchor'>
+<retval declared_type='CPTRectAnchor' type='i'/>
+</method>
+<method selector='setRectAnchor:'>
+<arg index='0' declared_type='CPTRectAnchor' name='rectAnchor' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTLegend'>
+<method selector='addPlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='allPlots'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='columnMargin'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='columnWidths'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='columnWidthsThatFit'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='equalColumns'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='equalRows'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='initWithGraph:'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithPlots:'>
+<arg index='0' declared_type='NSArray*' name='newPlots' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='insertPlot:atIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='layoutChanged'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='legendWithGraph:' class_method='true'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='legendWithPlots:' class_method='true'>
+<arg index='0' declared_type='NSArray*' name='newPlots' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numberOfColumns'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numberOfRows'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='plotAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlot*' type='@'/>
+</method>
+<method selector='plotWithIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='CPTPlot*' type='@'/>
+</method>
+<method selector='removePlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removePlotWithIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rowHeights'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='rowHeightsThatFit'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='rowMargin'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setColumnMargin:'>
+<arg index='0' declared_type='CGFloat' name='columnMargin' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setColumnWidths:'>
+<arg index='0' declared_type='NSArray*' name='columnWidths' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEqualColumns:'>
+<arg index='0' declared_type='BOOL' name='equalColumns' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEqualRows:'>
+<arg index='0' declared_type='BOOL' name='equalRows' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLayoutChanged'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNumberOfColumns:'>
+<arg index='0' declared_type='NSUInteger' name='numberOfColumns' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNumberOfRows:'>
+<arg index='0' declared_type='NSUInteger' name='numberOfRows' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRowHeights:'>
+<arg index='0' declared_type='NSArray*' name='rowHeights' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRowMargin:'>
+<arg index='0' declared_type='CGFloat' name='rowMargin' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSwatchBorderLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='swatchBorderLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSwatchCornerRadius:'>
+<arg index='0' declared_type='CGFloat' name='swatchCornerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSwatchFill:'>
+<arg index='0' declared_type='CPTFill*' name='swatchFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSwatchSize:'>
+<arg index='0' declared_type='CGSize' name='swatchSize' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='textStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitleOffset:'>
+<arg index='0' declared_type='CGFloat' name='titleOffset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='swatchBorderLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='swatchCornerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='swatchFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='swatchSize'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='textStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='titleOffset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='CPTLegendEntry'>
+<method selector='column'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='drawTitleInRect:inContext:scale:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='2' declared_type='CGFloat' name='scale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='index'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='plot'>
+<retval declared_type='CPTPlot*' type='@'/>
+</method>
+<method selector='row'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setColumn:'>
+<arg index='0' declared_type='NSUInteger' name='column' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIndex:'>
+<arg index='0' declared_type='NSUInteger' name='index' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRow:'>
+<arg index='0' declared_type='NSUInteger' name='row' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='textStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='textStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='titleSize'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+</class>
+<class name='CPTLimitBand'>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='initWithRange:fill:'>
+<arg index='0' declared_type='CPTPlotRange*' name='newRange' type='@'/>
+<arg index='1' declared_type='CPTFill*' name='newFill' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='limitBandWithRange:fill:' class_method='true'>
+<arg index='0' declared_type='CPTPlotRange*' name='newRange' type='@'/>
+<arg index='1' declared_type='CPTFill*' name='newFill' type='@'/>
+<retval declared_type='CPTLimitBand*' type='@'/>
+</method>
+<method selector='range'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='range' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTLineCap'>
+<method selector='barPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='crossPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='customLineCapPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='customLineCapWithPath:' class_method='true'>
+<arg index='0' declared_type='CGPathRef' name='aPath' type='^{CGPath=}'/>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='diamondPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='ellipsePlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='hexagonPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='lineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='lineCapType'>
+<retval declared_type='CPTLineCapType' type='i'/>
+</method>
+<method selector='lineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='openArrowPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='pentagonPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='rectanglePlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='renderAsVectorInContext:atPoint:inDirection:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='1' declared_type='CGPoint' name='center' type='{CGPoint=ff}'/>
+<arg index='2' declared_type='CGPoint' name='direction' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCustomLineCapPath:'>
+<arg index='0' declared_type='CGPathRef' name='customLineCapPath' type='^{CGPath=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineCapType:'>
+<arg index='0' declared_type='CPTLineCapType' name='lineCapType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='lineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSize:'>
+<arg index='0' declared_type='CGSize' name='size' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUsesEvenOddClipRule:'>
+<arg index='0' declared_type='BOOL' name='usesEvenOddClipRule' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='size'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='snowPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='solidArrowPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='sweptArrowPlotLineCap' class_method='true'>
+<retval declared_type='CPTLineCap*' type='@'/>
+</method>
+<method selector='usesEvenOddClipRule'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='CPTLineStyle'>
+<method selector='dashPattern'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='lineCap'>
+<retval declared_type='CGLineCap' type='i'/>
+</method>
+<method selector='lineColor'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='lineFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='lineJoin'>
+<retval declared_type='CGLineJoin' type='i'/>
+</method>
+<method selector='lineStyle' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='lineWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='miterLimit'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='patternPhase'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setLineStyleInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='strokePathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='strokeRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTMutableLineStyle'>
+<method selector='dashPattern'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='lineCap'>
+<retval declared_type='CGLineCap' type='i'/>
+</method>
+<method selector='lineColor'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='lineFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='lineJoin'>
+<retval declared_type='CGLineJoin' type='i'/>
+</method>
+<method selector='lineWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='miterLimit'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='patternPhase'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setDashPattern:'>
+<arg index='0' declared_type='NSArray*' name='dashPattern' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineCap:'>
+<arg index='0' declared_type='CGLineCap' name='lineCap' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineColor:'>
+<arg index='0' declared_type='CPTColor*' name='lineColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineFill:'>
+<arg index='0' declared_type='CPTFill*' name='lineFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineJoin:'>
+<arg index='0' declared_type='CGLineJoin' name='lineJoin' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineWidth:'>
+<arg index='0' declared_type='CGFloat' name='lineWidth' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMiterLimit:'>
+<arg index='0' declared_type='CGFloat' name='miterLimit' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPatternPhase:'>
+<arg index='0' declared_type='CGFloat' name='patternPhase' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTMutableNumericData'>
+<method selector='byteOrder'>
+<retval declared_type='CFByteOrder' type='l'/>
+</method>
+<method selector='convertToType:sampleBytes:byteOrder:'>
+<arg index='0' declared_type='CPTDataTypeFormat' name='newDataType' type='i'/>
+<arg index='1' declared_type='size_t' name='newSampleBytes' type='L'/>
+<arg index='2' declared_type='CFByteOrder' name='newByteOrder' type='l'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dataType'>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</method>
+<method selector='dataTypeFormat'>
+<retval declared_type='CPTDataTypeFormat' type='i'/>
+</method>
+<method selector='mutableBytes'>
+<retval declared_type='void*' type='^v'/>
+</method>
+<method selector='sampleBytes'>
+<retval declared_type='size_t' type='L'/>
+</method>
+<method selector='setByteOrder:'>
+<arg index='0' declared_type='CFByteOrder' name='byteOrder' type='l'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataType:'>
+<arg index='0' declared_type='CPTNumericDataType' name='dataType' type='{_CPTNumericDataType=iIi}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataTypeFormat:'>
+<arg index='0' declared_type='CPTDataTypeFormat' name='dataTypeFormat' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSampleBytes:'>
+<arg index='0' declared_type='size_t' name='sampleBytes' type='L'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShape:'>
+<arg index='0' declared_type='NSArray*' name='shape' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shape'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</class>
+<class name='CPTMutablePlotRange'>
+<method selector='expandRangeByFactor:'>
+<arg index='0' declared_type='NSDecimal' name='factor' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='intersectionPlotRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='length'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='location'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='setLength:'>
+<arg index='0' declared_type='NSDecimal' name='length' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLocation:'>
+<arg index='0' declared_type='NSDecimal' name='location' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shiftEndToFitInRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shiftLocationToFitInRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='unionPlotRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTMutableShadow'>
+<method selector='setShadowBlurRadius:'>
+<arg index='0' declared_type='CGFloat' name='shadowBlurRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadowColor:'>
+<arg index='0' declared_type='CPTColor*' name='shadowColor' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadowOffset:'>
+<arg index='0' declared_type='CGSize' name='shadowOffset' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shadowBlurRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='shadowColor'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='shadowOffset'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+</class>
+<class name='CPTMutableTextStyle'>
+<method selector='color'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='fontName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='fontSize'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setColor:'>
+<arg index='0' declared_type='CPTColor*' name='color' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFontName:'>
+<arg index='0' declared_type='NSString*' name='fontName' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFontSize:'>
+<arg index='0' declared_type='CGFloat' name='fontSize' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextAlignment:'>
+<arg index='0' declared_type='CPTTextAlignment' name='textAlignment' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='textAlignment'>
+<retval declared_type='CPTTextAlignment' type='i'/>
+</method>
+</class>
+<class name='CPTNumericData'>
+<method selector='byteOrder'>
+<retval declared_type='CFByteOrder' type='l'/>
+</method>
+<method selector='bytes'>
+<retval const='true' declared_type='void*' type='^v'/>
+</method>
+<method selector='convertData:dataType:toData:dataType:'>
+<arg index='0' declared_type='NSData*' name='sourceData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType*' name='sourceDataType' type='^{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSMutableData*' name='destData' type='@'/>
+<arg index='3' declared_type='CPTNumericDataType*' name='destDataType' type='^{_CPTNumericDataType=iIi}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='data'>
+<retval declared_type='NSData*' type='@'/>
+</method>
+<method selector='dataByConvertingToDataType:'>
+<arg index='0' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataByConvertingToType:sampleBytes:byteOrder:'>
+<arg index='0' declared_type='CPTDataTypeFormat' name='newDataType' type='i'/>
+<arg index='1' declared_type='size_t' name='newSampleBytes' type='L'/>
+<arg index='2' declared_type='CFByteOrder' name='newByteOrder' type='l'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataOrder'>
+<retval declared_type='CPTDataOrder' type='i'/>
+</method>
+<method selector='dataType'>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</method>
+<method selector='dataTypeFormat'>
+<retval declared_type='CPTDataTypeFormat' type='i'/>
+</method>
+<method selector='initWithArray:dataType:shape:'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithArray:dataType:shape:dataOrder:'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithArray:dataTypeString:shape:'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithArray:dataTypeString:shape:dataOrder:'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithData:dataType:shape:'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithData:dataType:shape:dataOrder:'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithData:dataTypeString:shape:'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithData:dataTypeString:shape:dataOrder:'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='length'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numberOfDimensions'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numberOfSamples'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numericDataWithArray:dataType:shape:' class_method='true'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithArray:dataType:shape:dataOrder:' class_method='true'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithArray:dataTypeString:shape:' class_method='true'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithArray:dataTypeString:shape:dataOrder:' class_method='true'>
+<arg index='0' declared_type='NSArray*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithData:dataType:shape:' class_method='true'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithData:dataType:shape:dataOrder:' class_method='true'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='CPTNumericDataType' name='newDataType' type='{_CPTNumericDataType=iIi}'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithData:dataTypeString:shape:' class_method='true'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numericDataWithData:dataTypeString:shape:dataOrder:' class_method='true'>
+<arg index='0' declared_type='NSData*' name='newData' type='@'/>
+<arg index='1' declared_type='NSString*' name='newDataTypeString' type='@'/>
+<arg index='2' declared_type='NSArray*' name='shapeArray' type='@'/>
+<arg index='3' declared_type='CPTDataOrder' name='order' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='sampleArray'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='sampleBytes'>
+<retval declared_type='size_t' type='L'/>
+</method>
+<method selector='sampleIndex:' variadic='true'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='samplePointer:'>
+<arg index='0' declared_type='NSUInteger' name='sample' type='I'/>
+<retval declared_type='void*' type='^v'/>
+</method>
+<method selector='samplePointerAtIndex:' variadic='true'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void*' type='^v'/>
+</method>
+<method selector='sampleValue:'>
+<arg index='0' declared_type='NSUInteger' name='sample' type='I'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='sampleValueAtIndex:' variadic='true'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='shape'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='swapByteOrderForData:sampleSize:'>
+<arg index='0' declared_type='NSMutableData*' name='sourceData' type='@'/>
+<arg index='1' declared_type='size_t' name='sampleSize' type='L'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPieChart'>
+<method selector='borderLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='centerAnchor'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='defaultPieSliceColorForIndex:' class_method='true'>
+<arg index='0' declared_type='NSUInteger' name='pieSliceIndex' type='I'/>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='endAngle'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='labelRotationRelativeToRadius'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='medianAngleForPieSliceIndex:'>
+<arg index='0' declared_type='NSUInteger' name='index' type='I'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='overlayFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='pieInnerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='pieRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='pieSliceIndexAtAngle:'>
+<arg index='0' declared_type='CGFloat' name='angle' type='f'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='setBorderLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='borderLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCenterAnchor:'>
+<arg index='0' declared_type='CGPoint' name='centerAnchor' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setEndAngle:'>
+<arg index='0' declared_type='CGFloat' name='endAngle' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelRotationRelativeToRadius:'>
+<arg index='0' declared_type='BOOL' name='labelRotationRelativeToRadius' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOverlayFill:'>
+<arg index='0' declared_type='CPTFill*' name='overlayFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPieInnerRadius:'>
+<arg index='0' declared_type='CGFloat' name='pieInnerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPieRadius:'>
+<arg index='0' declared_type='CGFloat' name='pieRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSliceDirection:'>
+<arg index='0' declared_type='CPTPieDirection' name='sliceDirection' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStartAngle:'>
+<arg index='0' declared_type='CGFloat' name='startAngle' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sliceDirection'>
+<retval declared_type='CPTPieDirection' type='i'/>
+</method>
+<method selector='startAngle'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='CPTPlot'>
+<method selector='alignsPointsToPixels'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='cacheArray:forKey:'>
+<arg index='0' declared_type='NSArray*' name='array' type='@'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheArray:forKey:atRecordIndex:'>
+<arg index='0' declared_type='NSArray*' name='array' type='@'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheNumbers:forField:'>
+<arg index='0' declared_type='id' name='numbers' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cacheNumbers:forField:atRecordIndex:'>
+<arg index='0' declared_type='id' name='numbers' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='cachePrecision'>
+<retval declared_type='CPTPlotCachePrecision' type='i'/>
+</method>
+<method selector='cachedArrayForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='cachedDataCount'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='cachedDecimalForField:recordIndex:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='cachedDoubleForField:recordIndex:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='cachedNumberForField:recordIndex:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='cachedNumbersForField:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<retval declared_type='CPTMutableNumericData*' type='@'/>
+</method>
+<method selector='cachedValueForKey:recordIndex:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='dataIndexFromInteractionPoint:'>
+<arg index='0' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='dataNeedsReloading'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='dataSource'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='decimalDataType'>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</method>
+<method selector='deleteDataInIndexRange:'>
+<arg index='0' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='doubleDataType'>
+<retval declared_type='CPTNumericDataType' type='{_CPTNumericDataType=iIi}'/>
+</method>
+<method selector='doublePrecisionCache'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='drawSwatchForLegend:atIndex:inRect:inContext:'>
+<arg index='0' declared_type='CPTLegend*' name='legend' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='3' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fieldIdentifiers'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='fieldIdentifiersForCoordinate:'>
+<arg index='0' declared_type='CPTCoordinate' name='coord' type='i'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='insertDataAtIndex:numberOfRecords:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='1' declared_type='NSUInteger' name='numberOfRecords' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='labelField'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='labelFormatter'>
+<retval declared_type='NSNumberFormatter*' type='@'/>
+</method>
+<method selector='labelOffset'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='labelRotation'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='labelShadow'>
+<retval declared_type='CPTShadow*' type='@'/>
+</method>
+<method selector='labelTextStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+<method selector='loadNumbersForAllFieldsFromDataSourceInRecordIndexRange:'>
+<arg index='0' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='needsRelabel'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='nilData' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='numberOfFields'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numberOfLegendEntries'>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numbersFromDataSourceForField:recordIndexRange:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='plotArea'>
+<retval declared_type='CPTPlotArea*' type='@'/>
+</method>
+<method selector='plotRangeForCoordinate:'>
+<arg index='0' declared_type='CPTCoordinate' name='coord' type='i'/>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='plotRangeForField:'>
+<arg index='0' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='plotSpace'>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='positionLabelAnnotation:forIndex:'>
+<arg index='0' declared_type='CPTPlotSpaceAnnotation*' name='label' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='relabel'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='relabelIndexRange:'>
+<arg index='0' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='reloadData'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='reloadDataIfNeeded'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='reloadDataInIndexRange:'>
+<arg index='0' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='repositionAllLabelAnnotations'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAlignsPointsToPixels:'>
+<arg index='0' declared_type='BOOL' name='alignsPointsToPixels' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCachePrecision:'>
+<arg index='0' declared_type='CPTPlotCachePrecision' name='cachePrecision' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataNeedsReloading'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataSource:'>
+<arg index='0' declared_type='id' name='dataSource' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelField:'>
+<arg index='0' declared_type='NSUInteger' name='labelField' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelFormatter:'>
+<arg index='0' declared_type='NSNumberFormatter*' name='labelFormatter' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelOffset:'>
+<arg index='0' declared_type='CGFloat' name='labelOffset' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelRotation:'>
+<arg index='0' declared_type='CGFloat' name='labelRotation' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelShadow:'>
+<arg index='0' declared_type='CPTShadow*' name='labelShadow' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLabelTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='labelTextStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setNeedsRelabel'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotSpace:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='plotSpace' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTitle:'>
+<arg index='0' declared_type='NSString*' name='title' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='title'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='titleForLegendEntryAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</class>
+<class name='CPTPlotArea'>
+<method selector='axisLabelGroup'>
+<retval declared_type='CPTAxisLabelGroup*' type='@'/>
+</method>
+<method selector='axisSet'>
+<retval declared_type='CPTAxisSet*' type='@'/>
+</method>
+<method selector='axisTitleGroup'>
+<retval declared_type='CPTAxisLabelGroup*' type='@'/>
+</method>
+<method selector='borderLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='majorGridLineGroup'>
+<retval declared_type='CPTGridLineGroup*' type='@'/>
+</method>
+<method selector='minorGridLineGroup'>
+<retval declared_type='CPTGridLineGroup*' type='@'/>
+</method>
+<method selector='plotGroup'>
+<retval declared_type='CPTPlotGroup*' type='@'/>
+</method>
+<method selector='setAxisLabelGroup:'>
+<arg index='0' declared_type='CPTAxisLabelGroup*' name='axisLabelGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisSet:'>
+<arg index='0' declared_type='CPTAxisSet*' name='axisSet' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisSetLayersForType:'>
+<arg index='0' declared_type='CPTGraphLayerType' name='layerType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAxisTitleGroup:'>
+<arg index='0' declared_type='CPTAxisLabelGroup*' name='axisTitleGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBorderLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='borderLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMajorGridLineGroup:'>
+<arg index='0' declared_type='CPTGridLineGroup*' name='majorGridLineGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setMinorGridLineGroup:'>
+<arg index='0' declared_type='CPTGridLineGroup*' name='minorGridLineGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotGroup:'>
+<arg index='0' declared_type='CPTPlotGroup*' name='plotGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTopDownLayerOrder:'>
+<arg index='0' declared_type='NSArray*' name='topDownLayerOrder' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sublayerIndexForAxis:layerType:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<arg index='1' declared_type='CPTGraphLayerType' name='layerType' type='i'/>
+<retval declared_type='unsigned int' type='I'/>
+</method>
+<method selector='topDownLayerOrder'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='updateAxisSetLayersForType:'>
+<arg index='0' declared_type='CPTGraphLayerType' name='layerType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPlotAreaFrame'>
+<method selector='axisSet'>
+<retval declared_type='CPTAxisSet*' type='@'/>
+</method>
+<method selector='plotArea'>
+<retval declared_type='CPTPlotArea*' type='@'/>
+</method>
+<method selector='plotGroup'>
+<retval declared_type='CPTPlotGroup*' type='@'/>
+</method>
+<method selector='setAxisSet:'>
+<arg index='0' declared_type='CPTAxisSet*' name='axisSet' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotGroup:'>
+<arg index='0' declared_type='CPTPlotGroup*' name='plotGroup' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPlotGroup'>
+<method selector='addPlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='insertPlot:atIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='removePlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPlotRange'>
+<method selector='compareToDecimal:'>
+<arg index='0' declared_type='NSDecimal' name='number' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='CPTPlotRangeComparisonResult' type='i'/>
+</method>
+<method selector='compareToDouble:'>
+<arg index='0' declared_type='double' name='number' type='d'/>
+<retval declared_type='CPTPlotRangeComparisonResult' type='i'/>
+</method>
+<method selector='compareToNumber:'>
+<arg index='0' declared_type='NSNumber*' name='number' type='@'/>
+<retval declared_type='CPTPlotRangeComparisonResult' type='i'/>
+</method>
+<method selector='contains:'>
+<arg index='0' declared_type='NSDecimal' name='number' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='containsDouble:'>
+<arg index='0' declared_type='double' name='number' type='d'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='containsRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='end'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='endDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='initWithLocation:length:'>
+<arg index='0' declared_type='NSDecimal' name='loc' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg index='1' declared_type='NSDecimal' name='len' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='intersectsRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isEqualToRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='otherRange' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='length'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='lengthDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='location'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='locationDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='maxLimit'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='maxLimitDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='midPoint'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='midPointDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='minLimit'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='minLimitDouble'>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='plotRangeWithLocation:length:' class_method='true'>
+<arg index='0' declared_type='NSDecimal' name='loc' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg index='1' declared_type='NSDecimal' name='len' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='CPTPlotSpace'>
+<method selector='allowsUserInteraction'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='delegate'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='doublePrecisionPlotPoint:forEvent:'>
+<arg index='0' declared_type='double*' name='plotPoint' type='^d'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='doublePrecisionPlotPoint:forPlotAreaViewPoint:'>
+<arg index='0' declared_type='double*' name='plotPoint' type='^d'/>
+<arg index='1' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='graph'>
+<retval declared_type='CPTGraph*' type='@'/>
+</method>
+<method selector='identifier'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='plotAreaViewPointForDoublePrecisionPlotPoint:'>
+<arg index='0' declared_type='double*' name='plotPoint' type='^d'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='plotAreaViewPointForEvent:'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='plotAreaViewPointForPlotPoint:'>
+<arg index='0' declared_type='NSDecimal*' name='plotPoint' type='^{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='plotPoint:forEvent:'>
+<arg index='0' declared_type='NSDecimal*' name='plotPoint' type='^{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plotPoint:forPlotAreaViewPoint:'>
+<arg index='0' declared_type='NSDecimal*' name='plotPoint' type='^{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg index='1' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plotRangeForCoordinate:'>
+<arg index='0' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='scaleBy:aboutPoint:'>
+<arg index='0' declared_type='CGFloat' name='interactionScale' type='f'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scaleToFitPlots:'>
+<arg index='0' declared_type='NSArray*' name='plots' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scaleTypeForCoordinate:'>
+<arg index='0' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='CPTScaleType' type='i'/>
+</method>
+<method selector='setAllowsUserInteraction:'>
+<arg index='0' declared_type='BOOL' name='allowsUserInteraction' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDelegate:'>
+<arg index='0' declared_type='id' name='delegate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGraph:'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIdentifier:'>
+<arg index='0' declared_type='id' name='identifier' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotRange:forCoordinate:'>
+<arg index='0' declared_type='CPTPlotRange*' name='newRange' type='@'/>
+<arg index='1' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setScaleType:forCoordinate:'>
+<arg index='0' declared_type='CPTScaleType' name='newType' type='i'/>
+<arg index='1' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPlotSpaceAnnotation'>
+<method selector='anchorPlotPoint'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='initWithPlotSpace:anchorPlotPoint:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='NSArray*' name='plotPoint' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='plotSpace'>
+<retval declared_type='CPTPlotSpace*' type='@'/>
+</method>
+<method selector='setAnchorPlotPoint:'>
+<arg index='0' declared_type='NSArray*' name='anchorPlotPoint' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTPlotSymbol'>
+<method selector='anchorPoint'>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='crossPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='customPlotSymbolWithPath:' class_method='true'>
+<arg index='0' declared_type='CGPathRef' name='aPath' type='^{CGPath=}'/>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='customSymbolPath'>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+<method selector='dashPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='diamondPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='ellipsePlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='fill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='hexagonPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='lineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='pentagonPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='plotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='plusPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='rectanglePlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='renderAsVectorInContext:atPoint:scale:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='1' declared_type='CGPoint' name='center' type='{CGPoint=ff}'/>
+<arg index='2' declared_type='CGFloat' name='scale' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='renderInContext:atPoint:scale:alignToPixels:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<arg index='1' declared_type='CGPoint' name='center' type='{CGPoint=ff}'/>
+<arg index='2' declared_type='CGFloat' name='scale' type='f'/>
+<arg index='3' declared_type='BOOL' name='alignToPixels' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAnchorPoint:'>
+<arg index='0' declared_type='CGPoint' name='anchorPoint' type='{CGPoint=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setCustomSymbolPath:'>
+<arg index='0' declared_type='CGPathRef' name='customSymbolPath' type='^{CGPath=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setFill:'>
+<arg index='0' declared_type='CPTFill*' name='fill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='lineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setShadow:'>
+<arg index='0' declared_type='CPTShadow*' name='shadow' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSize:'>
+<arg index='0' declared_type='CGSize' name='size' type='{CGSize=ff}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setSymbolType:'>
+<arg index='0' declared_type='CPTPlotSymbolType' name='symbolType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setUsesEvenOddClipRule:'>
+<arg index='0' declared_type='BOOL' name='usesEvenOddClipRule' type='B'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shadow'>
+<retval declared_type='CPTShadow*' type='@'/>
+</method>
+<method selector='size'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='snowPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='starPlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='symbolType'>
+<retval declared_type='CPTPlotSymbolType' type='i'/>
+</method>
+<method selector='trianglePlotSymbol' class_method='true'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='usesEvenOddClipRule'>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</class>
+<class name='CPTRangePlot'>
+<method selector='areaFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='barLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='barWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='gapHeight'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='gapWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setAreaFill:'>
+<arg index='0' declared_type='CPTFill*' name='areaFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='barLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarWidth:'>
+<arg index='0' declared_type='CGFloat' name='barWidth' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGapHeight:'>
+<arg index='0' declared_type='CGFloat' name='gapHeight' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGapWidth:'>
+<arg index='0' declared_type='CGFloat' name='gapWidth' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTScatterPlot'>
+<method selector='areaBaseValue'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='areaBaseValue2'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='areaFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='areaFill2'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='dataLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='indexOfVisiblePointClosestToPlotAreaPoint:'>
+<arg index='0' declared_type='CGPoint' name='viewPoint' type='{CGPoint=ff}'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='interpolation'>
+<retval declared_type='CPTScatterPlotInterpolation' type='i'/>
+</method>
+<method selector='plotAreaPointOfVisiblePointAtIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='plotSymbol'>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='plotSymbolForRecordIndex:'>
+<arg index='0' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='plotSymbolMarginForHitDetection'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='setAreaBaseValue2:'>
+<arg index='0' declared_type='NSDecimal' name='areaBaseValue2' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAreaBaseValue:'>
+<arg index='0' declared_type='NSDecimal' name='areaBaseValue' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAreaFill2:'>
+<arg index='0' declared_type='CPTFill*' name='areaFill2' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setAreaFill:'>
+<arg index='0' declared_type='CPTFill*' name='areaFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDataLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='dataLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setInterpolation:'>
+<arg index='0' declared_type='CPTScatterPlotInterpolation' name='interpolation' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotSymbol:'>
+<arg index='0' declared_type='CPTPlotSymbol*' name='plotSymbol' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotSymbolMarginForHitDetection:'>
+<arg index='0' declared_type='CGFloat' name='plotSymbolMarginForHitDetection' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTShadow'>
+<method selector='setShadowInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='shadow' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='shadowBlurRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='shadowColor'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='shadowOffset'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+</class>
+<class name='CPTTextLayer'>
+<method selector='initWithText:'>
+<arg index='0' declared_type='NSString*' name='newText' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithText:style:'>
+<arg index='0' declared_type='NSString*' name='newText' type='@'/>
+<arg index='1' declared_type='CPTTextStyle*' name='newStyle' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='setText:'>
+<arg index='0' declared_type='NSString*' name='text' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='textStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sizeThatFits'>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='sizeToFit'>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='text'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='textStyle'>
+<retval declared_type='CPTTextStyle*' type='@'/>
+</method>
+</class>
+<class name='CPTTextStyle'>
+<method selector='color'>
+<retval declared_type='CPTColor*' type='@'/>
+</method>
+<method selector='fontName'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='fontSize'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='textAlignment'>
+<retval declared_type='CPTTextAlignment' type='i'/>
+</method>
+<method selector='textStyle' class_method='true'>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='CPTTheme'>
+<method selector='applyThemeToAxisSet:'>
+<arg index='0' declared_type='CPTAxisSet*' name='axisSet' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applyThemeToBackground:'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applyThemeToGraph:'>
+<arg index='0' declared_type='CPTGraph*' name='graph' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='applyThemeToPlotArea:'>
+<arg index='0' declared_type='CPTPlotAreaFrame*' name='plotAreaFrame' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='graphClass'>
+<retval declared_type='Class' type='#'/>
+</method>
+<method selector='name' class_method='true'>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='newGraph'>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='registerTheme:' class_method='true'>
+<arg index='0' declared_type='Class' name='themeClass' type='#'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGraphClass:'>
+<arg index='0' declared_type='Class' name='graphClass' type='#'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='themeClasses' class_method='true'>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='themeNamed:' class_method='true'>
+<arg index='0' declared_type='NSString*' name='theme' type='@'/>
+<retval declared_type='CPTTheme*' type='@'/>
+</method>
+</class>
+<class name='CPTTimeFormatter'>
+<method selector='dateFormatter'>
+<retval declared_type='NSDateFormatter*' type='@'/>
+</method>
+<method selector='initWithDateFormatter:'>
+<arg index='0' declared_type='NSDateFormatter*' name='aDateFormatter' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='referenceDate'>
+<retval declared_type='NSDate*' type='@'/>
+</method>
+<method selector='setDateFormatter:'>
+<arg index='0' declared_type='NSDateFormatter*' name='dateFormatter' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setReferenceDate:'>
+<arg index='0' declared_type='NSDate*' name='referenceDate' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTTradingRangePlot'>
+<method selector='barCornerRadius'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='barWidth'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='decreaseFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='decreaseLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='increaseFill'>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='increaseLineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='lineStyle'>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='plotStyle'>
+<retval declared_type='CPTTradingRangePlotStyle' type='i'/>
+</method>
+<method selector='setBarCornerRadius:'>
+<arg index='0' declared_type='CGFloat' name='barCornerRadius' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setBarWidth:'>
+<arg index='0' declared_type='CGFloat' name='barWidth' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDecreaseFill:'>
+<arg index='0' declared_type='CPTFill*' name='decreaseFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setDecreaseLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='decreaseLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIncreaseFill:'>
+<arg index='0' declared_type='CPTFill*' name='increaseFill' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setIncreaseLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='increaseLineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setLineStyle:'>
+<arg index='0' declared_type='CPTLineStyle*' name='lineStyle' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setPlotStyle:'>
+<arg index='0' declared_type='CPTTradingRangePlotStyle' name='plotStyle' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setStickLength:'>
+<arg index='0' declared_type='CGFloat' name='stickLength' type='f'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='stickLength'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='CPTXYAxis'>
+<method selector='axisConstraints'>
+<retval declared_type='CPTConstraints*' type='@'/>
+</method>
+<method selector='orthogonalCoordinateDecimal'>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='setAxisConstraints:'>
+<arg index='0' declared_type='CPTConstraints*' name='axisConstraints' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setOrthogonalCoordinateDecimal:'>
+<arg index='0' declared_type='NSDecimal' name='orthogonalCoordinateDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='CPTXYAxisSet'>
+<method selector='xAxis'>
+<retval declared_type='CPTXYAxis*' type='@'/>
+</method>
+<method selector='yAxis'>
+<retval declared_type='CPTXYAxis*' type='@'/>
+</method>
+</class>
+<class name='CPTXYGraph'>
+<method selector='initWithFrame:xScaleType:yScaleType:'>
+<arg index='0' declared_type='CGRect' name='newFrame' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CPTScaleType' name='newXScaleType' type='i'/>
+<arg index='2' declared_type='CPTScaleType' name='newYScaleType' type='i'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='CPTXYPlotSpace'>
+<method selector='globalXRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='globalYRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='setGlobalXRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='globalXRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setGlobalYRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='globalYRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setXRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='xRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setXScaleType:'>
+<arg index='0' declared_type='CPTScaleType' name='xScaleType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setYRange:'>
+<arg index='0' declared_type='CPTPlotRange*' name='yRange' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='setYScaleType:'>
+<arg index='0' declared_type='CPTScaleType' name='yScaleType' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='xRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='xScaleType'>
+<retval declared_type='CPTScaleType' type='i'/>
+</method>
+<method selector='yRange'>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='yScaleType'>
+<retval declared_type='CPTScaleType' type='i'/>
+</method>
+</class>
+<class name='NSCoder'>
+<method selector='decodeCGFloatForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='decodeCPTPointForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='decodeCPTRectForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGRect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+</method>
+<method selector='decodeCPTSizeForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+<method selector='decodeDecimalForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='NSDecimal' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+</method>
+<method selector='encodeCGColorSpace:forKey:'>
+<arg index='0' declared_type='CGColorSpaceRef' name='colorSpace' type='^{CGColorSpace=}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCGFloat:forKey:'>
+<arg index='0' declared_type='CGFloat' name='number' type='f'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCGImage:forKey:'>
+<arg index='0' declared_type='CGImageRef' name='image' type='^{CGImage=}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCGPath:forKey:'>
+<arg index='0' declared_type='CGPathRef' name='path' type='^{CGPath=}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCPTPoint:forKey:'>
+<arg index='0' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCPTRect:forKey:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeCPTSize:forKey:'>
+<arg index='0' declared_type='CGSize' name='size' type='{CGSize=ff}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='encodeDecimal:forKey:'>
+<arg index='0' declared_type='NSDecimal' name='number' type='{_NSDecimal=b8b4b1b1b18[8S]}'/>
+<arg index='1' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='newCGColorSpaceDecodeForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGColorSpaceRef' type='^{CGColorSpace=}'/>
+</method>
+<method selector='newCGImageDecodeForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGImageRef' type='^{CGImage=}'/>
+</method>
+<method selector='newCGPathDecodeForKey:'>
+<arg index='0' declared_type='NSString*' name='key' type='@'/>
+<retval declared_type='CGPathRef' type='^{CGPath=}'/>
+</method>
+</class>
+<class name='NSNumber'>
+<method selector='cgFloatValue'>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='decimalNumber'>
+<retval declared_type='NSDecimalNumber*' type='@'/>
+</method>
+<method selector='initWithCGFloat:'>
+<arg index='0' declared_type='CGFloat' name='number' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isGreaterThan:'>
+<arg index='0' declared_type='NSNumber*' name='other' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isGreaterThanOrEqualTo:'>
+<arg index='0' declared_type='NSNumber*' name='other' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isLessThan:'>
+<arg index='0' declared_type='NSNumber*' name='other' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='isLessThanOrEqualTo:'>
+<arg index='0' declared_type='NSNumber*' name='other' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='numberWithCGFloat:' class_method='true'>
+<arg index='0' declared_type='CGFloat' name='number' type='f'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+</class>
+<class name='NSObject'>
+<method selector='axis:shouldUpdateAxisLabelsAtLocations:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<arg index='1' declared_type='NSSet*' name='locations' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='axis:shouldUpdateMinorAxisLabelsAtLocations:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<arg index='1' declared_type='NSSet*' name='locations' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='axisDidRelabel:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='axisShouldRelabel:'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='barFillForBarPlot:recordIndex:'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='barFillsForBarPlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='barLineStyleForBarPlot:recordIndex:'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='barLineStyleForRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='barLineStylesForBarPlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='barLineStylesForRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='barPlot:barWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTBarPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='barPlot:barWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTBarPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='dataForPlot:field:recordIndexRange:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataForPlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataLabelForPlot:recordIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLayer*' type='@'/>
+</method>
+<method selector='dataLabelsForPlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='decreaseFillForTradingRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='decreaseFillsForTradingRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='decreaseLineStyleForTradingRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='decreaseLineStylesForTradingRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='didFinishDrawing:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='doubleForPlot:field:recordIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='doublesForPlot:field:recordIndexRange:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='double*' type='^d'/>
+</method>
+<method selector='increaseFillForTradingRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='increaseFillsForTradingRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='increaseLineStyleForTradingRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='increaseLineStylesForTradingRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='legend:shouldDrawSwatchAtIndex:forPlot:inRect:inContext:'>
+<arg index='0' declared_type='CPTLegend*' name='legend' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='3' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='4' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='legendTitleForBarPlot:recordIndex:'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='legendTitleForPieChart:recordIndex:'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='lineStyleForTradingRangePlot:recordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='lineStylesForTradingRangePlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='numberForPlot:field:recordIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='numberOfRecordsForPlot:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numbersForPlot:field:recordIndexRange:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='pieChart:sliceWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTPieChart*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='pieChart:sliceWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTPieChart*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plot:dataLabelWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plot:dataLabelWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plotSpace:didChangePlotRangeForCoordinate:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceCancelledEvent:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceDownEvent:atPoint:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceDraggedEvent:atPoint:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceUpEvent:atPoint:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldScaleBy:aboutPoint:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CGFloat' name='interactionScale' type='f'/>
+<arg index='2' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:willChangePlotRangeTo:forCoordinate:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CPTPlotRange*' name='newRange' type='@'/>
+<arg index='2' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='plotSpace:willDisplaceBy:'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CGPoint' name='proposedDisplacementVector' type='{CGPoint=ff}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+<method selector='pointingDeviceCancelledEvent:'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceDownEvent:atPoint:'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceDraggedEvent:atPoint:'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceUpEvent:atPoint:'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='radialOffsetForPieChart:recordIndex:'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='radialOffsetsForPieChart:recordIndexRange:'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='rangePlot:rangeWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rangePlot:rangeWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scatterPlot:plotSymbolWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scatterPlot:plotSymbolWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sliceFillForPieChart:recordIndex:'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='sliceFillsForPieChart:recordIndexRange:'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='symbolForScatterPlot:recordIndex:'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='symbolsForScatterPlot:recordIndexRange:'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='tradingRangePlot:barWasSelectedAtRecordIndex:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tradingRangePlot:barWasSelectedAtRecordIndex:withEvent:'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='drawInRect:withTextStyle:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CPTTextStyle*' name='style' type='@'/>
+<arg index='2' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='sizeWithTextStyle:'>
+<arg index='0' declared_type='CPTTextStyle*' name='style' type='@'/>
+<retval declared_type='CGSize' type='{CGSize=ff}'/>
+</method>
+</class>
+<class name='_CPTConstraintsFixed'>
+<method selector='initWithLowerOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='initWithUpperOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isEqualToConstraint:'>
+<arg index='0' declared_type='CPTConstraints*' name='otherConstraint' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='positionForLowerBound:upperBound:'>
+<arg index='0' declared_type='CGFloat' name='lowerBound' type='f'/>
+<arg index='1' declared_type='CGFloat' name='upperBound' type='f'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='_CPTConstraintsRelative'>
+<method selector='initWithRelativeOffset:'>
+<arg index='0' declared_type='CGFloat' name='newOffset' type='f'/>
+<retval declared_type='id' type='@'/>
+</method>
+<method selector='isEqualToConstraint:'>
+<arg index='0' declared_type='CPTConstraints*' name='otherConstraint' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='positionForLowerBound:upperBound:'>
+<arg index='0' declared_type='CGFloat' name='lowerBound' type='f'/>
+<arg index='1' declared_type='CGFloat' name='upperBound' type='f'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+</class>
+<class name='_CPTFillColor'>
+<method selector='fillPathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithColor:'>
+<arg index='0' declared_type='CPTColor*' name='aCcolor' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='_CPTFillGradient'>
+<method selector='fillPathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithGradient:'>
+<arg index='0' declared_type='CPTGradient*' name='aGradient' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<class name='_CPTFillImage'>
+<method selector='fillPathInContext:'>
+<arg index='0' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='fillRect:inContext:'>
+<arg index='0' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='1' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='initWithImage:'>
+<arg index='0' declared_type='CPTImage*' name='anImage' type='@'/>
+<retval declared_type='id' type='@'/>
+</method>
+</class>
+<informal_protocol name='CPTAxisDelegate'>
+<method selector='axis:shouldUpdateAxisLabelsAtLocations:' type='B16@0:4@8@12'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<arg index='1' declared_type='NSSet*' name='locations' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='axis:shouldUpdateMinorAxisLabelsAtLocations:' type='B16@0:4@8@12'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<arg index='1' declared_type='NSSet*' name='locations' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='axisDidRelabel:' type='v12@0:4@8'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='axisShouldRelabel:' type='B12@0:4@8'>
+<arg index='0' declared_type='CPTAxis*' name='axis' type='@'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTBarPlotDataSource'>
+<method selector='barFillForBarPlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='barFillsForBarPlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='barLineStyleForBarPlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='barLineStylesForBarPlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='legendTitleForBarPlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTBarPlot*' name='barPlot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTBarPlotDelegate'>
+<method selector='barPlot:barWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTBarPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='barPlot:barWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTBarPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTLegendDelegate'>
+<method selector='legend:shouldDrawSwatchAtIndex:forPlot:inRect:inContext:' type='B40@0:4@8I12@16{CGRect={CGPoint=ff}{CGSize=ff}}20^{CGContext=}36'>
+<arg index='0' declared_type='CPTLegend*' name='legend' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='3' declared_type='CGRect' name='rect' type='{CGRect={CGPoint=ff}{CGSize=ff}}'/>
+<arg index='4' declared_type='CGContextRef' name='context' type='^{CGContext=}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTPieChartDataSource'>
+<method selector='legendTitleForPieChart:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSString*' type='@'/>
+</method>
+<method selector='radialOffsetForPieChart:recordIndex:' type='f16@0:4@8I12'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CGFloat' type='f'/>
+</method>
+<method selector='radialOffsetsForPieChart:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='sliceFillForPieChart:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='sliceFillsForPieChart:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTPieChart*' name='pieChart' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTPieChartDelegate'>
+<method selector='pieChart:sliceWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTPieChart*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='pieChart:sliceWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTPieChart*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTPlotDataSource'>
+<method selector='dataForPlot:field:recordIndexRange:' type='@24@0:4@8I12{_NSRange=II}16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataForPlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='CPTNumericData*' type='@'/>
+</method>
+<method selector='dataLabelForPlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLayer*' type='@'/>
+</method>
+<method selector='dataLabelsForPlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='doubleForPlot:field:recordIndex:' type='d20@0:4@8I12I16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='double' type='d'/>
+</method>
+<method selector='doublesForPlot:field:recordIndexRange:' type='^d24@0:4@8I12{_NSRange=II}16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='double*' type='^d'/>
+</method>
+<method selector='numberForPlot:field:recordIndex:' type='@20@0:4@8I12I16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='NSNumber*' type='@'/>
+</method>
+<method selector='numberOfRecordsForPlot:' type='I12@0:4@8'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='NSUInteger' type='I'/>
+</method>
+<method selector='numbersForPlot:field:recordIndexRange:' type='@24@0:4@8I12{_NSRange=II}16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='fieldEnum' type='I'/>
+<arg index='2' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTPlotDelegate'>
+<method selector='didFinishDrawing:' type='v12@0:4@8'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plot:dataLabelWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plot:dataLabelWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTPlotSpaceDelegate'>
+<method selector='plotSpace:didChangePlotRangeForCoordinate:' type='v16@0:4@8i12'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceCancelledEvent:' type='B16@0:4@8^{UIEvent=#d}12'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceDownEvent:atPoint:' type='B24@0:4@8^{UIEvent=#d}12{CGPoint=ff}16'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceDraggedEvent:atPoint:' type='B24@0:4@8^{UIEvent=#d}12{CGPoint=ff}16'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldHandlePointingDeviceUpEvent:atPoint:' type='B24@0:4@8^{UIEvent=#d}12{CGPoint=ff}16'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='2' declared_type='CGPoint' name='point' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:shouldScaleBy:aboutPoint:' type='B24@0:4@8f12{CGPoint=ff}16'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CGFloat' name='interactionScale' type='f'/>
+<arg index='2' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='plotSpace:willChangePlotRangeTo:forCoordinate:' type='@20@0:4@8@12i16'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CPTPlotRange*' name='newRange' type='@'/>
+<arg index='2' declared_type='CPTCoordinate' name='coordinate' type='i'/>
+<retval declared_type='CPTPlotRange*' type='@'/>
+</method>
+<method selector='plotSpace:willDisplaceBy:' type='{CGPoint=ff}20@0:4@8{CGPoint=ff}12'>
+<arg index='0' declared_type='CPTPlotSpace*' name='space' type='@'/>
+<arg index='1' declared_type='CGPoint' name='proposedDisplacementVector' type='{CGPoint=ff}'/>
+<retval declared_type='CGPoint' type='{CGPoint=ff}'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTRangePlotDataSource'>
+<method selector='barLineStyleForRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='barLineStylesForRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTRangePlotDelegate'>
+<method selector='rangePlot:rangeWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='rangePlot:rangeWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTResponder'>
+<method selector='pointingDeviceCancelledEvent:' type='B12@0:4^{UIEvent=#d}8'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceDownEvent:atPoint:' type='B20@0:4^{UIEvent=#d}8{CGPoint=ff}12'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceDraggedEvent:atPoint:' type='B20@0:4^{UIEvent=#d}8{CGPoint=ff}12'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+<method selector='pointingDeviceUpEvent:atPoint:' type='B20@0:4^{UIEvent=#d}8{CGPoint=ff}12'>
+<arg index='0' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<arg index='1' declared_type='CGPoint' name='interactionPoint' type='{CGPoint=ff}'/>
+<retval declared_type='BOOL' type='B'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTScatterPlotDataSource'>
+<method selector='symbolForScatterPlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTPlotSymbol*' type='@'/>
+</method>
+<method selector='symbolsForScatterPlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTScatterPlotDelegate'>
+<method selector='scatterPlot:plotSymbolWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='scatterPlot:plotSymbolWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTScatterPlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTTradingRangePlotDataSource'>
+<method selector='decreaseFillForTradingRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='decreaseFillsForTradingRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='decreaseLineStyleForTradingRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='decreaseLineStylesForTradingRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='increaseFillForTradingRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTFill*' type='@'/>
+</method>
+<method selector='increaseFillsForTradingRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='increaseLineStyleForTradingRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='increaseLineStylesForTradingRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+<method selector='lineStyleForTradingRangePlot:recordIndex:' type='@16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='CPTLineStyle*' type='@'/>
+</method>
+<method selector='lineStylesForTradingRangePlot:recordIndexRange:' type='@20@0:4@8{_NSRange=II}12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSRange' name='indexRange' type='{_NSRange=II}'/>
+<retval declared_type='NSArray*' type='@'/>
+</method>
+</informal_protocol>
+<informal_protocol name='CPTTradingRangePlotDelegate'>
+<method selector='tradingRangePlot:barWasSelectedAtRecordIndex:' type='v16@0:4@8I12'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<retval declared_type='void' type='v'/>
+</method>
+<method selector='tradingRangePlot:barWasSelectedAtRecordIndex:withEvent:' type='v20@0:4@8I12^{UIEvent=#d}16'>
+<arg index='0' declared_type='CPTTradingRangePlot*' name='plot' type='@'/>
+<arg index='1' declared_type='NSUInteger' name='idx' type='I'/>
+<arg index='2' declared_type='UIEvent*' name='event' type='^{UIEvent=#d}'/>
+<retval declared_type='void' type='v'/>
+</method>
+</informal_protocol>
+</signatures>
