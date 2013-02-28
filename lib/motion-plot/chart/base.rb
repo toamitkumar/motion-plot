@@ -77,18 +77,19 @@ module MotionPlot
       # add plot space
       add_plot_space
 
-      # TODO - move it to base class
       @major_grid_line_style            = CPTMutableLineStyle.lineStyle
       @major_grid_line_style.lineWidth  = 0.75
       @major_grid_line_style.lineColor  = CPTColor.grayColor.colorWithAlphaComponent(0.25)
 
       axisSet                           = @graph.axisSet
-      @xaxis                            = axisSet.xAxis
-      @xaxis.majorGridLineStyle         = @major_grid_line_style
-      @xaxis.minorTicksPerInterval      = 1
 
+      # Setting up x-axis
       if(@axes[:x])
-        axis = @axes[:x]
+        axis                          = @axes[:x]
+        @xaxis                        = axisSet.xAxis
+        @xaxis.majorGridLineStyle     = @major_grid_line_style
+        @xaxis.minorTicksPerInterval  = 1
+
         add_axis_title(@xaxis, axis.title)
 
         if(axis.labels)
@@ -105,16 +106,18 @@ module MotionPlot
       end
 
       # Setting up y-axis
-      @yaxis                            = axisSet.yAxis
-      @yaxis.majorGridLineStyle         = @major_grid_line_style
-      @yaxis.minorTicksPerInterval      = 1
-      @yaxis.labelingPolicy             = CPTAxisLabelingPolicyAutomatic
-
       if(@axes[:y])
+        @yaxis                            = axisSet.yAxis
+        @yaxis.majorGridLineStyle         = @major_grid_line_style
+        @yaxis.minorTicksPerInterval      = 1
+        @yaxis.labelingPolicy             = CPTAxisLabelingPolicyAutomatic
+
         axis = @axes[:y]
         add_axis_title(@yaxis, axis.title)
         @yaxis.setLabelTextStyle(axis.text_style)
       end
+
+      @graph.axisSet = nil if(@xaxis.nil? and @yaxis.nil?)
 
       # Create the lines
       add_series
@@ -138,6 +141,7 @@ module MotionPlot
     end
 
     def add_xy_range
+      return if(@xaxis.nil? and @yaxis.nil?)
       @plot_space.scaleToFitPlots(@plots)
       x_range = @plot_space.xRange.mutableCopy
       y_range = @plot_space.yRange.mutableCopy
