@@ -32,7 +32,7 @@ class HomeViewController < UIViewController
         style: {
           color: "0000FF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         }
       },
       data_label: {
@@ -51,7 +51,7 @@ class HomeViewController < UIViewController
         style: {
           color: "0000FF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         },
         enabled: true
       },

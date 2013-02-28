@@ -3,7 +3,6 @@ module MotionPlot
 
     attr_reader :data_hash
 
-    CPDBarWidth     = 0.25
     CPDBarInitialX  = 0.0
 
     def add_series
@@ -16,6 +15,7 @@ module MotionPlot
       when "normal"
         StackBarDelegate.new(self)
       when "percent"
+        PercentBarDelegate.new(self)
       else
         BarDelegate.new(self)
       end
@@ -68,39 +68,7 @@ module MotionPlot
 
     def plot_type
       "bar"
-    end    
-
-    # def numberOfRecordsForPlot(plot)
-    #   @series[plot.identifier].data.size
-    # end
-
-    # def numberForPlot(plot, field:field_enum, recordIndex:index)
-    #   # data  = @series[plot.identifier].data
-
-    #   case field_enum
-    #   when CPTBarPlotFieldBarLocation
-    #     index
-    #   when CPTBarPlotFieldBarTip
-    #     plot_index = @series[plot.identifier].index
-    #     record_data = @series[plot.identifier].data[index]
-    #     bar_tip_value(plot_index, recordIndex:index, startValue:record_data)
-    #   when CPTBarPlotFieldBarBase
-    #     plot_index = @series[plot.identifier].index
-    #     bar_base_value(plot_index, recordIndex:index)
-    #   end
-
-    #   # (field_enum == CPTBarPlotFieldBarTip) ? data[index] : index
-    # end
-
-    # def barPlot(plot, barWasSelectedAtRecordIndex:index)
-    #   if(@data_label and @data_label.annotation)
-    #     @graph.plotAreaFrame.plotArea.removeAnnotation(@data_label.annotation)
-    #     @data_label.annotation = nil
-    #   end
-
-    #   y_value = @series[plot.identifier].data[index].round(2)
-    #   @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: index+CPTDecimalFloatValue(plot.barOffset), plotSpace: @graph.defaultPlotSpace))
-    # end
+    end
 
   end
 end

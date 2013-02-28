@@ -17,45 +17,41 @@ module MotionPlot
       when CPTBarPlotFieldBarTip
         plot_index = @delegated_to.series[plot.identifier].index
         record_data = @delegated_to.series[plot.identifier].data[index]
-        value = bar_tip_value(plot_index, recordIndex:index, startValue:record_data)
-        p value
-        value
+        bar_tip_value(plot_index, recordIndex:index, startValue:record_data)
       when CPTBarPlotFieldBarBase
         plot_index = @delegated_to.series[plot.identifier].index
-        value = bar_base_value(plot_index, recordIndex:index)
-
-        p value
-        value
+        bar_base_value(plot_index, recordIndex:index)
       end
     end
 
     def barPlot(plot, barWasSelectedAtRecordIndex:index)
-      if(@data_label and @data_label.annotation)
-        @graph.plotAreaFrame.plotArea.removeAnnotation(@data_label.annotation)
-        @data_label.annotation = nil
+      if(@delegated_to.data_label and @delegated_to.data_label.annotation)
+        @delegated_to.graph.plotAreaFrame.plotArea.removeAnnotation(@delegated_to.data_label.annotation)
+        @delegated_to.data_label.annotation = nil
       end
 
-      y_value = @series[plot.identifier].data[index].round(2)
-      @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: index+CPTDecimalFloatValue(plot.barOffset), plotSpace: @graph.defaultPlotSpace))
+      y_value     = (@delegated_to.series[plot.identifier].data[index].round(2) / total_sum_at_index(index)) * 100
+      plot_index  = @delegated_to.series[plot.identifier].index
+      y_pos       = (0..plot_index).inject(0) {|base, i| base + (@delegated_to.data_hash[i][index] / total_sum_at_index(index)) * 100 }
+      
+      @delegated_to.graph.plotAreaFrame.plotArea.addAnnotation(@delegated_to.data_label.annotation_for("#{y_value} %", atCoordinate: [index+CPTDecimalFloatValue(plot.barOffset), y_pos], plotSpace: @delegated_to.graph.defaultPlotSpace))
     end
 
     protected
     def bar_base_value(plot_index, recordIndex:index)
       return 0 if(plot_index == 0)
 
-      ((0..plot_index-1).inject(0) {|base, i| base + @delegated_to.data_hash[i][index] } / total_sum_at_index(index)) * 100
+      (0..plot_index-1).inject(0) {|base, i| base + (@delegated_to.data_hash[i][index] / total_sum_at_index(index))*100 }
     end
 
     def bar_tip_value(plot_index, recordIndex:index, startValue:value)
       return (value / total_sum_at_index(index))*100 if(plot_index == 0)
 
-      ((0..plot_index).inject(0) {|base, i| base + @delegated_to.data_hash[i][index] } / total_sum_at_index(index)) * 100
+      (0..plot_index).inject(0) {|base, i| base + (@delegated_to.data_hash[i][index] / total_sum_at_index(index))*100 }
     end
 
     def total_sum_at_index(index)
-      total = (0..@number_of_plots).inject(0) {|total, i| total + @delegated_to.data_hash[i][index]}
-
-      p total
+      total ||= (0..@number_of_plots-1).inject(0) {|total, i| total + @delegated_to.data_hash[i][index]}
 
       total
     end

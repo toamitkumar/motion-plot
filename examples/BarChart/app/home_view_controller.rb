@@ -76,7 +76,7 @@ class HomeViewController < UIViewController
         ],
         style: {
           color: "173B0B",
-          width: 0.1
+          width: 0.25
         }
       }, {
         name: 'New York',

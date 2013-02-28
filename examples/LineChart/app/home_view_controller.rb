@@ -87,7 +87,7 @@ class HomeViewController < UIViewController
       }, {
         name: 'New York',
         data: [
-          [-0.2, 'Jan'], 
+          [0.2, 'Jan'], 
           [0.8, 'Feb'], 
           [5.7, 'Mar'], 
           [11.3, 'Apr'], 
