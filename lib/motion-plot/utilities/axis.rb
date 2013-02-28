@@ -33,5 +33,9 @@ module MotionPlot
     def is_y?
       type == "yaxis"
     end
+
+    def enabled?
+      enabled
+    end
   end
 end

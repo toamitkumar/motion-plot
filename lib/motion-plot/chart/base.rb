@@ -84,7 +84,7 @@ module MotionPlot
       axisSet                           = @graph.axisSet
 
       # Setting up x-axis
-      if(@axes[:x])
+      if(@axes[:x].enabled?)
         axis                          = @axes[:x]
         @xaxis                        = axisSet.xAxis
         @xaxis.majorGridLineStyle     = @major_grid_line_style
@@ -106,7 +106,7 @@ module MotionPlot
       end
 
       # Setting up y-axis
-      if(@axes[:y])
+      if(@axes[:y].enabled?)
         @yaxis                            = axisSet.yAxis
         @yaxis.majorGridLineStyle         = @major_grid_line_style
         @yaxis.minorTicksPerInterval      = 1
@@ -117,9 +117,8 @@ module MotionPlot
         @yaxis.setLabelTextStyle(axis.text_style)
       end
 
-      @graph.axisSet = nil if(@xaxis.nil? and @yaxis.nil?)
+      @graph.axisSet = nil if(not @axes[:x].enabled? and not @axes[:y].enabled?)
 
-      # Create the lines
       add_series
 
       add_legend if(@legend_enabled)
@@ -141,7 +140,7 @@ module MotionPlot
     end
 
     def add_xy_range
-      return if(@xaxis.nil? and @yaxis.nil?)
+      return if(not @axes[:x].enabled? and not @axes[:y].enabled?)
       @plot_space.scaleToFitPlots(@plots)
       x_range = @plot_space.xRange.mutableCopy
       y_range = @plot_space.yRange.mutableCopy
