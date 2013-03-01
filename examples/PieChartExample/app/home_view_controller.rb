@@ -28,6 +28,13 @@ class HomeViewController < UIViewController
       legend: {
         enabled: true
       },
+      plot_options: {
+        pie: {
+          style: {
+            gradient: true
+          }
+        }
+      },
       series: [{
         name: 'Browser Share',
         data: [

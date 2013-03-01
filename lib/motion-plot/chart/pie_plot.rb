@@ -10,8 +10,14 @@ module MotionPlot
       pie.pieRadius       = pie_radius
       pie.startAngle      = Math::PI/4
       pie.sliceDirection  = CPTPieDirectionCounterClockwise #CPTPieDirectionClockwise
+      # pie.identifier      = 
+
+      p plot_identifier
+
       
       series_data.each_with_index {|obj, i| @selected_slice = i if(obj[:selected]) }
+
+      add_gradient(pie)
 
       animate(pie)
       @graph.addPlot(pie)
@@ -49,6 +55,18 @@ module MotionPlot
       "pie"
     end
 
+    def add_gradient(pie)
+      if(pie_series.style.gradient)
+        overlay_gradient              = CPTGradient.alloc.init
+        overlay_gradient.gradientType = CPTGradientTypeRadial
+
+        overlay_gradient              = overlay_gradient.addColorStop(CPTColor.blackColor.colorWithAlphaComponent(0.0), atPosition:0.0)
+        overlay_gradient              = overlay_gradient.addColorStop(CPTColor.blackColor.colorWithAlphaComponent(0.3), atPosition:0.9)
+        overlay_gradient              = overlay_gradient.addColorStop(CPTColor.blackColor.colorWithAlphaComponent(0.7), atPosition:1.0)
+        pie.overlayFill               = overlay_gradient
+      end
+    end
+
     def pie_radius
       [
         0.8 * (@layer_hosting_view.frame.size.height - 2 * @graph.paddingLeft) / 2.0,
@@ -56,15 +74,22 @@ module MotionPlot
       ].min
     end
 
+    def plot_identifier
+      @series.keys.select{|k| @series[k].type == plot_type}.first
+    end
+
     def series_data
-      key = @series.keys.select{|k| @series[k].type == plot_type}.first
-      @series[key].data
+      pie_series.data
+    end
+
+    def pie_series
+      @series[plot_identifier]
     end
 
     def animate(plot)
       CATransaction.begin
       CATransaction.setAnimationDuration 2.0
-    CATransaction.setAnimationTimingFunction CAMediaTimingFunction.functionWithName(KCAMediaTimingFunctionEaseIn)
+      CATransaction.setAnimationTimingFunction CAMediaTimingFunction.functionWithName(KCAMediaTimingFunctionEaseIn)
 
       radial_animation                     = CABasicAnimation.animationWithKeyPath("pieRadius")
 
@@ -86,26 +111,7 @@ module MotionPlot
 
       plot.addAnimation(angle_animation, forKey:"angle") 
 
-      CATransaction.commit     
-
-      # CATransaction.begin
-
-      # CATransaction.setAnimationDuration 2.0
-      # CATransaction.setAnimationTimingFunction CAMediaTimingFunction.functionWithName(KCAMediaTimingFunctionEaseIn)
-
-      # animation = CABasicAnimation.animationWithKeyPath "pieRadius"
-      # animation.fromValue           = NSNumber.numberWithDouble 0
-      # animation.toValue             = NSNumber.numberWithDouble radius
-      # animation.fillMode            = KCAFillModeForwards
-      # plot.addAnimation animation, forKey: "pieRadius"
-
-      # animation          = CABasicAnimation.animationWithKeyPath 'startAngle'
-      # animation.fromValue           = NSNumber.numberWithDouble 0
-      # animation.toValue             = NSNumber.numberWithDouble Math::PI/2
-      # animation.fillMode            = KCAFillModeForwards
-      # plot.addAnimation animation, forKey: "startAngle"
-
-      # CATransaction.commit
+      CATransaction.commit
     end
 
   end
