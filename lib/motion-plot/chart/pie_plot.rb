@@ -1,7 +1,7 @@
 module MotionPlot
   class Pie < Base
 
-    attr_accessor :selected_index
+    attr_accessor :selected_slice
 
     def add_series
       pie                 = CPTPieChart.alloc.init
@@ -10,6 +10,8 @@ module MotionPlot
       pie.pieRadius       = pie_radius
       pie.startAngle      = Math::PI/4
       pie.sliceDirection  = CPTPieDirectionCounterClockwise #CPTPieDirectionClockwise
+      
+      series_data.each_with_index {|obj, i| @selected_slice = i if(obj[:selected]) }
 
       animate(pie)
       @graph.addPlot(pie)
@@ -30,8 +32,7 @@ module MotionPlot
     def radialOffsetForPieChart(plot, recordIndex: index)
       offset = 0.0
 
-      @selected_index = series_data[index][:selected] if(@selected_index.nil?)
-      if(@selected_index)
+      if(@selected_slice == index)
         offset = pie_radius / 25.0
       end
 
@@ -39,8 +40,8 @@ module MotionPlot
     end
 
     def pieChart(plot, sliceWasSelectedAtRecordIndex: index)
-      @selected_index = index
-      pie.reloadData
+      @selected_slice = index
+      plot.reloadData
     end
 
     protected
