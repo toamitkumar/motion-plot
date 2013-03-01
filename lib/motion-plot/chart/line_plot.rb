@@ -37,7 +37,7 @@ module MotionPlot
       end
 
       y_value = @series[plot.identifier].data[index][0].round(2)
-      @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: [index, value], plotSpace: @graph.defaultPlotSpace))
+      @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: [index, y_value], plotSpace: @graph.defaultPlotSpace))
     end
 
     def numberOfRecordsForPlot(plot)

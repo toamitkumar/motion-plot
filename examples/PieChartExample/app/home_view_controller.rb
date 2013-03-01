@@ -2,7 +2,7 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    @chart_view = UIView.alloc.initWithFrame([[10, 10], [900, 700]])
+    @chart_view = UIView.alloc.initWithFrame([[10, 10], [700, 500]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
@@ -34,6 +34,7 @@ class HomeViewController < UIViewController
           {
             name: 'Firefox',
             y: 30.2,
+            selected: true,
             style: {
               color: "173B0B"
             }

@@ -6,8 +6,8 @@ module MotionPlot
       pie.dataSource      = self
       pie.delegate        = self
       pie.pieRadius       = pie_radius
-      pie.startAngle      = Math::PI/2
-      pie.sliceDirection  = CPTPieDirectionCounterClockwise #CPTPieDirectionCounterClockwise
+      pie.startAngle      = Math::PI/4
+      pie.sliceDirection  = CPTPieDirectionCounterClockwise #CPTPieDirectionClockwise
 
       animate(pie)
       @graph.addPlot(pie)
@@ -25,6 +25,16 @@ module MotionPlot
       CPTFill.alloc.initWithColor Series::COLORS[index].to_color.to_cpt_color
     end
 
+    def radialOffsetForPieChart(plot, recordIndex: index)
+      offset = 0.0
+
+      if(series_data[index][:selected])
+        offset = pie_radius / 25.0
+      end
+
+      offset
+    end
+
     protected
     def plot_type
       "pie"
@@ -32,8 +42,8 @@ module MotionPlot
 
     def pie_radius
       [
-        0.9 * (@layer_hosting_view.frame.size.height - 2 * @graph.paddingLeft) / 2.0,
-        0.9 * (@layer_hosting_view.frame.size.width - 2 * @graph.paddingTop) / 2.0
+        0.8 * (@layer_hosting_view.frame.size.height - 2 * @graph.paddingLeft) / 2.0,
+        0.8 * (@layer_hosting_view.frame.size.width - 2 * @graph.paddingTop) / 2.0
       ].min
     end
 
@@ -44,6 +54,9 @@ module MotionPlot
 
     def animate(plot)
       CATransaction.begin
+      CATransaction.setAnimationDuration 2.0
+    CATransaction.setAnimationTimingFunction CAMediaTimingFunction.functionWithName(KCAMediaTimingFunctionEaseIn)
+
       radial_animation                     = CABasicAnimation.animationWithKeyPath("pieRadius")
 
       radial_animation.fromValue           = 0.0
