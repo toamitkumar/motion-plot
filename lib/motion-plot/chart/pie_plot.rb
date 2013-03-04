@@ -9,11 +9,8 @@ module MotionPlot
       pie.delegate        = self
       pie.pieRadius       = pie_radius
       pie.startAngle      = Math::PI/4
-      pie.sliceDirection  = CPTPieDirectionCounterClockwise #CPTPieDirectionClockwise
-      # pie.identifier      = 
-
-      p plot_identifier
-
+      pie.sliceDirection  = CPTPieDirectionClockwise #CPTPieDirectionCounterClockwise
+      pie.identifier      = plot_identifier
       
       series_data.each_with_index {|obj, i| @selected_slice = i if(obj[:selected]) }
 
@@ -30,6 +27,10 @@ module MotionPlot
     def numberForPlot(plot, field: fieldEnum, recordIndex: index)
       fieldEnum == CPTPieChartFieldSliceWidth ? series_data[index][:y] : index
     end
+
+    def legendTitleForPieChart(pie, recordIndex: index)
+      series_data[index][:name]
+    end    
 
     def sliceFillForPieChart(plot, recordIndex: index)
       CPTFill.alloc.initWithColor Series::COLORS[index].to_color.to_cpt_color
@@ -102,9 +103,9 @@ module MotionPlot
       plot.addAnimation(radial_animation, forKey:"pieRadius")
 
 
-      angle_animation  = CABasicAnimation.animationWithKeyPath 'angle'
+      angle_animation                     = CABasicAnimation.animationWithKeyPath 'angle'
       angle_animation.fromValue           = 0.0
-      angle_animation.toValue             = Math::PI/2
+      angle_animation.toValue             = Math::PI/4
       angle_animation.duration            = 1.0
       angle_animation.removedOnCompletion = false
       angle_animation.fillMode            = KCAFillModeForwards

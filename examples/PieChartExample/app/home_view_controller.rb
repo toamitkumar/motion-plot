@@ -14,7 +14,7 @@ class HomeViewController < UIViewController
 
     options = {
       title: {
-        text: "Monthly Average Temperature",
+        text: "Browser Market Share 2013 - W3C",
         color: '0000FF',
         font_name: "Arial"
       },
@@ -26,7 +26,17 @@ class HomeViewController < UIViewController
         displacement: [0, 10]
       },
       legend: {
-        enabled: true
+        enabled: true,
+        style: {
+
+        },
+        swatch_size: [25.0, 25.0],
+        position: "top_right",
+        displacement: [0.0, 0.0],
+        fill_color: "173B0B",
+        radius: 4.0,
+        number_of_rows: 1,
+        number_of_columns: 2
       },
       plot_options: {
         pie: {

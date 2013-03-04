@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title
 
-    attr_accessor :legend_enabled, :plot_symbol, :axes, :theme, :data_label, :orientation, :plot_options
+    attr_accessor :legend, :plot_symbol, :axes, :theme, :data_label, :orientation, :plot_options
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -39,7 +39,7 @@ module MotionPlot
       }
 
       if(options[:legend])
-        @legend_enabled = options[:legend][:enabled] || false
+        @legend = Legend.new(options[:legend])
       end
 
       if(options[:data_label])
@@ -121,7 +121,7 @@ module MotionPlot
 
       add_series
 
-      add_legend if(@legend_enabled)
+      add_legend if(@legend.enabled?)
 
       add_xy_range
 
@@ -165,12 +165,9 @@ module MotionPlot
     end
 
     def add_legend
-      @graph.legend               = CPTLegend.legendWithGraph(@graph)
-      @graph.legend.fill          = CPTFill.fillWithColor(CPTColor.whiteColor)
-      @graph.legend.cornerRadius  = 5.0
-      @graph.legend.swatchSize    = CGSizeMake(25.0, 25.0)
-      @graph.legendAnchor         = AnchorPosition.default
-      @graph.legendDisplacement   = CGPointMake(0.0, 0.0)
+      @graph.legend               = @legend.cpt_legend(@graph)
+      @graph.legendAnchor         = @legend.position
+      @graph.legendDisplacement   = @legend.displacement
     end
 
     def default_padding
