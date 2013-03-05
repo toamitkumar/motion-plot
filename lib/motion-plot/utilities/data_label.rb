@@ -27,13 +27,15 @@ module MotionPlot
 
     def annotation_for(value, atCoordinate: coordinate, plotSpace: plot_space)
       @annotation               = CPTPlotSpaceAnnotation.alloc.initWithPlotSpace(plot_space, anchorPlotPoint:coordinate)
-      text_layer                = CPTTextLayer.alloc.initWithText(value.to_s, style:style)
-      @annotation.contentLayer  = text_layer
+      @annotation.contentLayer  = annotation_text_style(value)
       @annotation.displacement  = @attributes[:displacement]
 
       @annotation
     end
 
+    def annotation_text_style(value)
+      CPTTextLayer.alloc.initWithText(value.to_s, style:style)
+    end
 
   end
 end

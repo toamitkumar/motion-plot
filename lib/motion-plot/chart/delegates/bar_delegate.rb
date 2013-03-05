@@ -24,7 +24,7 @@ module MotionPlot
       end
 
       y_value = @delegated_to.series[plot.identifier].data[index].round(2)
-      @delegated_to.graph.plotAreaFrame.plotArea.addAnnotation(@delegated_to.data_label.annotation_for(y_value, atCoordinate: [index+CPTDecimalFloatValue(plot.barOffset), value], plotSpace: @delegated_to.graph.defaultPlotSpace))
+      @delegated_to.graph.plotAreaFrame.plotArea.addAnnotation(@delegated_to.data_label.annotation_for(y_value, atCoordinate: [index+CPTDecimalFloatValue(plot.barOffset), y_value], plotSpace: @delegated_to.graph.defaultPlotSpace))
     end
 
   end

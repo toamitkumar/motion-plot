@@ -6,7 +6,7 @@ module MotionPlot
     DEFAULTS = {
       swatch_size: [25.0, 25.0],
       corner_radius: 5,
-      position: AnchorPosition.default,
+      position: "top",
       displacement: [0.0, 0.0],
       fill_color: "FFFFFF"
     }

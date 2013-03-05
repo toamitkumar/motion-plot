@@ -51,6 +51,10 @@ module MotionPlot
       plot.reloadData
     end
 
+    def dataLabelForPlot(plot, recordIndex: index)
+      @data_label.annotation_text_style(series_data[index][:y].round(2))
+    end
+
     protected
     def plot_type
       "pie"
