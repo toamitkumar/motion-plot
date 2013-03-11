@@ -18,10 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO:  
-  - Support for iPhones
-  - more configuration options from json (use procs)
-  - 
+  Look at examples directory for usage options.
 
 ## Contributing
 
