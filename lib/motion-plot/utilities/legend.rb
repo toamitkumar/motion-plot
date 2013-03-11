@@ -18,9 +18,7 @@ module MotionPlot
         send("#{key}=", value) if(respond_to?("#{key}="))
       }
 
-      if(style)
-        @style = Style.new(args[:style])
-      end
+      @style = args[:style] ? Style.new(args[:style]) : Style.new
     end
 
     def enabled?
@@ -36,6 +34,10 @@ module MotionPlot
       legend.fill         = CPTFill.fillWithColor(fill_color.to_color.to_cpt_color)
       legend.cornerRadius = corner_radius
       legend.swatchSize   = swatch_size
+      legend.textStyle    = TextStyle.cpt_text_style(@style) if(@style)
+
+      p @style
+      
       legend
     end
 

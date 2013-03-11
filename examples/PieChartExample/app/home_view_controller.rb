@@ -2,12 +2,16 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    @chart_view = UIView.alloc.initWithFrame([[10, 10], [700, 500]])
+    @chart_view = UIView.alloc.initWithFrame([[10, 10], [200, 250]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
 
     self.view.addSubview(@chart_view)
+  end
+
+  def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
+    true
   end
 
   def add_chart
@@ -28,10 +32,11 @@ class HomeViewController < UIViewController
       legend: {
         enabled: true,
         style: {
-
+          font_name: "Arial",
+          font_size: 5
         },
-        swatch_size: [25.0, 25.0],
-        position: "top_right",
+        swatch_size: [4.0, 4.0],
+        position: "bottom_right",
         displacement: [0.0, 0.0],
         fill_color: "173B0B",
         radius: 4.0,
@@ -41,7 +46,13 @@ class HomeViewController < UIViewController
       plot_options: {
         pie: {
           style: {
-            gradient: true
+            gradient: true,
+            padding: [5.0, 5.0, 5.0, 5.0],
+            plot_area: {
+              padding: [5.0, 5.0, 5.0, 5.0],
+              mask_to_border: false,
+              border_line_style: false
+            }
           }
         }
       },
@@ -51,7 +62,7 @@ class HomeViewController < UIViewController
           {
             name: 'Firefox',
             y: 30.2,
-            selected: true,
+            # selected: true,
             style: {
               color: "173B0B"
             }

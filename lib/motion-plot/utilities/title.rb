@@ -10,11 +10,7 @@ module MotionPlot
     end
 
     def text_style
-      text_style           = CPTMutableTextStyle.textStyle
-      text_style.color     = @style.color
-      text_style.fontName  = @style.font_name
-
-      text_style
+      TextStyle.cpt_text_style(@style)
     end
 
   end

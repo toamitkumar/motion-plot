@@ -20,6 +20,11 @@ module MotionPlot
       @graph.addPlot(pie)
     end
 
+    def default_padding
+      pie_series.style.paddings_for(@graph)
+      pie_series.style.plot_area.add_style(@graph.plotAreaFrame)
+    end
+
     def numberOfRecordsForPlot(plot)
       series_data.size
     end

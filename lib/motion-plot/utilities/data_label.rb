@@ -13,12 +13,7 @@ module MotionPlot
     end
 
     def style
-      _style          = CPTMutableTextStyle.textStyle
-      _style.color    = @style.color
-      _style.fontSize = @style.font_size
-      _style.fontName = @style.font_name
-
-      _style
+      TextStyle.cpt_text_style(@style)
     end
 
     def displacement
