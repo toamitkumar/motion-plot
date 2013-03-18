@@ -21,11 +21,11 @@ module MotionPlot
       }
     end
 
-    def symbol_for(line, atIndex:index)
+    def symbol_for(plot, atIndex:index)
       _style            = CPTMutableLineStyle.lineStyle
-      _style.lineColor  = line.dataLineStyle.lineColor
+      _style.lineColor  = plot.dataLineStyle.lineColor
       symbol            = MotionPlot::PlotSymbol[index]
-      symbol.fill       = CPTFill.fillWithColor(line.dataLineStyle.lineColor, colorWithAlphaComponent:0.5)
+      symbol.fill       = CPTFill.fillWithColor(plot.dataLineStyle.lineColor, colorWithAlphaComponent:0.5)
       symbol.lineStyle  = _style
       symbol.size       = CGSizeMake(size.to_f, size.to_f)
 

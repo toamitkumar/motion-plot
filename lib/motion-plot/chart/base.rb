@@ -134,9 +134,9 @@ module MotionPlot
       @plot_space.allowsUserInteraction = true
     end
 
-    def add_plot_symbol(line, index)
-      line.plotSymbol                       = @plot_symbol.symbol_for(line, atIndex: index)
-      line.plotSymbolMarginForHitDetection  = 5.0
+    def add_plot_symbol(plot, index)
+      plot.plotSymbol                       = @plot_symbol.symbol_for(plot, atIndex: index)
+      plot.plotSymbolMarginForHitDetection  = 5.0
     end
 
     def add_xy_range

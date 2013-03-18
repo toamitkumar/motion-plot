@@ -36,7 +36,7 @@ module MotionPlot
         @data_label.annotation = nil
       end
 
-      y_value = @series[plot.identifier].data[index][0].round(2)
+      y_value = @series[plot.identifier].data[index].round(2)
       @graph.plotAreaFrame.plotArea.addAnnotation(@data_label.annotation_for(y_value, atCoordinate: [index, y_value], plotSpace: @graph.defaultPlotSpace))
     end
 
@@ -47,7 +47,7 @@ module MotionPlot
     def numberForPlot(plot, field:field_enum, recordIndex:index)
       data  = @series[plot.identifier].data
 
-      (field_enum == CPTScatterPlotFieldY) ? data[index][0] : index
+      (field_enum == CPTScatterPlotFieldY) ? data[index] : index
     end
 
     protected
