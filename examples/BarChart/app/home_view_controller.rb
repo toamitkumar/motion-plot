@@ -15,14 +15,14 @@ class HomeViewController < UIViewController
     options = {
       title: {
         text: "Monthly Average Temperature",
-        color: '0000FF',
+        color: 'FFFFFF',
         font_name: "Arial"
       },
       theme: MotionPlot::Theme.plain_white,
       xAxis: {
         title: {
           text: 'Months - 2013',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
@@ -30,28 +30,28 @@ class HomeViewController < UIViewController
         color: '808080',
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 12
         }
       },
       data_label: {
-        color: "0000FF",
-        font_size: 8,
+        color: "FFFFFF",
+        font_size: 12,
         font_name: "Arial",
         displacement: [0, 10]
       },
       yAxis: {
         title: {
           text: 'Temperature (°C)',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 12
         },
         enabled: true
       },

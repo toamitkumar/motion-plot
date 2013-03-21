@@ -15,7 +15,7 @@ class HomeViewController < UIViewController
     options = {
       title: {
         text: "Monthly Average Temperature",
-        color: '0000FF',
+        color: 'FFFFFF',
         font_name: "Arial"
       },
       curve_inerpolation: true,
@@ -24,7 +24,7 @@ class HomeViewController < UIViewController
       xAxis: {
         title: {
           text: 'Months - 2013',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
@@ -32,9 +32,9 @@ class HomeViewController < UIViewController
         color: '808080',
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         }
       },
       plot_symbol: {
@@ -42,22 +42,22 @@ class HomeViewController < UIViewController
         size: 8
       },
       data_label: {
-        color: "0000FF",
-        font_size: 8,
+        color: "FFFFFF",
+        font_size: 10,
         font_name: "Arial",
         displacement: [0, 10]
       },
       yAxis: {
         title: {
           text: 'Temperature (°C)',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         },
         enabled: true
       },
@@ -66,43 +66,17 @@ class HomeViewController < UIViewController
       },
       series: [{
         name: 'Tokyo',
-        data: [
-          [7.0, 'Jan'], 
-          [6.9, 'Feb'], 
-          [9.5, 'Mar'], 
-          [14.5, 'Apr'], 
-          [18.2, 'May'], 
-          [21.5, 'Jun'], 
-          [25.2, 'Jul'], 
-          [26.5, 'Aug'], 
-          [23.3, 'Sep'], 
-          [18.3, 'Oct'], 
-          [13.9, 'Nov'], 
-          [9.6, 'Dec']
-        ],
+        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
         color: "173B0B"
       }, {
         name: 'New York',
-        data: [
-          [-0.2, 'Jan'], 
-          [0.8, 'Feb'], 
-          [5.7, 'Mar'], 
-          [11.3, 'Apr'], 
-          [17.0, 'May'], 
-          [22.0, 'Jun'], 
-          [24.8, 'Jul'], 
-          [24.1, 'Aug'], 
-          [20.1, 'Sep'], 
-          [14.1, 'Oct'], 
-          [8.6, 'Nov'], 
-          [2.5, 'Dec']
-        ]
+        data: [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
       }, {
         name: 'Berlin',
-        data: [[-0.9, 'Jan'], [0.6, 'Feb'], [3.5, 'Mar'], [8.4, 'Apr'], [13.5, 'May'], [17.0, 'Jun'], [18.6, 'Jul'], [17.9, 'Aug'], [14.3, 'Sep'], [9.0, 'Oct'], [3.9, 'Nov'], [1.0, 'Dec']]
+        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
       }, {
         name: 'London',
-        data: [[3.9, 'Jan'], [4.2, 'Feb'], [5.7, 'Mar'], [8.5, 'Apr'], [11.9, 'May'], [15.2, 'Jun'], [17.0, 'Jul'], [16.6, 'Aug'], [14.2, 'Sep'], [-10.3, 'Oct'], [0.1, 'Nov']]
+        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3]
       }]
     }
 

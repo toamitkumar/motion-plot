@@ -2,7 +2,7 @@ class HomeViewController < UIViewController
 
   def viewDidLoad
     super
-    @chart_view = UIView.alloc.initWithFrame([[10, 10], [200, 250]])
+    @chart_view = UIView.alloc.initWithFrame([[10, 10], [500, 600]])
     @chart_view.backgroundColor = UIColor.whiteColor
 
     add_chart
@@ -19,13 +19,13 @@ class HomeViewController < UIViewController
     options = {
       title: {
         text: "Browser Market Share 2013 - W3C",
-        color: '0000FF',
+        color: 'FFFFFF',
         font_name: "Arial"
       },
-      theme: MotionPlot::Theme.plain_white,
+      theme: MotionPlot::Theme.slate,
       data_label: {
-        color: "0000FF",
-        font_size: 8,
+        color: "FFFFFF",
+        font_size: 10,
         font_name: "Arial",
         displacement: [0, 10]
       },
@@ -33,9 +33,10 @@ class HomeViewController < UIViewController
         enabled: true,
         style: {
           font_name: "Arial",
-          font_size: 5
+          font_size: 10,
+          color: "FFFFFF"
         },
-        swatch_size: [4.0, 4.0],
+        # swatch_size: [8.0, 8.0],
         position: "bottom_right",
         displacement: [0.0, 0.0],
         fill_color: "173B0B",
@@ -62,7 +63,7 @@ class HomeViewController < UIViewController
           {
             name: 'Firefox',
             y: 30.2,
-            # selected: true,
+            selected: true,
             style: {
               color: "173B0B"
             }

@@ -16,15 +16,15 @@ class HomeViewController < UIViewController
     options = {
       title: {
         text: "Monthly Average Temperature",
-        color: '0000FF',
+        color: 'FFFFFF',
         font_name: "Arial"
       },
       curve_inerpolation: true,
-      theme: MotionPlot::Theme.dark_gradient,
+      theme: MotionPlot::Theme.stocks,
       xAxis: {
         title: {
           text: 'Months - 2013',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
@@ -32,37 +32,38 @@ class HomeViewController < UIViewController
         color: '808080',
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         }
       },
       plot_symbol: {
         enabled: true,
-        size: 8
+        size: 10
       },
       data_label: {
-        color: "0000FF",
-        font_size: 8,
+        color: "FFFFFF",
+        font_size: 10,
         font_name: "Arial",
         displacement: [0, 10]
       },
       yAxis: {
         title: {
           text: 'Temperature (°C)',
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
           offset: 30.0
         },
         style: {
-          color: "0000FF",
+          color: "FFFFFF",
           font_name: "Arial",
-          font_size: 8
+          font_size: 10
         },
         enabled: true
       },
       legend: {
-        enabled: false
+        enabled: true,
+        position: "top_right"
       },
       series: [{
         name: 'Tokyo',
