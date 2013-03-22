@@ -3,7 +3,7 @@ module MotionPlot
 
     attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title
 
-    attr_accessor :legend, :plot_symbol, :axes, :theme, :data_label, :orientation, :plot_options
+    attr_accessor :legend, :axes, :theme, :data_label, :orientation, :plot_options
 
     def bootstrap(options)
       options.each_pair {|key, value|
@@ -34,7 +34,13 @@ module MotionPlot
       @series = {}
       series = options[:series]
       series && series.each_with_index {|hash, index|
-        hash.merge!({index: index, defaults: default_style, plot_options: @plot_options, type: self.plot_type})
+        hash.reverse_merge!({
+          index: index, 
+          defaults: default_style, 
+          plot_options: @plot_options, 
+          type: self.plot_type,
+          plot_symbol: (@plot_symbol ? options[:plot_symbol] : nil)
+        })
         @series[hash[:name]] = Series.new(hash)
       }
 
@@ -44,10 +50,6 @@ module MotionPlot
 
       if(options[:data_label])
         @data_label = DataLabel.new(options[:data_label])
-      end
-
-      if(@plot_symbol)
-        @plot_symbol = PlotSymbol.new(options[:plot_symbol])
       end
 
       @plots = []
@@ -134,8 +136,8 @@ module MotionPlot
       @plot_space.allowsUserInteraction = true
     end
 
-    def add_plot_symbol(plot, index)
-      plot.plotSymbol                       = @plot_symbol.symbol_for(plot, atIndex: index)
+    def add_plot_symbol(plot, symbol)
+      plot.plotSymbol                       = symbol
       plot.plotSymbolMarginForHitDetection  = 5.0
     end
 

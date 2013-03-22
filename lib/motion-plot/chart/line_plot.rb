@@ -18,7 +18,7 @@ module MotionPlot
         line.delegate         = self
         line.interpolation    = CPTScatterPlotInterpolationCurved if(@curve_inerpolation)
 
-        add_plot_symbol(line, index) if(@plot_symbol)
+        add_plot_symbol(line, @series[name].plot_symbol.symbol_for(line)) if(@series[name].plot_symbol)
 
         @graph.addPlot(line)
         @plots << line

@@ -4,6 +4,7 @@ module MotionPlot
     COLORS = ['4572A7', 'AA4643', '89A54E', '80699B', '3D96AE', 'DB843D', '92A8CD', 'A47D7C', 'B5CA92']
 
     attr_accessor :name, :data, :index, :type, :style
+    attr_reader :plot_symbol
 
     def initialize(args={})
       args.each_pair {|key, value|
@@ -14,7 +15,8 @@ module MotionPlot
       merge_plot_options(style_attr, args[:plot_options])
       merge_style(style_attr, args[:style])
 
-      @style = Style.new(style_attr)
+      @style        = Style.new(style_attr)
+      @plot_symbol  = PlotSymbol.new(args[:plot_symbol].merge(index: @index)) if(args[:plot_symbol])
     end
 
     def color

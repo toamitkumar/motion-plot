@@ -45,9 +45,9 @@ class HomeViewController < UIViewController
         },
         enabled: true
       },
-      plot_symbol: {
-        enabled: true
-      },
+      # plot_symbol: {
+      #   enabled: true
+      # },
       legend: {
         enabled: false
       },
@@ -61,17 +61,17 @@ class HomeViewController < UIViewController
         name: 'Berlin',
         data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
       }, {
-        name: 'London',
-        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3]
-      }, {
+      #   name: 'London',
+      #   data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3]
+      # }, {
         name: "Static_1",
-        data: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
+        data: [2],
         plot_symbol: {
           type: 'pentagon',
           size: 8
         }        
       }, {
-        name: "Static_1",
+        name: "Static_2",
         data: [4]
       }]
     }
