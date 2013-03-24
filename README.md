@@ -1,22 +1,25 @@
 # Motion::Plot
 
-Build native charts as you are used with Highcharts/D3. This library is a wrapper on top of [CorePlot](https://code.google.com/p/core-plot/), the iOS plotting framework to build native chart using CoreAnimation, Core Data and Cocoa Bindings
+Create native iOS charts using simple JSON as you are used-to with Highcharts like JS library. 
+This library is a wrapper on top of [CorePlot](https://code.google.com/p/core-plot/), the iOS plotting framework to build native chart using CoreAnimation, Core Data and Cocoa Bindings
 
 ## Installation
 
-Add this line to your application's Gemfile:
+1. Add this line to your application's Gemfile:
 
     `gem 'motion-plot'`
 
-And then execute:
+  And then execute:
 
     $ bundle
 
-Or install it yourself as:
+  Or install it yourself as:
 
     $ gem install motion-plot
 
-And add `require 'motion-plot'` to your `Gemfile`
+  And add `require 'motion-plot'` to your `Gemfile`
+
+2. Run 'pod setup' to install core-plot as pod on your local
 
 ## Usage
 

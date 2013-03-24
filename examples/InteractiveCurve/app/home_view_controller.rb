@@ -18,7 +18,6 @@ class HomeViewController < UIViewController
         color: '0000FF',
         font_name: "Arial"
       },
-      curve_inerpolation: true,
       theme: MotionPlot::Theme.dark_gradient,
       xAxis: {
         title: {
@@ -45,44 +44,39 @@ class HomeViewController < UIViewController
         },
         enabled: true
       },
-      # plot_symbol: {
-      #   enabled: true
-      # },
       legend: {
         enabled: false
       },
       plot_options: {
         line: {
-          data_size: 500,
-          beizer: true
+          data_size: 100,
+          beizer: true,
+          curve_inerpolation: true,
+          step_size: 1
         }
       },
       series: [{
         name: 'Tokyo',
-        data: [
-          {x: 2.0, y: 7.0},
-          {}
-        ]
-        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        data: lambda{|p| 0.5 * p * p}
       }, {
         name: 'New York',
-        data: [0.2, 0.8, 5.7, 11.3, 17.0, 22.0, 24.8, 24.1, 20.1, 14.1, 8.6, 2.5]
+        data: lambda{|p| 2.0 * p * p} 
       }, {
         name: 'Berlin',
-        data: [-0.9, 0.6, 3.5, 8.4, 13.5, 17.0, 18.6, 17.9, 14.3, 9.0, 3.9, 1.0]
+        data: lambda{|p| 4.0 * p * p}  
       }, {
-      #   name: 'London',
-      #   data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3]
-      # }, {
+        name: 'London',
+        data: lambda{|p| 8.0 * p * p} 
+      }, {
         name: "Static_1",
-        data: [2],
+        data: lambda{|p| 4.0 * 5 * 5},
         plot_symbol: {
           type: 'pentagon',
           size: 8
         }        
-      }, {
-        name: "Static_2",
-        data: [4]
+      # }, {
+      #   name: "Static_2",
+      #   data: [4]
       }]
     }
 

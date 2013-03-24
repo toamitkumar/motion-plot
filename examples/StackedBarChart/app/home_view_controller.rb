@@ -56,7 +56,8 @@ class HomeViewController < UIViewController
         enabled: true
       },
       legend: {
-        enabled: true
+        enabled: true,
+        position: "top_right"
       },
       plot_options: {
         bar: {

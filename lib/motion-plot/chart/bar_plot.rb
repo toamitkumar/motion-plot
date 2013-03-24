@@ -10,7 +10,7 @@ module MotionPlot
 
       bar_x               = CPDBarInitialX
       @data_hash          = {}
-      horizontal_bar      = (@plot_options.bar[:orientation] == "vertical") ? true : false
+      horizontal_bar      = (@plot_options and @plot_options.bar[:orientation] == "vertical") ? true : false
       @delegate_object    = case @stacking
       when "normal"
         StackBarDelegate.new(self)
@@ -48,7 +48,7 @@ module MotionPlot
 
     def animate(bar)
       bar.anchorPoint             = [0.0, 0.0]
-      scale_direction             = (@plot_options.bar[:orientation] == "vertical") ? "transform.scale.x" : "transform.scale.y"
+      scale_direction             = (@plot_options and @plot_options.bar[:orientation] == "vertical") ? "transform.scale.x" : "transform.scale.y"
       scaling                     = CABasicAnimation.animationWithKeyPath(scale_direction)
       scaling.fromValue           = 0.0
       scaling.toValue             = 1.0

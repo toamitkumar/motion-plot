@@ -1,16 +1,8 @@
 module MotionPlot
-  class StackBarDelegate
+  class StackBarDelegate < BaseDelegate
 
     # consign :series, :to => :delegated_to
-
-    def initialize(source)
-      @delegated_to = source
-    end
-
-    def numberOfRecordsForPlot(plot)
-      @delegated_to.series[plot.identifier].data.size
-    end
-
+    
     def numberForPlot(plot, field:field_enum, recordIndex:index)
       case field_enum
       when CPTBarPlotFieldBarLocation

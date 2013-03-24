@@ -1,15 +1,5 @@
 module MotionPlot
-  class BarDelegate
-
-    # delegate :series, :to => :delegated_to
-
-    def initialize(source)
-      @delegated_to = source
-    end
-
-    def numberOfRecordsForPlot(plot)
-      @delegated_to.series[plot.identifier].data.size
-    end
+  class BarDelegate < BaseDelegate
 
     def numberForPlot(plot, field:field_enum, recordIndex:index)
       data  = @delegated_to.series[plot.identifier].data

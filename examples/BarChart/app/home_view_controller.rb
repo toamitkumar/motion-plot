@@ -36,7 +36,7 @@ class HomeViewController < UIViewController
         }
       },
       data_label: {
-        color: "FFFFFF",
+        color: "000000",
         font_size: 12,
         font_name: "Arial",
         displacement: [0, 10]

@@ -35,9 +35,7 @@ module MotionPlot
       legend.cornerRadius = corner_radius
       legend.swatchSize   = swatch_size
       legend.textStyle    = TextStyle.cpt_text_style(@style) if(@style)
-
-      p @style
-      
+            
       legend
     end
 

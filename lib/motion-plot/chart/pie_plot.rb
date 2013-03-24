@@ -18,6 +18,7 @@ module MotionPlot
 
       animate(pie)
       @graph.addPlot(pie)
+      @plots << pie
     end
 
     def default_padding

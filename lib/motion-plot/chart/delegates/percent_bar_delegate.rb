@@ -1,13 +1,9 @@
 module MotionPlot
-  class PercentBarDelegate
+  class PercentBarDelegate < BaseDelegate
 
     def initialize(source)
-      @delegated_to = source
+      super
       @number_of_plots = @delegated_to.series.keys.size
-    end
-
-    def numberOfRecordsForPlot(plot)
-      @delegated_to.series[plot.identifier].data.size
     end
 
     def numberForPlot(plot, field:field_enum, recordIndex:index)
