@@ -16,6 +16,8 @@ module MotionPlot
         StackBarDelegate.new(self)
       when "percent"
         PercentBarDelegate.new(self)
+      when "waterfall"
+        WaterfallDelegate.new(self)
       else
         BarDelegate.new(self)
       end
