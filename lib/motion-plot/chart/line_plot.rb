@@ -29,6 +29,19 @@ module MotionPlot
       end
     end
 
+    def default_padding
+      line_series.style.paddings_for(@graph)
+      line_series.style.plot_area.add_style(@graph.plotAreaFrame)
+    end
+
+    def line_series
+      @series[plot_identifier]
+    end
+
+    def plot_identifier
+      @series.keys.select{|k| @series[k].type == plot_type}.first
+    end
+
     protected
     def default_style
       {
