@@ -23,7 +23,12 @@ This library is a wrapper on top of [CorePlot](https://code.google.com/p/core-pl
 
 ## Usage
 
-  Look at examples directory for usage options.
+  1. Create a UIView (with frame size you wish)
+  2. Build a JSON structure with details of chart (look at examples for more)
+  3. Initialize the chart type with this json (it returns back an instance of CPTGraphHostingView)
+  4. Add the view returned to your view
+
+  Look at examples directory for detail usage options.
 
 ## Contributing
 
