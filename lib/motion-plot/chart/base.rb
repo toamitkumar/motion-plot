@@ -116,6 +116,19 @@ module MotionPlot
 
         axis = @axes[:y]
         add_axis_title(@yaxis, axis.title)
+
+        if(axis.labels)
+          labels = axis.labels.each_with_index.map do |l, i|
+            @yaxis.labelingPolicy = CPTAxisLabelingPolicyNone
+            label                 = CPTAxisLabel.alloc.initWithText(l, textStyle: axis.text_style)
+            label.tickLocation    = CPTDecimalFromInt(i)
+            label.offset          = 3.0
+            label  
+          end
+
+          @yaxis.axisLabels = NSSet.setWithArray(labels)  
+        end
+
         @yaxis.setLabelTextStyle(axis.text_style)
       end
 

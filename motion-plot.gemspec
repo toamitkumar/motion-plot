@@ -4,8 +4,8 @@ require File.expand_path('../lib/motion-plot/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Amit Kumar"]
   gem.email         = ["toamitkumar@gmail.com"]
-  gem.description   = "Build native charts as you are used with Highcharts/D3. This library is a wrapper on top of CorePlot"
-  gem.summary       = "Build native charts as you are used with Highcharts/D3. This library is a wrapper on top of CorePlot"
+  gem.description   = "Create native iOS charts using simple JSON as you are used-to with Highcharts like JS library. This library is a wrapper on top of CorePlot"
+  gem.summary       = "Create native iOS charts using simple JSON as you are used-to with Highcharts like JS library. This library is a wrapper on top of CorePlot"
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split("\n").delete_if {|x| x.include? "examples"}
