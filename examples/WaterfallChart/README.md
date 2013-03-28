@@ -1,0 +1,1 @@
+![Screenshot](https://raw.github.com/toamitkumar/motion-plot/master/examples/WaterfallChart/Screenshot.png)

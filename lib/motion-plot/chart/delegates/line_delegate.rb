@@ -14,6 +14,10 @@ module MotionPlot
 
       y_value = @delegated_to.series[plot.identifier].data[index].round(2)
       @delegated_to.graph.plotAreaFrame.plotArea.addAnnotation(@delegated_to.data_label.annotation_for(y_value, atCoordinate: [index, y_value], plotSpace: @delegated_to.graph.defaultPlotSpace))
+
+      if(@delegated_to.subscribed_events)
+        @delegated_to.subscribed_events.delegate_event(:symbol_selected, withData: {plot: plot, index: index})
+      end
     end
 
     def numberForPlot(plot, field:field_enum, recordIndex:index)

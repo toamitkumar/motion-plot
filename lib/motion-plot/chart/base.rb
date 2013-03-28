@@ -1,7 +1,7 @@
 module MotionPlot
   class Base
 
-    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title
+    attr_reader :layer_hosting_view, :graph, :series, :plot_space, :major_grid_line_style, :plots, :xaxis, :yaxis, :title, :subscribed_events
 
     attr_accessor :legend, :axes, :theme, :data_label, :plot_options
 
@@ -39,7 +39,7 @@ module MotionPlot
           defaults: default_style, 
           plot_options: @plot_options, 
           type: self.plot_type,
-          plot_symbol: (@plot_symbol ? options[:plot_symbol] : nil)
+          plot_symbol: options[:plot_symbol]
         })
         @series[hash[:name]] = Series.new(hash)
       }
@@ -50,6 +50,10 @@ module MotionPlot
 
       if(options[:data_label])
         @data_label = DataLabel.new(options[:data_label])
+      end
+
+      if(options[:events])
+        @subscribed_events = Events.new(options[:events], self.plot_type)
       end
 
       @plots = []

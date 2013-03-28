@@ -19,7 +19,12 @@ class HomeViewController < UIViewController
         color: 'FFFFFF',
         font_name: "Arial"
       },
-      curve_inerpolation: true,
+      events: {
+        subscriber: self,
+        line: {
+          symbol_selected: "symbol_selected_for_index"
+        }
+      },
       theme: MotionPlot::Theme.stocks,
       xAxis: {
         title: {
@@ -82,6 +87,10 @@ class HomeViewController < UIViewController
 
     view = MotionPlot::Line.alloc.initWithOptions(options, containerView:@chart_view)
     @chart_view.addSubview(view)
+  end
+
+  def symbol_selected_for_index(data)
+    p data
   end
 
 end
