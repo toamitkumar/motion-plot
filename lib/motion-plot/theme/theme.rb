@@ -10,7 +10,7 @@ module MotionPlot
 
     class << self
       def method_missing(m, *args, &block)
-        method_name = m == :default ? :plain_white : m
+        return if m == :default
 
         raise unless(DEFAULTS.keys.include?(method_name))       
 
