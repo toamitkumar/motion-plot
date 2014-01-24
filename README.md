@@ -9,26 +9,26 @@ This library is a wrapper on top of [CorePlot](https://code.google.com/p/core-pl
 
     `gem 'motion-plot'`
 
-  And then execute:
+  Then execute:
 
-    $ bundle
+    `$ bundle`
 
   Or install it yourself as:
 
-    $ gem install motion-plot
+    `$ gem install motion-plot`
 
   And add `require 'motion-plot'` to your `Gemfile`
 
-2. Run 'pod setup' to install core-plot as pod on your local
+2. Run '`pod setup`' to install core-plot as a pod
 
 ## Usage
 
-  1. Create a UIView (with frame size you wish)
-  2. Build a JSON structure with details of chart (look at examples for more)
-  3. Initialize the chart type with this json (it returns back an instance of CPTGraphHostingView)
+  1. Create a UIView (with whatever frame size you wish)
+  2. Build a JSON structure with the details of the chart (look at examples for more)
+  3. Initialize the chart type with this JSON (it returns back an instance of `CPTGraphHostingView`)
   4. Add the view returned to your view
 
-  Look at examples directory for detail usage options.
+  Look at the `examples` directory for detail usage options.
 
 ## Contributing
 
