@@ -113,14 +113,14 @@ module MotionPlot
       plot.addAnimation(radial_animation, forKey:"pieRadius")
 
 
-      angle_animation                     = CABasicAnimation.animationWithKeyPath 'angle'
-      angle_animation.fromValue           = 0.0
+      angle_animation                     = CABasicAnimation.animationWithKeyPath 'endAngle'
+      angle_animation.fromValue           = -(Math::PI * 7/4)
       angle_animation.toValue             = Math::PI/4
       angle_animation.duration            = 1.0
       angle_animation.removedOnCompletion = false
       angle_animation.fillMode            = KCAFillModeForwards
 
-      plot.addAnimation(angle_animation, forKey:"angle") 
+      plot.addAnimation(angle_animation, forKey:"endAngle")
 
       CATransaction.commit
     end
